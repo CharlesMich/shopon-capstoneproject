@@ -3,20 +3,21 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 import datetime
 
-class Review(db.Model):
-    __tablename__ = 'reviews'
+class Cart_Product(db.Model):
+    __tablename__ = 'cart_products'
 
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
+    #columns
+    id = db.Column(db.Integer, primary_key=True) 
+    cart_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('carts.id')), nullable=False)
     product_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('products.id')), nullable=False)
-    review = db.Column(db.String(5000), nullable=False)
+    quantity = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Numeric, nullable=False)
     created_at = db.Column(db.Date, default=datetime.date.today, nullable=False)
     updated_at = db.Column(db.Date, default=datetime.date.today, nullable=False)
 
-    # Relationships
-    review_user = db.relationship('User', back_populates='user_review')
-    review_product = db.relationship('Product', back_populates='product_review')
-    
+    # relationships
+    cartproduct_cart = db.relationship('Cart', back_populates='cart_cartproduct')
+    cartproduct_product = db.relationship('Product', back_populates='product_cartproduct')

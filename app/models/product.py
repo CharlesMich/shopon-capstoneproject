@@ -22,5 +22,8 @@ class Product(db.Model):
 
     # relationships
     product_catagory = db.relationship('Catagory', back_populates="catagory_product")
+    product_orderitem  = db.relationship('Order_Item', back_populates='orderitem_product')
+    product_review = db.relationship('Review', back_populates='review_product')
+    product_cartproduct = db.relationship('Cart_Product', back_populates='cartproduct_product')
 
 
