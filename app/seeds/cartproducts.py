@@ -6,7 +6,6 @@ def seed_cartproducts():
         cart_id = 1,
         product_id = 1,
         quantity = 1,
-        price = 799
     )
 
     db.session.add(cartproduct1)

@@ -7,4 +7,5 @@ from .order import Order
 from .order_item import Order_Item
 from .cart import Cart
 from .cart_product import Cart_Product
+from .product_image import ProductImage
 from .db import environment, SCHEMA
