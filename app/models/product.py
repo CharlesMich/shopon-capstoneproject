@@ -27,4 +27,14 @@ class Product(db.Model):
     product_cartproduct = db.relationship('Cart_Product', back_populates='cartproduct_product')
     product_productimages = db.relationship('ProductImage', back_populates="productimages_product")
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name' : self.name,
+            'product_shortdescription': self.product_shortdescription,
+            'product_longdescription': self.product_longdescription,
+            'price': self.price,
+            'catagory_id' : self.catagory_id,
+        }
+
 
