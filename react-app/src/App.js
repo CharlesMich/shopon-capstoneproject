@@ -27,14 +27,14 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          {/* <Route Path='/product-details/:productid'>
-          <ProductDetails/>
-          </Route> */}
-          <Route path="/cart">
+          <Route exact path="/">
+            <AllProducts/>
+          </Route>
+          <Route path="/cart/:userId">
             <Cart/>
           </Route>
-          <Route path="/">
-            <AllProducts/>
+          <Route exact Path="/products/product-details/:productId">
+          <ProductDetails/>
           </Route>
 
         </Switch>

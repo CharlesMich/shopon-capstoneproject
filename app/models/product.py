@@ -17,6 +17,11 @@ class Product(db.Model):
     product_longdescription = db.Column(db.String(5000), nullable=False)
     price = db.Column(db.Numeric, nullable=False)
     catagory_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('catagories.id')), nullable=False)
+    img1 = db.Column(db.String, nullable=False)
+    img2 = db.Column(db.String, nullable=False)
+    img3 = db.Column(db.String, nullable=False)
+    img4 = db.Column(db.String, nullable=False)
+    img5 = db.Column(db.String, nullable=False)
     created_at = db.Column(db.Date, default=datetime.date.today, nullable=False)
     updated_at = db.Column(db.Date, default=datetime.date.today, nullable=False)
 
@@ -35,6 +40,11 @@ class Product(db.Model):
             'product_longdescription': self.product_longdescription,
             'price': self.price,
             'catagory_id' : self.catagory_id,
+            'img1':self.img1,
+            'img2':self.img2,
+            'img3':self.img3,
+            'img4':self.img4,
+            'img5':self.img5,
         }
 
 

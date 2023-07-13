@@ -5,6 +5,8 @@ def seed_orderitems():
     orderitem1 = Order_Item(
         order_id=1,
         product_id=1,
+        product='Iphone',
+        price=799,
         quantity=1,
     )
 

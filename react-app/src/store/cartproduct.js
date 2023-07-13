@@ -26,8 +26,8 @@ const delete_caritem = payload => ({
 
 // Thunks
 // Get
-export const fetchLoadCartItem = () => async dispatch => {
-    const response = await fetch('/api/cartproduct/')
+export const fetchLoadCartItem = (cartId) => async dispatch => {
+    const response = await fetch(`/api/cartproduct/${cartId}`)
     if (response.ok){
         const payload = await response.json()
         dispatch(all_cartitems(payload))

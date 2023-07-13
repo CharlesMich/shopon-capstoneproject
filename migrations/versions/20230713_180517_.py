@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 9618b480f95c
+Revision ID: 3a9f32ccee69
 Revises: ffdc0a98111c
-Create Date: 2023-07-12 16:23:18.291640
+Create Date: 2023-07-13 18:05:17.947966
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '9618b480f95c'
+revision = '3a9f32ccee69'
 down_revision = 'ffdc0a98111c'
 branch_labels = None
 depends_on = None
@@ -47,6 +47,11 @@ def upgrade():
     sa.Column('product_longdescription', sa.String(length=5000), nullable=False),
     sa.Column('price', sa.Numeric(), nullable=False),
     sa.Column('catagory_id', sa.Integer(), nullable=False),
+    sa.Column('img1', sa.String(), nullable=False),
+    sa.Column('img2', sa.String(), nullable=False),
+    sa.Column('img3', sa.String(), nullable=False),
+    sa.Column('img4', sa.String(), nullable=False),
+    sa.Column('img5', sa.String(), nullable=False),
     sa.Column('created_at', sa.Date(), nullable=False),
     sa.Column('updated_at', sa.Date(), nullable=False),
     sa.ForeignKeyConstraint(['catagory_id'], ['catagories.id'], ),
@@ -55,18 +60,22 @@ def upgrade():
     op.create_table('cart_products',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('cart_id', sa.Integer(), nullable=False),
+    sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('product_id', sa.Integer(), nullable=False),
     sa.Column('quantity', sa.Integer(), nullable=False),
     sa.Column('created_at', sa.Date(), nullable=False),
     sa.Column('updated_at', sa.Date(), nullable=False),
     sa.ForeignKeyConstraint(['cart_id'], ['carts.id'], ),
     sa.ForeignKeyConstraint(['product_id'], ['products.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('order_items',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('order_id', sa.Integer(), nullable=False),
     sa.Column('product_id', sa.Integer(), nullable=False),
+    sa.Column('price', sa.Numeric(), nullable=False),
+    sa.Column('product', sa.String(), nullable=False),
     sa.Column('quantity', sa.Integer(), nullable=False),
     sa.Column('created_at', sa.Date(), nullable=False),
     sa.Column('updated_at', sa.Date(), nullable=False),

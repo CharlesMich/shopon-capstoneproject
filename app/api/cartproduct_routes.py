@@ -7,9 +7,9 @@ cartproduct_route = Blueprint('cartproduct', __name__)
 
 
 # Get all items in cart
-@cartproduct_route.route('/', methods = ["GET"])
-def getCartProduct():
-    cartProducts = Cart_Product.query.all()
+@cartproduct_route.route('/<int:id>', methods = ["GET"])
+def getCartProduct(id):
+    cartProducts = Cart_Product.query.filter(Cart_Product.cart_id == id).all()
     print([cartProduct.to_dict() for cartProduct in cartProducts])
     return [cartProduct.to_dict() for cartProduct in cartProducts]
 

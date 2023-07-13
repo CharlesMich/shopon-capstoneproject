@@ -3,10 +3,26 @@ from sqlalchemy.sql import text
 
 def seed_catagories():
     catagory1 = Catagory(
-        catagory='Phone'
+        catagory='Electronics'
+    )
+    catagory2 = Catagory(
+        catagory='Books'
+    )
+    catagory3 = Catagory(
+        catagory='Movies'
+    )
+    catagory4 = Catagory(
+        catagory='Clothes'
+    )
+    catagory5 = Catagory(
+        catagory='Furniture'
     )
 
     db.session.add(catagory1)
+    db.session.add(catagory2)
+    db.session.add(catagory3)
+    db.session.add(catagory4)
+    db.session.add(catagory5)
     db.session.commit()
 
 def undo_catagories():

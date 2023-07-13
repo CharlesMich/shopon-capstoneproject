@@ -19,6 +19,7 @@ class User(db.Model, UserMixin):
     user_cart = db.relationship('Cart', back_populates= 'cart_user')
     user_review = db.relationship('Review', back_populates='review_user')
     user_order = db.relationship('Order', back_populates='order_user')
+    user_cartproduct = db.relationship('Cart_Product', back_populates='cartproduct_user')
 
     @property
     def password(self):
@@ -36,4 +37,6 @@ class User(db.Model, UserMixin):
             'id': self.id,
             'username': self.username,
             'email': self.email,
+            'first_name': self.first_name,
+            'last_name': self.last_name
         }

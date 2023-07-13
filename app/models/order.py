@@ -18,3 +18,9 @@ class Order(db.Model):
     # relationships
     order_user = db.relationship('User', back_populates='user_order')
     order_orderitem = db.relationship('Order_Item', back_populates='orderitem_order')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id' : self.user_id,
+        }

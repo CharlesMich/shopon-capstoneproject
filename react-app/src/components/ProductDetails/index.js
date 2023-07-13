@@ -9,19 +9,21 @@ import { getSingleProduct } from "../../store/product";
 function ProductDetails(){
     const dispatch = useDispatch()
     const history = useHistory()
-    const id = useParams()
-
-    let sessionUser = useSelector((state)=> state.session.user);
-    // if(!sessionUser) history.push('/')
-    
+    const id = useParams().productId
    
-    let product = useSelector((state)=> state.product)
-
-    console.log(product)
+   let sessionUser = useSelector((state)=> state.session.user);
+   // if(!sessionUser) history.push('/')
+   const userId = sessionUser.id
+   let product = useSelector((state)=> state.product)
+   console.log(id)
+   
+   const { productId } = useParams()
+   console.log(productId)
+   
 
     useEffect(() => {
-        dispatch(getSingleProduct(id))
-    },[dispatch, id]);
+        dispatch(getSingleProduct(3))
+    },[dispatch, 3]);
 
 
     let productArr = Object.values(product)
@@ -36,7 +38,9 @@ function ProductDetails(){
                 <div>{ele.id}</div>
                 <div>{ele.name}</div>
                 <div>{ele.product_shortdescription}</div>
-                <Link to="/">Shopping Cart</Link>
+                <div>{ele.price}</div>
+                <div>{ele.product_longdescription}</div>
+                <Link to={`/cart/${userId}`}>Add to Cart</Link>
                 </div>
               )}</div>
 

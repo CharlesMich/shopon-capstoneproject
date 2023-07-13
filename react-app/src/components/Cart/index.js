@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom";
 // import { Link } from 'react-router-dom'
@@ -7,55 +7,59 @@ import { fetchLoadCartItem } from '../../store/cartproduct';
 import { fetchGetCart } from '../../store/cart';
 
 
-function Cart(){
+function Cart() {
     const dispatch = useDispatch()
     // const history = useHistory()
-    
-    const userId = useSelector(state => state.session.user.id) 
+
+    const userId = useSelector(state => state.session.user.id)
     const cartId = useSelector(state => state.cart)
     const product = useSelector(state => state.product)
     const cartItems = useSelector(state => state.cartProducts)
 
-    console.log(userId)
-    console.log(cartId)
-    console.log('product', product)
-    // console.log(cartItems)
+
+    const [quantity, setquantity] = useState()
 
     useEffect(() => {
         dispatch(fetchGetCart())
-    },[dispatch]);
+    }, [dispatch]);
 
     useEffect(() => {
-        dispatch(fetchLoadCartItem())
-    },[dispatch]);
+        dispatch(fetchLoadCartItem(userId))
+    }, [dispatch, userId]);
 
-    
     useEffect(() => {
         dispatch(getAllProducts())
-    },[dispatch]);
-    
-
+    }, [dispatch]);
 
     const cartItemArr = Object.values(cartItems)
+    cartItemArr.forEach(ele => console.log(ele.name))
+    console.log('cartitemsarr', cartItemArr)
+    // if (cartId) return null;
 
 
-    return(
+    if(!cartItemArr){
+        return <div>Your Cart is currently Empty</div>
+    }
+
+    return (
         <div className="cart-container">
-        <div>Shopping Cart</div>
-        <div className="cart-items">
-            <div className= "cart-map">
-                {cartItemArr.map(ele=> (
-                    <div>
-                    
-                    <div>{ele.name}</div>
-                    <div>{ele.description}</div>
-                    <div>{ele.price}</div>
-                    <div>{ele.quantity}</div>
-                    </div>
+            <div>Shopping Cart</div>
+            <div className="cart-items">
+                <div className="cart-map">
+                    {cartItemArr && cartItemArr.map((ele) => (
+                        <div>
 
-                ))}
+                            <div >{ele.cart_id}</div>
+                            <div>{ele.description}</div>
+                            <div>{ele.price}</div>
+                            <div>{ele.quantity}</div>
+                            <div><button>Update</button></div>
+                        </div>
+
+                    ))}
+                </div>
             </div>
-        </div>
+            <div><button>Empty Cart</button></div>
         </div>
 
     )
