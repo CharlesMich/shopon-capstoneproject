@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom'
 import { getAllProducts } from "../../store/product";
 
 
@@ -26,9 +27,10 @@ function AllProducts(){
             <div>Hello from all products</div>
               <div className="productMap">{allProducts.map((ele)=> 
               <div>
-                <div>{ele.id}</div>
-                <div>{ele.name}</div>
-                <div>{ele.product_shortdescription}</div>
+                    <div>{ele.id}</div>
+                    <div>{ele.name}</div>
+                    <div>{ele.product_shortdescription}</div>
+                    <Link to={`/product-details/${ele.id}`} key={ele.id}>Product Details</Link>
                 </div>
               )}</div>
 

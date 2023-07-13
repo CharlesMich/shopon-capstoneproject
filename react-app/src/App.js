@@ -7,6 +7,7 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import AllProducts from "./components/products";
 import ProductDetails from "./components/ProductDetails";
+import Cart from "./components/Cart";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,10 +27,13 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route exact Path = '/product-details/:productid'>
+          {/* <Route Path='/product-details/:productid'>
           <ProductDetails/>
+          </Route> */}
+          <Route path="/cart">
+            <Cart/>
           </Route>
-          <Route path='/products'>
+          <Route path="/">
             <AllProducts/>
           </Route>
 

@@ -28,5 +28,8 @@ class Cart_Product(db.Model):
             'cart_id' : self.cart_id,
             'product_id': self.product_id,
             'quantity': self.quantity,
-            # 'price': self.price,
+            'price': self.cartproduct_product.price,
+            'name': self.cartproduct_product.name,
+            'description': self.cartproduct_product.product_shortdescription
+            
         }
