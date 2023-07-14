@@ -30,10 +30,10 @@ function App() {
           <Route exact path="/">
             <AllProducts/>
           </Route>
-          <Route path="/cart/:userId">
+          <Route path="/cart">
             <Cart/>
           </Route>
-          <Route exact Path="/products/product-details/:productId">
+          <Route Path="/products/product-details/:productId">
           <ProductDetails/>
           </Route>
 

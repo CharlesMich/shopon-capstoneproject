@@ -31,16 +31,24 @@ export const fetchLoadCartItem = (cartId) => async dispatch => {
     if (response.ok){
         const payload = await response.json()
         dispatch(all_cartitems(payload))
-        console.log('fetch cartitem', payload)
     }
 }
 
 // Add
-export const fetchAddCartItem = () => async dispatch => {
-    const response = await fetch('/api/cartproduct/new')
+export const fetchAddCartItem = (createCartForm) => async dispatch => {
+    const response = await fetch('/api/cartproduct/new', {
+        method:"POST",
+        headers: { "Content-Type": "application/json",
+        },
+        body: JSON.stringify(createCartForm),
+        
+    })
+    console.log('fetch/send/cartform', createCartForm)
+   
     if (response.ok){
         const payload = await response.json();
         dispatch(add_cartitem(payload))
+        return payload
 
     }
 }
@@ -78,20 +86,21 @@ export default function cartItemReducer(state=initialState, action){
     switch(action.type){
         case ALL_CARTITEMS:
             const cartItems = {};
-            console.log(action.payload)
             action.payload.forEach(ele => cartItems[ele.id] = ele);
             return { ...state, ...cartItems }
 
-        // case ADD_CARTITEM:
-        //     return {...state.cartItems, [action.payload.id]: action.payload}
+        case ADD_CARTITEM:
+            const newItems = {}
+            newItems[action.payload.id] = action.payload
+            return {...state.cartItems, ...newItems}
 
-        // case EDIT_CARTITEM:
-        //     return {...state.cartItems, [action.payload.id]: action.payload}
+        case EDIT_CARTITEM:
+            return {...state, [action.payload.id]: action.payload}
 
-        // case DELETE_CARTITEM:
-        //     const delState = {...state.cartItems}
-        //     delete delState[action.payload]
-        //     return {...state}    
+        case DELETE_CARTITEM:
+            const delState = {...state};
+            delete delState[action.payload]
+            return delState    
                
         default: return state;        
     }

@@ -30,7 +30,8 @@ function AllProducts(){
                     <div>{ele.id}</div>
                     <div>{ele.name}</div>
                     <div>{ele.product_shortdescription}</div>
-                    <Link to={`products/product-details/${ele.id}`} key={ele.id}>Product Details</Link>
+                    <Link to={`/products/product-details/${ele.id}`} key={ele.id}>Product Details</Link>
+                   
                 </div>
               )}</div>
 

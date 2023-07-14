@@ -17,21 +17,23 @@ def getCartProduct(id):
 # Post item to cart
 @cartproduct_route.route('/new', methods = ["POST"])
 def postCartProduct():
-    form = CartProductForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    data = form.data
-    print('data', data)
-    if form.validate_on_submit():
-        newCartItem = Cart_Product(
-            cart_id =data['cart_id'],
-            product_id = data['product_id'],
-            quantity = data['quantity'],
-            price = data['price']
-        ) 
-
-        db.session.add(newCartItem)
-        db.session.commit()
-        return newCartItem.to_dict()
+    # if request.method == "POST": 
+            form = CartProductForm()
+            form['csrf_token'].data = request.cookies['csrf_token']
+            data = form.data
+            print('data', data, 'userid', current_user.id)
+            if form.validate_on_submit():
+                newCartItem = Cart_Product(
+                    cart_id = data['cart_id'],
+                    user_id = current_user.id,
+                    product_id = data['product_id'],
+                    quantity = data['quantity'],
+                ) 
+                db.session.add(newCartItem)
+                db.session.commit()
+                return newCartItem.to_dict()
+            return {"error": "Product Rejected"}
+            
     
     # update image in cart
 @cartproduct_route.route('/update-cart/<int:id>', methods =["GET", "POST"])
