@@ -37,14 +37,14 @@ export const getSingleProduct = (id) => async dispatch => {
     }
 }
 
-const initialState = {}
+const initialState = {allProducts:{}, singleProduct:{}}
 // const initialState = {allProducts:{}, singleProduct:{}}
 export default function productReducer(state = initialState, action){
     switch(action.type){
         case LOAD_PRODUCTS:
             const allProducts = {}
             action.payload.forEach(ele=> allProducts[ele.id]=ele)
-            return {...state, ...allProducts}
+            return {...state, allProducts}
 
         case SINGLE_PRODUCT:
             const singleProduct = {...action.payload}

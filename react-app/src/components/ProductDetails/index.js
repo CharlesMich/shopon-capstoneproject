@@ -12,12 +12,9 @@ function ProductDetails() {
   const history = useHistory()
 
 
-  // const { productId } = useParams()
-  // console.log(productId)
-  // let productId = useParams()
-  // console.log(productId)
-
-  const product_id = 3
+  const { productId } = useParams()
+  
+ 
   const cart_id = 1
 
   let sessionUser = useSelector((state) => state.session.user);
@@ -30,8 +27,8 @@ function ProductDetails() {
 
 
   useEffect(() => {
-    dispatch(getSingleProduct(product_id))
-  }, [dispatch, product_id]);
+    dispatch(getSingleProduct(productId))
+  }, [dispatch, productId]);
 
   const user_id = sessionUser.id
 
@@ -43,7 +40,7 @@ function ProductDetails() {
 
     const createCartForm = {
       cart_id,
-      product_id,
+      productId,
       user_id,
       quantity
     }
@@ -64,6 +61,7 @@ function ProductDetails() {
       <div>Hello from single product</div>
       <div className="productMap">{productArr.map((ele) =>
         <div>
+          <div>{ele.id}</div>
           <div>{ele.name}</div>
           <div>{ele.product_shortdescription}</div>
           <div>{ele.price}</div>
@@ -87,7 +85,10 @@ function ProductDetails() {
 
         <button type="sumbit" className="product-details-shoppingcart" >Add to Cart</button>
       </form>
-        <Link to="/cart">Go to Cart</Link>
+        <div><Link to="/cart">Go to Cart</Link></div>
+        <div><Link to="/products">All Products</Link></div>
+        <div><Link to="/reviews">reviews</Link></div>
+
 
     </div>
 

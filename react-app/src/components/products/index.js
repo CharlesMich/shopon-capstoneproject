@@ -12,9 +12,9 @@ function AllProducts(){
     let sessionUser = useSelector((state)=> state.session.user);
     if(!sessionUser) history.push('/')
 
-    let allProducts = useSelector((state)=> Object.values(state.product))
+    let allProducts = useSelector((state)=> Object.values(state.product.allProducts))
 
-   
+
 
     useEffect(() => {
         dispatch(getAllProducts())
@@ -27,17 +27,18 @@ function AllProducts(){
             <div>Hello from all products</div>
               <div className="productMap">{allProducts.map((ele)=> 
               <div>
-                    <div>{ele.id}</div>
+                    
                     <div>{ele.name}</div>
                     <div>{ele.product_shortdescription}</div>
-                    <Link to={`/products/product-details/${ele.id}`} key={ele.id}>Product Details</Link>
+                    <Link to={`/products/${ele.id}`} key={ele.id}>Product Details</Link>
                    
                 </div>
               )}</div>
-
+     <div><Link to={`/reviews`}>Reviews</Link></div>
+     <Link to={`/cart`}>Cart</Link>
+    {/* <Link to={`/products/product-details/${Number(ele.id)}`} key={ele.id}>Product Details</Link> */}
         </div>
 
-      
     )
        
 

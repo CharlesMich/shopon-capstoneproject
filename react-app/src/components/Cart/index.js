@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom";
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { getAllProducts } from "../../store/product";
 import { fetchLoadCartItem } from '../../store/cartproduct';
 import { fetchGetCart } from '../../store/cart';
@@ -34,12 +34,23 @@ function Cart() {
     console.log('cartitemsarr', cartItemArr)
     // if (cartId) return null;
     
+
+    // delete single item
     const handleDelete = async(e) => {
         e.preventDefault();
         const {value} = e.target.dataset
         
         await dispatch(fetchDeleteCartItem(value))
     }    
+
+    // delete all items 
+    
+        const emptyCart = async(e) => {
+            e.preventDefault()
+            for (let item of cartItemArr){
+            await dispatch(fetchDeleteCartItem(item.id))
+        }    
+    }
 
     useEffect(() => {
         dispatch(fetchLoadCartItem(userId))
@@ -89,9 +100,11 @@ function Cart() {
                     ))}
                 </div>
             </div>
-            <div><button>Empty Cart</button></div>
+            <div><button onClick={emptyCart}>Empty Cart</button></div>
+            <div><Link to={`/reviews`}>Reviews</Link></div>
+            <div><Link to={`/products`}>Products</Link></div>
         </div>
-
+        
     )
 }
 

@@ -6,6 +6,8 @@ import cartItemReducer from './cartproduct';
 import cartReducer from './cart';
 import orderReducer from './order';
 import orderItemReducer from './orderitem';
+import reviewReducer from './review';
+import catagoryReducer from './catagories';
 
 const rootReducer = combineReducers({
   session,
@@ -13,7 +15,9 @@ const rootReducer = combineReducers({
   cartProducts:cartItemReducer,
   cart: cartReducer,
   order:orderReducer,
-  orderItems: orderItemReducer
+  orderItems: orderItemReducer,
+  review: reviewReducer,
+  catagory: catagoryReducer
 });
 
 

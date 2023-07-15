@@ -15,7 +15,7 @@ def seed_catagories():
         catagory='Clothes'
     )
     catagory5 = Catagory(
-        catagory='Furniture'
+        catagory='Cologne'
     )
 
     db.session.add(catagory1)

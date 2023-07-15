@@ -18,3 +18,18 @@ class Catagory(db.Model):
     #relationships
     catagory_product = db.relationship('Product', back_populates='product_catagory')
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'catagory': self.catagory,
+            # 'name' : self.product_catagory.name,
+            # 'product_shortdescription': self.catagory_product.product_shortdescription,
+            # 'product_longdescription': self.catagory_product.product_longdescription,
+            # 'price': self.catagory_product.price,
+            # 'img1':self.catagory_product.img1,
+            # 'img2':self.catagory_product.img2,
+            # 'img3':self.catagory_product.img3,
+            # 'img4':self.catagory_product.img4,
+            # 'img5':self.catagory_product.img5,
+        }
+
