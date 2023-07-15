@@ -22,27 +22,32 @@ function Catagories(){
         dispatch(getAllProducts())
     }, [dispatch])
 
+   
+    
 
     if(!catagories) return null
-
+   
     console.log(catagories)
     return(
         <div className="catagories-container">
+            <div className="catagories-card">
             <div className="catagories-map">{catagories.map((ele)=> 
             <div>    
                         <div>{ele.catagory}</div>
 
                         <div className="catagories-product-map">
                             {allProducts.map((item)=> 
-                            <div>
-                                <div>{ele.id === item.catagory_id && item.name}</div>
-                                <div>{ele.id === item.catagory_id && <img src ={item.img1} alt=""></img>}</div>
+                           
+                            <div className="catagories-product-map-each-element">
+                                {ele.id === item.catagory_id && <img className="cat-img" src ={item.img1} alt=""></img>}
                                 </div>
+                               
                             )}
                          </div>
                         <Link to={`/products`} key={ele.id}>Product of Catagory</Link>
             </div>
             )}
+            </div>
             </div>
         </div>
     )

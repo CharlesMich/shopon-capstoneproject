@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import { getAllProducts } from "../../store/product";
+import './products.css'
+
 
 
 function AllProducts(){
@@ -24,19 +26,20 @@ function AllProducts(){
 
     return(
         <div className="product-container">
-            <div>Hello from all products</div>
-              <div className="productMap">{allProducts.map((ele)=> 
-              <div>
-                    
-                    <div>{ele.name}</div>
-                    <div>{ele.product_shortdescription}</div>
-                    <Link to={`/products/${ele.id}`} key={ele.id}>Product Details</Link>
-                   
+           
+                <div className='products-inner-container'>
+                    <div className="productMap">{allProducts.map((ele)=> 
+                                        <div className="products-each-product">  
+                                       
+                                       <Link to={`/products/${ele.id}`} key={ele.id}> <div className="products-name">{ele.name}</div></Link> 
+                                                <div>{ele.product_shortdescription}</div>
+                                                <div>{<img className="cat-img" src ={ele.img1} alt=""></img>}</div>
+                                                <div>{ele.price}</div>
+                                               
+                                        </div> 
+                    )}</div>
                 </div>
-              )}</div>
-     <div><Link to={`/reviews`}>Reviews</Link></div>
-     <Link to={`/cart`}>Cart</Link>
-    {/* <Link to={`/products/product-details/${Number(ele.id)}`} key={ele.id}>Product Details</Link> */}
+         
         </div>
 
     )
