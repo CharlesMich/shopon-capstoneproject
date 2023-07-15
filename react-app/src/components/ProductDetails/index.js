@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import { getSingleProduct } from "../../store/product";
 import { fetchAddCartItem } from "../../store/cartproduct"
+import './allproducts.css'
 
 
 function ProductDetails() {
@@ -19,7 +20,7 @@ function ProductDetails() {
 
   let sessionUser = useSelector((state) => state.session.user);
 
-  let product = useSelector((state) => state.product)
+  let product = useSelector((state) => (state.product.singleProduct))
 
 
   const [quantity, setQuantity] = useState(1)
@@ -32,9 +33,7 @@ function ProductDetails() {
 
   const user_id = sessionUser.id
 
-  let productArr = Object.values(product)
-
-
+console.log(product.img1)
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -54,42 +53,39 @@ function ProductDetails() {
 
   }
 
-  if (!product || !productArr) return null
+  if (!product) return null
   if (!sessionUser) return null
   return (
-    <div className="product-container">
-      <div>Hello from single product</div>
-      <div className="productMap">{productArr.map((ele) =>
-        <div>
-          <div>{ele.id}</div>
-          <div>{ele.name}</div>
-          <div>{ele.product_shortdescription}</div>
-          <div>{ele.price}</div>
-          <div>{ele.product_longdescription}</div>
-        </div>
-      )}</div>
+    <div className="productdetails-container">
+            <div className="productdetails-subcontainer">
+             <div className="product-galary-image-galary">
+              <div className="product-detail-thumbnail">
+            <img className = "product-detail-thumbnail-img" src={product.img1}></img>
+            <img className = "product-detail-thumbnail-img" src={product.img2}></img>
+            <img className = "product-detail-thumbnail-img" src={product.img3}></img>
+            <img className = "product-detail-thumbnail-img" src={product.img4}></img>
+            <img className = "product-detail-thumbnail-img" src={product.img5}></img>
+            </div>
+            <div className = "produt-detail-main-image">
+            <img className = "product-detail-img" src={product.img1}></img>
+            </div>
+            </div> 
+                    <form onSubmit={onSubmit}>
+                                <div><label htmlFor='quantity'>Quantity</label></div>
+                                <div><select id="quantity" className="product-unit-select" value={quantity}
+                                  onChange={(e) => setQuantity(e.target.value)}>
+                                  <option value={1}>1</option>
+                                  <option value={2}>2</option>
+                                  <option value={3}>3</option>
+                                  <option value={4}>4</option>
+                                  <option value={5}>5</option>
+                                  <option value={6}>6</option>
+                                  <option value={7}>7</option>
+                                </select></div>
 
-      <form onSubmit={onSubmit}>
-        <div><label htmlFor='quantity'>Quantity</label></div>
-        <div><select id="quantity" className="product-unit-select" value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}>
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-          <option value={6}>6</option>
-          <option value={7}>7</option>
-
-        </select></div>
-
-        <button type="sumbit" className="product-details-shoppingcart" >Add to Cart</button>
-      </form>
-        <div><Link to="/cart">Go to Cart</Link></div>
-        <div><Link to="/products">All Products</Link></div>
-        <div><Link to="/reviews">reviews</Link></div>
-
-
+                                <button type="sumbit" className="product-details-shoppingcart" >Add to Cart</button>
+                    </form>
+            </div>
     </div>
 
   )
