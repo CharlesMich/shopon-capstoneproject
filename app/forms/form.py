@@ -37,7 +37,7 @@ class CartForm(FlaskForm):
 class CartProductForm(FlaskForm):
     cart_id = IntegerField('CartId', validators=[DataRequired()])
     user_id = IntegerField('UserId', validators=[DataRequired()])
-    product_id = IntegerField('ProductId', validators=[DataRequired()])
+    productId = IntegerField('ProductId', validators=[DataRequired()])
     quantity = IntegerField('Quantity', validators=[DataRequired()])
     # price = IntegerField('Price', validators=[DataRequired()])
 

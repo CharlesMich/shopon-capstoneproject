@@ -9,7 +9,6 @@ class Cart(db.Model):
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
-
     # columns
     id = db.Column(db.Integer, primary_key=True)
     userId = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False) 

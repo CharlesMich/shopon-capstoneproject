@@ -14,9 +14,9 @@ function ProductDetails() {
   const history = useHistory()
 
 
-  const { productId } = useParams()
+  let { productId } = useParams()
   
- 
+  productId = Number(productId)
   const cart_id = 1
 
   let sessionUser = useSelector((state) => state.session.user);
@@ -38,7 +38,7 @@ function ProductDetails() {
 
   const user_id = sessionUser.id
 
-console.log(product.img1)
+console.log(typeof productId)
   const onSubmit = async (e) => {
     e.preventDefault();
 

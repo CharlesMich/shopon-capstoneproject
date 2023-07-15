@@ -65,13 +65,14 @@ export const fetchDeleteCartItem = (cartItemId) => async dispatch => {
 }
 
 // Update
-export const fetchUpdateCartItem = (updateCartItemForm, cartItemId) => async dispatch => {
+export const fetchUpdateCartItem = (quantity, cartItemId) => async dispatch => {
+    console.log(JSON.stringify({quantity}))
     const response = await fetch(`/api/cartproduct/update-cart/${cartItemId}`,{
         method:"POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(updateCartItemForm),
+        body: JSON.stringify({quantity}),
     })
     if (response.ok){
         const payload = await response.json();

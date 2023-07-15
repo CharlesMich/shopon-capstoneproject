@@ -25,8 +25,8 @@ def postCartProduct():
             if form.validate_on_submit():
                 newCartItem = Cart_Product(
                     cart_id = data['cart_id'],
-                    user_id = current_user.id,
-                    product_id = data['product_id'],
+                    user_id = data['user_id'],
+                    product_id = data['productId'],
                     quantity = data['quantity'],
                 ) 
                 db.session.add(newCartItem)
@@ -40,8 +40,9 @@ def postCartProduct():
 def cartProductUpdate(id):
     cartProduct = Cart_Product.query.filter(Cart_Product.id == id).first()
     if request.method == "POST":
-        print(cartProduct)
+        print('cartProduct in route', cartProduct)
         data =request.get_json()
+        print('data in route', data)
         cart_product_update = data.get('quantity')
         cartProduct.quantity = cart_product_update
         db.session.commit()

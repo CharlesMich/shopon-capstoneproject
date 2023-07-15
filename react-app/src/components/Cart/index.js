@@ -6,6 +6,7 @@ import { getAllProducts } from "../../store/product";
 import { fetchLoadCartItem } from '../../store/cartproduct';
 import { fetchGetCart } from '../../store/cart';
 import { fetchDeleteCartItem } from '../../store/cartproduct';
+import { fetchUpdateCartItem } from '../../store/cartproduct';
 import './cart.css'
 
 
@@ -17,9 +18,6 @@ function Cart() {
     const cartId = useSelector(state => state.cart)
     const product = useSelector(state => state.product)
     const cartItems = useSelector(state => state.cartProducts)
-
-
-    const [quantity, setQuantity] = useState()
 
     useEffect(() => {
         dispatch(fetchGetCart())
@@ -53,19 +51,24 @@ function Cart() {
         }    
     }
 
+    // update an item
+
     useEffect(() => {
         dispatch(fetchLoadCartItem(userId))
     }, [dispatch, userId]);
 
-    const minusQty = e => {
-        const {value} = e.target.dataset
-        setQuantity(value-1)
-    }
 
-    const addQty = e => {
-        const {value} = e.target.dataset
-        setQuantity(value+1)
-    }
+    
+    
+    // const minusQty = e => {
+    //     const {value} = e.target.dataset
+    //     setAbc(value-1)
+    // }
+
+    // const addQty = e => {
+    //     const {value} = e.target.dataset
+    //     setAbc(value+1)
+    // }
 
     const onSubmit = async (e) => {
         e.preventDefault()
@@ -83,15 +86,15 @@ function Cart() {
                 <div className="cart-map">
                     {cartItemArr && cartItemArr.map((ele) => (
                         <div>
-                            <div>{ele.id}</div>
+                             <div>{ele.name}</div>
                             <div>{ele.description}</div>
                             <div>{ele.price}</div>
                             <div>{ele.quantity}</div>
                             <form onSubmit={onSubmit}>
                             <div className="cart-quanity-buttons"></div>
-                            <button key={ele.id} className="cart-minus" onClick={minusQty}><i class="fa-solid fa-circle-minus"></i> </button>
-                            <input type="number" value ={quantity} quantity = {ele.quantity} ></input>
-                            <button key={ele.id} className="cart-minus" onClick={addQty}><i class="fa-solid fa-circle-plus"></i></button>
+                            <button key={ele.id} className="cart-minus" onClick={() =>dispatch(fetchUpdateCartItem(Math.max(ele.quantity-1,1), ele.id ))}><i class="fa-solid fa-circle-minus"></i> </button>
+                            <span className="cart-quanity-update">{ele.quantity}</span>
+                            <button key={ele.id} className="cart-minus" onClick={() => dispatch(fetchUpdateCartItem(ele.quantity+1, ele.id ))}><i class="fa-solid fa-circle-plus"></i></button>
                             
                             <div><button>Update</button></div>
                             </form>
