@@ -14,7 +14,7 @@ def getReviews():
 
 
 #  get all reviews of a product(single)
-@review_route.route('/product/<int:id>', methods=["GET"])
+@review_route.route('/<int:id>', methods=["GET"])
 def singleReviews(id):
     reviews = Review.query.filter(Review.product_id == id).all()
     return [review.to_dict() for review in reviews]

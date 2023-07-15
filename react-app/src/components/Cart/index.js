@@ -6,6 +6,7 @@ import { getAllProducts } from "../../store/product";
 import { fetchLoadCartItem } from '../../store/cartproduct';
 import { fetchGetCart } from '../../store/cart';
 import { fetchDeleteCartItem } from '../../store/cartproduct';
+import './cart.css'
 
 
 function Cart() {
@@ -77,8 +78,8 @@ function Cart() {
 
     return (
         <div className="cart-container">
-            <div>Shopping Cart</div>
             <div className="cart-items">
+            <h1 className= "cart-h1">Shopping Cart</h1>
                 <div className="cart-map">
                     {cartItemArr && cartItemArr.map((ele) => (
                         <div>
@@ -87,9 +88,11 @@ function Cart() {
                             <div>{ele.price}</div>
                             <div>{ele.quantity}</div>
                             <form onSubmit={onSubmit}>
-                            <div><button key={ele.id} className="cart-minus" onClick={minusQty}>minus</button></div>
-                            <div><input type="number" value ={quantity} quantity = {ele.quantity} ></input></div>
-                            <div><button key={ele.id} className="cart-minus" onClick={addQty}>Add</button></div>
+                            <div className="cart-quanity-buttons"></div>
+                            <button key={ele.id} className="cart-minus" onClick={minusQty}><i class="fa-solid fa-circle-minus"></i> </button>
+                            <input type="number" value ={quantity} quantity = {ele.quantity} ></input>
+                            <button key={ele.id} className="cart-minus" onClick={addQty}><i class="fa-solid fa-circle-plus"></i></button>
+                            
                             <div><button>Update</button></div>
                             </form>
                            
@@ -100,9 +103,10 @@ function Cart() {
                     ))}
                 </div>
             </div>
-            <div><button onClick={emptyCart}>Empty Cart</button></div>
-            <div><Link to={`/reviews`}>Reviews</Link></div>
-            <div><Link to={`/products`}>Products</Link></div>
+            <div className="cart-buttons">
+            <div><button className="product-details-shoppingcart-button" onClick={emptyCart}>Empty Cart</button></div>
+            <div><button className="product-details-shoppingcart-button" style={{backgroundColor:"yellow", width:"270px"}} onClick={emptyCart}>Buy Now</button></div>
+            </div>
         </div>
         
     )

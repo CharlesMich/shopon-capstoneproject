@@ -27,7 +27,7 @@ export const getAllReviews = () => async dispatch => {
 
 // get single product review
 export const getSingleReview = (productid) => async dispatch => {
-    const response = await fetch(`/api/reviews/${productid}`)
+    const response = await fetch(`/api/review/${productid}`)
     if (response.ok){
         const payload = await response.json();
         console.log(payload)
@@ -35,7 +35,7 @@ export const getSingleReview = (productid) => async dispatch => {
     }
 }
 
-const initialState = {allReviews:{}}
+const initialState = {allReviews:{}, singleReview:{}}
 
 export default function reviewReducer(state = initialState, action){
     switch(action.type){
@@ -45,7 +45,8 @@ export default function reviewReducer(state = initialState, action){
             return {...state, allReviews}
 
         case SINGLE_REVIEW:
-            const singleReview = {...action.payload}
+            const singleReview = {}
+            action.payload.forEach(ele=> singleReview[ele.id]=ele)
             return {...state, singleReview}
 
         default: 
