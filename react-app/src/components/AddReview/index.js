@@ -6,7 +6,6 @@ import StarRatingInput from './starAnimate';
 import './addreview.css';
 import { fetchPostReview } from "../../store/review";
 
-
 function CreateReviewModal(id) {
 
     const dispatch = useDispatch();
@@ -16,13 +15,12 @@ function CreateReviewModal(id) {
     let product_id = id.id;
 
     let sessionUser = useSelector((state) => state.session.user);
+    let product = useSelector((state)=> state.product.singleProduct)
 
     let user_id;
     if (sessionUser) {
         user_id = sessionUser.id
     }
-
-    console.log("inside create review modal", id.id)
 
     const [review, setReview] = useState("");
     const [rating, setRating] = useState(0);
@@ -38,7 +36,7 @@ function CreateReviewModal(id) {
             errors.review = "Review must be 10 Character or more"
         }
         if(rating < 1 || !rating || rating === 0){
-            errors.stars = "Star rating input has no stars"
+            errors.stars = "Rating input has no stars"
         }
         setErrors(errors);
     }, [review, rating]);
@@ -46,6 +44,7 @@ function CreateReviewModal(id) {
 
     const onSubmit = async (e) => {
         e.preventDefault();
+
         const postReviewForm = {
             product_id,
             user_id,
@@ -77,7 +76,10 @@ return (
     <div className="addReviewContainer" style={{ width: "300px", height: " 250px" }}>
 
         <form onSubmit={onSubmit}>
-            <div ><h1 style={{ color: "rgb(168 42 100)" }}>Add a written review</h1></div>
+            <div ><h1 style={{ color: "rgb(18 24 30)" }}>Add a written review</h1></div>
+
+            <div><img src={product.img1} style={{width:"50px"}}></img></div>
+            <div>{product.name}</div>
 
             <textarea id="description" 
             type="text" 
@@ -89,11 +91,11 @@ return (
             <span>{hasSubmitted && errors.stars && `${errors.stars}`}</span>
             <div><button 
             className="revSubButton"
-            style={{ width: "250px", height: "25px", marginTop: "10px", color: "white", border: "none", backgroundColor: "rgb(168 42 100)", borderRadius: "3px" }}
+            style={{ width: "400px", height: "25px", marginTop: "10px", color: "white", border: "none", backgroundColor: "rgb(18 24 30)", borderRadius: "3px" }}
             disabled= {errors.review || errors.stars? true : false}
           
             >Submit Your Review</button></div>
-            <div><button  style={{ width: "250px", height: "25px", marginTop: "10px", backgroundColor: "rgb(6 45 70)", color: "white", border: "none", borderRadius: "3px" }} onClick={closeModal}>Cancel</button></div>
+            <div><button  style={{ width: "400px", height: "25px", marginTop: "10px", backgroundColor: "rgb(18 24 30)", color: "white", border: "none", borderRadius: "3px" }} onClick={closeModal}>Cancel</button></div>
         </form>
 
     </div>

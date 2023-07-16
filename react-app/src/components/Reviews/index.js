@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom";
 import { Link, Redirect } from 'react-router-dom'
 import { getAllReviews } from "../../store/review";
-import { fetchDeleteReview } from "../../store/review"
+import { fetchDeleteReview } from "../../store/review";
+import UpdateReviewModal from '../UpdateReviewModal';
+import OpenModalButton from '../OpenModalButton';
 import './reviews.css'
 
 
@@ -40,7 +42,7 @@ function AllReviews(){
                                                         <div>Review id: {ele.id}</div>                                               
                                                         <p className="review-text">{ele.review}</p>
                                                         <div>{ele.rating}</div>
-                                                        <button >Update</button>
+                                                        <div><OpenModalButton buttonText="Update" className="postReview" modalComponent={<UpdateReviewModal id={ele.id} />} /></div>
                                                         <button key={ele.id} onClick={handleDelete} data-value ={ele.id}>Delete</button>
                                                         </div>
                                             )}</div>

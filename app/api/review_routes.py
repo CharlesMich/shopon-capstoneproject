@@ -48,6 +48,8 @@ def updateReview(id):
         data = request.get_json()
         update_review_review = data.get('review')
         review.review = update_review_review
+        update_review_rating = data.get('rating')
+        review.rating = update_review_rating
         db.session.commit()
         return review.to_dict()
     return {"error": "Review Rejected"}
