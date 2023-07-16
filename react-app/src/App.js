@@ -10,6 +10,7 @@ import ProductDetails from "./components/ProductDetails";
 import AllReviews from "./components/Reviews";
 import Cart from "./components/Cart";
 import Catagories from "./components/Catagories";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route path="/login" >
-            <LoginFormPage />
+            <LandingPage />
           </Route>
           <Route path="/signup">
             <SignupFormPage />

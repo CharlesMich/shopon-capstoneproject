@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom";
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { getAllProducts } from "../../store/product";
 import { fetchLoadCartItem } from '../../store/cartproduct';
 import { fetchGetCart } from '../../store/cart';
@@ -15,14 +15,16 @@ function Cart() {
     // const history = useHistory()
 
     const userId = useSelector(state => state.session.user.id)
+    let sessionUser = useSelector((state)=> state.session.user);
     const cartId = useSelector(state => state.cart)
     const product = useSelector(state => state.product)
     const cartItems = useSelector(state => state.cartProducts)
 
+    
     useEffect(() => {
         dispatch(fetchGetCart())
     }, [dispatch]);
-
+    
     
     useEffect(() => {
         dispatch(getAllProducts())
@@ -33,7 +35,7 @@ function Cart() {
     console.log('cartitemsarr', cartItemArr)
     // if (cartId) return null;
     
-
+    
     // delete single item
     const handleDelete = async(e) => {
         e.preventDefault();
@@ -41,37 +43,39 @@ function Cart() {
         
         await dispatch(fetchDeleteCartItem(value))
     }    
-
+    
     // delete all items 
     
-        const emptyCart = async(e) => {
-            e.preventDefault()
-            for (let item of cartItemArr){
+    const emptyCart = async(e) => {
+        e.preventDefault()
+        for (let item of cartItemArr){
             await dispatch(fetchDeleteCartItem(item.id))
         }    
     }
-
+    
     // update an item
-
+    
     useEffect(() => {
         dispatch(fetchLoadCartItem(userId))
     }, [dispatch, userId]);
-
-
+    
+    
     const subTotal = (cartItemArr)=> {
-            let sum = 0 
+        let sum = 0 
         for (let i = 0; i < cartItemArr.length; i++){
             sum = sum + Number(cartItemArr[i].price)*cartItemArr[i].quantity
         }    
         return sum;
     }
     console.log(subTotal(cartItemArr))
-  
-
+    
+    if (!sessionUser) return <Redirect to="/login" />;
+    
     if(!cartItemArr){
         return <div>Your Cart is currently Empty</div>
     }
 
+  
     return (
         <div className="cart-container">
             <div className="cart-items">

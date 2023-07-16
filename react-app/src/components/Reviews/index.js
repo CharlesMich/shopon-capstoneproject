@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom";
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { getAllReviews } from "../../store/review";
 import './reviews.css'
 
@@ -22,6 +22,7 @@ function AllReviews(){
 
     if(!allReviews) return null
     if(!sessionUser) return history.push('/')
+    if (!sessionUser) return <Redirect to="/login" />;
 
     return(
         <div className="review-container">

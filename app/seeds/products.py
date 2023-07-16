@@ -123,7 +123,68 @@ def seed_products():
         img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/cologne/kencole4.jpg',
         img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/cologne/kencole1.jpg'
     )
+    product11 = Product(
+        name = 'Kezhiho Steel',
+        product_shortdescription = 'Toe Shoes for Women Air Cushion Lightweight Work Shoes Comfortable Breathable Puncture Proof Slip Resistant Sneakers',
+        product_longdescription = 'Lightweight Skin-friendly Mesh Imported Air Cushion sole Air cushion The specially made heel can reduce vibration, flexible rebound, and provide maximum comfort for walking and standing. Anti-smash The sturdy European standard steel toe protects your toes against any impact. Puncture-proof The lightweight and tough Kevlar midsole protects the sole of the foot from puncture injuries from sharp objects. Non-slif Abrasion-resistant slip-resistant tread sole provides firm foot grip, giving you the traction you need to stay safe.',
+        price = 59,
+        catagory_id = 6,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/Kezhiho1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/Kezhiho2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/Kezhiho3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/Kezhiho4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/Kezhiho5.jpg'
+    )
+    product12 = Product(
+        name = 'MLAGJSS',
+        product_shortdescription = 'Running Shoes Women Sneakers Tennis Workout Walking Gym',
+        product_longdescription = 'Lightweight Skin-friendly Mesh Imported Air Cushion sole Air cushion The specially made heel can reduce vibration, flexible rebound, and provide maximum comfort for walking and standing. Anti-smash The sturdy European standard steel toe protects your toes against any impact. Puncture-proof The lightweight and tough Kevlar midsole protects the sole of the foot from puncture injuries from sharp objects. Non-slif Abrasion-resistant slip-resistant tread sole provides firm foot grip, giving you the traction you need to stay safe.',
+        price = 49,
+        catagory_id = 6,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/mlagjss1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/mlagjss2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/mlagjss3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/mlagjss4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/mlag5.jss.jpg'
+    )
+    product13 = Product(
+        name = 'PUMA',
+        product_shortdescription = 'Womens Carina Sneaker New tooling with an elevated platform sole.',
+        product_longdescription = 'Lightweight Skin-friendly Mesh Imported Air Cushion sole Air cushion The specially made heel can reduce vibration, flexible rebound, and provide maximum comfort for walking and standing. Anti-smash The sturdy European standard steel toe protects your toes against any impact. Puncture-proof The lightweight and tough Kevlar midsole protects the sole of the foot from puncture injuries from sharp objects. Non-slif Abrasion-resistant slip-resistant tread sole provides firm foot grip, giving you the traction you need to stay safe.',
+        price = 69,
+        catagory_id = 6,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/puma1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/puma2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/puma3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/puma4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/puma5.jpg'
+    )
 
+    product14 = Product(
+            name = 'Saucony',
+            product_shortdescription = 'Saucony Mens Ride 15 Running Shoe. Lighter, Softer and Faster: A new softer PWRRUN formula means a thicker stack of cushioning with less weight, for your springiest run yet.',
+            product_longdescription = 'Lightweight Skin-friendly Mesh Imported Air Cushion sole Air cushion The specially made heel can reduce vibration, flexible rebound, and provide maximum comfort for walking and standing. Anti-smash The sturdy European standard steel toe protects your toes against any impact. Puncture-proof The lightweight and tough Kevlar midsole protects the sole of the foot from puncture injuries from sharp objects. Non-slif Abrasion-resistant slip-resistant tread sole provides firm foot grip, giving you the traction you need to stay safe.',
+            price = 99,
+            catagory_id = 6,
+            img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/saucony1.jpg',
+            img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/saucony2.jpg',
+            img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/saucony3.jpg",
+            img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/saucony4.jpg',
+            img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/saucony5.jpg'
+        )
+
+    product15 = Product(
+        name = 'Sketchers',
+        product_shortdescription = 'Skechers Mens Afterburn Memory-Foam Lace-up Sneaker',
+        product_longdescription = 'Lightweight Skin-friendly Mesh Imported Air Cushion sole Air cushion The specially made heel can reduce vibration, flexible rebound, and provide maximum comfort for walking and standing. Anti-smash The sturdy European standard steel toe protects your toes against any impact. Puncture-proof The lightweight and tough Kevlar midsole protects the sole of the foot from puncture injuries from sharp objects. Non-slif Abrasion-resistant slip-resistant tread sole provides firm foot grip, giving you the traction you need to stay safe.',
+        price = 89,
+        catagory_id = 6,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/sketchers.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/sketchers2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/sketchers3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/sketchers4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/sketchers.jpg'
+    )
 
     db.session.add(product1)
     db.session.add(product2)
@@ -135,6 +196,11 @@ def seed_products():
     db.session.add(product8)
     db.session.add(product9)
     db.session.add(product10)
+    db.session.add(product11)
+    db.session.add(product12)
+    db.session.add(product13)
+    db.session.add(product14)
+    db.session.add(product15)
 
     db.session.commit()
 

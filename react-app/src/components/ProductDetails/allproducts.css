@@ -27,6 +27,16 @@
     flex-direction: column;
    
 }
+.produt-detail-main-image{
+    width:580px;
+    height:580px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+
 .product-detail-img{
     max-width: 580px;
     max-height: 580px;

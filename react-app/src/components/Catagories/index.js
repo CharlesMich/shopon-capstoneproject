@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from 'react';
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import './catagories.css'
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import {getAllCatagories} from "../../store/catagories"
@@ -26,6 +26,7 @@ function Catagories(){
     
 
     if(!catagories) return null
+    if (!sessionUser) return <Redirect to="/login" />;
    
     console.log(catagories)
     return(

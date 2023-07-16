@@ -1,0 +1,12 @@
+.demo-user {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: medium;
+    border-radius: 15px;
+    padding: 3px;
+    color: white;
+    background-color: rgb(18 24 30);
+    width:300px
+}
+
