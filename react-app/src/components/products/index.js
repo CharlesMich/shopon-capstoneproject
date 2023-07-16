@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import { getAllProducts } from "../../store/product";
+
 import './products.css'
 
 
@@ -15,7 +16,7 @@ function AllProducts(){
     if(!sessionUser) history.push('/')
 
     let allProducts = useSelector((state)=> Object.values(state.product.allProducts))
-
+    
 
 
     useEffect(() => {

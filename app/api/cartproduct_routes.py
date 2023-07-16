@@ -35,7 +35,7 @@ def postCartProduct():
             return {"error": "Product Rejected"}
             
     
-    # update image in cart
+    # update item in cart
 @cartproduct_route.route('/update-cart/<int:id>', methods =["GET", "POST"])
 def cartProductUpdate(id):
     cartProduct = Cart_Product.query.filter(Cart_Product.id == id).first()

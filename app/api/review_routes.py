@@ -27,11 +27,13 @@ def postReview():
     form['csrf_token'].data = request.cookies['csrf_token']
 
     data = form.data
+    print(data)
     if form.validate_on_submit():
         newReview = Review(
             product_id = data['product_id'],
             user_id = data['user_id'],
-            review = data['review']
+            review = data['review'],
+            rating= data['rating']
         )
         db.session.add(newReview)
         db.session.commit()
@@ -52,9 +54,10 @@ def updateReview(id):
 
 # delete review
 @review_route.route('/delete/<int:id>', methods = ["GET", "POST"])
-
 def deleteReview(id):
+    print(id)
     review = Review.query.filter(Review.id == id).first()
+    print(review)
     db.session.delete(review)
     db.session.commit()
     return {"message": "Successfully Deleted"}

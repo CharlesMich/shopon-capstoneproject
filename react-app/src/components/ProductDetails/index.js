@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 import { getSingleProduct } from "../../store/product";
 import { fetchAddCartItem } from "../../store/cartproduct"
 import {getSingleReview} from "../../store/review"
+import { fetchGetCart } from '../../store/cart';
+import CreateReviewModal from '../AddReview';
+import OpenModalButton from '../OpenModalButton';
 import './allproducts.css'
 
 
@@ -26,6 +29,11 @@ function ProductDetails() {
 
   const [quantity, setQuantity] = useState(1)
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const cartItems = useSelector(state => state.cartProducts)
+
+	useEffect(() => {
+        dispatch(fetchGetCart())
+    }, [dispatch]);
 
 
   useEffect(() => {
@@ -97,6 +105,9 @@ console.log(typeof productId)
                                   <option value={5}>5</option>
                                   <option value={6}>6</option>
                                   <option value={7}>7</option>
+                                  <option value={8}>8</option>
+                                  <option value={9}>9</option>
+                                  <option value={10}>10</option>
                                 </select></div>
 
                                 <button type="sumbit" className="product-details-shoppingcart-button" >Add to Cart</button>
@@ -107,6 +118,8 @@ console.log(typeof productId)
 
 
             <h2 className="productdetails-h2">Reviews</h2>
+            <div><OpenModalButton buttonText="Post your Review" className="postReview" modalComponent={<CreateReviewModal id={product.id} />} /></div>
+
             <div>{reviews.map((ele)=>
 
             <div className= "productdetails-review">
