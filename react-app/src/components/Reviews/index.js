@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import { getAllReviews } from "../../store/review";
+import './reviews.css'
 
 
 function AllReviews(){
@@ -24,19 +25,17 @@ function AllReviews(){
 
     return(
         <div className="review-container">
-            <div>Manage All Reviews</div>
-              <div className="reviewMap">{allReviews.map((ele)=> 
-              <div>
-                    
-                    <div>{ele.review}</div>
-                    <div>{ele.rating}</div>
-                </div>
-              )}</div>
-
-        <div><Link to={`/products`}>Products</Link></div>
-        <div><Link to={`/cart`}>Cart</Link></div>
-
-    
+                            <div className="review-sub-container">
+                                            <h1 className="review-h1">Manage All Reviews</h1>
+                                            <div className="reviewMap">{allReviews.map((ele)=> 
+                                                        <div className="review-each-review">                                                  
+                                                        <p className="review-text">{ele.review}</p>
+                                                        <div>{ele.rating}</div>
+                                                        <button>Update</button>
+                                                        <button>Delete</button>
+                                                        </div>
+                                            )}</div>
+                            </div>
         </div>
 
     )

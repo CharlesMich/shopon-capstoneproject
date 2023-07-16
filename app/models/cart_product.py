@@ -30,6 +30,7 @@ class Cart_Product(db.Model):
             'cart_id' : self.cart_id,
             'user_id': self.user_id,
             'product_id': self.product_id,
+            'img1': self.cartproduct_product.img1,
             'quantity': self.quantity,
             'name': self.cartproduct_product.name,
             'description': self.cartproduct_product.product_shortdescription,

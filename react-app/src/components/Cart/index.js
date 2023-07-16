@@ -58,22 +58,15 @@ function Cart() {
     }, [dispatch, userId]);
 
 
-    
-    
-    // const minusQty = e => {
-    //     const {value} = e.target.dataset
-    //     setAbc(value-1)
-    // }
-
-    // const addQty = e => {
-    //     const {value} = e.target.dataset
-    //     setAbc(value+1)
-    // }
-
-    const onSubmit = async (e) => {
-        e.preventDefault()
-
+    const subTotal = (cartItemArr)=> {
+            let sum = 0 
+        for (let i = 0; i < cartItemArr.length; i++){
+            sum = sum + Number(cartItemArr[i].price)*cartItemArr[i].quantity
+        }    
+        return sum;
     }
+    console.log(subTotal(cartItemArr))
+  
 
     if(!cartItemArr){
         return <div>Your Cart is currently Empty</div>
@@ -85,26 +78,30 @@ function Cart() {
             <h1 className= "cart-h1">Shopping Cart</h1>
                 <div className="cart-map">
                     {cartItemArr && cartItemArr.map((ele) => (
-                        <div>
-                             <div>{ele.name}</div>
-                            <div>{ele.description}</div>
-                            <div>{ele.price}</div>
-                            <div>{ele.quantity}</div>
-                            <form onSubmit={onSubmit}>
-                            <div className="cart-quanity-buttons"></div>
-                            <button key={ele.id} className="cart-minus" onClick={() =>dispatch(fetchUpdateCartItem(Math.max(ele.quantity-1,1), ele.id ))}><i class="fa-solid fa-circle-minus"></i> </button>
-                            <span className="cart-quanity-update">{ele.quantity}</span>
-                            <button key={ele.id} className="cart-minus" onClick={() => dispatch(fetchUpdateCartItem(ele.quantity+1, ele.id ))}><i class="fa-solid fa-circle-plus"></i></button>
-                            
-                            <div><button>Update</button></div>
-                            </form>
-                           
+                        <div className="cart-map-one">
+                                    <div className="cart-map-img-div">
+                                            <img className="cart-map-img" src={ele.img1}></img>
+                                    </div>
 
-                            <div><button onClick={handleDelete} key = {ele.id} data-value ={ele.id}>Delete</button></div>
+
+                                    <div className="cart-map-text-div">           
+                                            <h2 className ="cart-map-h2">{ele.name}</h2>
+                                            <p className ="cart-map-p">{ele.description}</p>
+                                    </div>        
+                                            <div className="cart-quanity-buttons"></div>
+                                            <button key={ele.id} className="cart-minus" onClick={() =>dispatch(fetchUpdateCartItem(Math.max(ele.quantity-1,1), ele.id ))}><i class="fa-solid fa-circle-minus fa-2x"></i> </button>
+                                            <span className="cart-quanity-update">{ele.quantity}</span>
+                                            <button key={ele.id} className="cart-minus" onClick={() => dispatch(fetchUpdateCartItem(ele.quantity+1, ele.id ))}><i class="fa-solid fa-circle-plus fa-2x"></i></button>
+                        
+                                            <div>${(ele.price * ele.quantity).toFixed(2)}</div>
+                                            
+                                            <div><button onClick={handleDelete} key = {ele.id} data-value ={ele.id}>Delete</button></div>
+                                   
                         </div>
 
                     ))}
                 </div>
+                <div>Subtotal: ${subTotal(cartItemArr).toFixed(2)}</div>
             </div>
             <div className="cart-buttons">
             <div><button className="product-details-shoppingcart-button" onClick={emptyCart}>Empty Cart</button></div>
