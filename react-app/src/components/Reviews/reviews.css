@@ -17,6 +17,7 @@
  .review-text{
     font-size: 14px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    word-wrap: break-word;
  }
 
  .review-h1{
@@ -26,6 +27,27 @@
 
  .review-each-review{
     background-color: white;;
+    display: flex;
+   flex-direction: column;
     padding: 10px;
     margin: 10px
+ }
+
+ .review-update-del-button{
+   display: flex;
+   flex-direction: row;
+ }
+
+ .review-button{
+   background-color: black;
+   border:none;
+   color:white;
+   padding: 5px 30px;
+   margin: 0px 10px 0px 0px;
+   border-radius: 3px;
+ }
+
+ .review-h2{
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   color: rgb(28 42 53)
  }

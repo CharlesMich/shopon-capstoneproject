@@ -17,7 +17,6 @@ function UpdateReviewModal(id){
 
     const reviews = useSelector((state)=> state.review.allReviews[review_id])
 
-    console.log(reviews, id.id)
     const [review, setReview] = useState(reviews.review);
     const [rating, setRating] = useState(reviews.rating);
     const [errors, setErrors] = useState({});
@@ -27,6 +26,8 @@ const [hasSubmitted, setHasSubmitted] = useState(false);
 useEffect(()=> {
     const errors = {};
     if(review.length === 0) errors.review = "Review is required";
+    if(review.length < 10) errors.review = "Review must be 10 characters or more";
+
     if(rating.length === 0) errors.stars = "Rating is required";
     if(rating> 5 || rating < 1) errors.rating = "Rating must be an integer between 1 and 5";
     setErrors(errors);
@@ -76,7 +77,7 @@ return(
             placeholder='What did you like or dislike? What did you use this product for?'
                 onChange={(e) => setReview(e.target.value)} />
             <span>{hasSubmitted && errors.review && `${errors.review}`}</span>
-            <div ><StarRatingInput disabled={false} onChange={onChange} rating={rating} /></div>
+            <div ><StarRatingInput disabled={false} onChange={onChange} stars={rating} /></div>
             <span>{hasSubmitted && errors.stars && `${errors.stars}`}</span>
             <div><button 
             className="revSubButton"

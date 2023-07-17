@@ -26,7 +26,7 @@ function ProductDetails() {
   let product = useSelector((state) => (state.product.singleProduct))
   let reviews = useSelector((state)=> Object.values((state.review.singleReview)))
 
-
+  const [previmg, setPrevimg] = useState(1)
   const [quantity, setQuantity] = useState(1)
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const cartItems = useSelector(state => state.cartProducts)
@@ -46,7 +46,63 @@ function ProductDetails() {
 
   const user_id = sessionUser.id
 
-console.log(typeof productId)
+  // check if user has no reviews
+  let userNoReview = true;
+  if (reviews.length > 0) {
+      reviews.forEach(review => {
+          if (user_id && Number(review.user_id) === Number(user_id)) userNoReview = false;
+      });
+    }
+
+  function avgRating(reviews){
+      let sum = 0
+    for (let i = 0; i < reviews.length; i++){
+        sum = sum + reviews[i].rating
+    }
+    return sum / reviews.length
+  }  
+
+  console.log(avgRating(reviews))
+
+  function starAvgRating(avgRating){
+    if(avgRating === 1){
+      return  (<div><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>)
+    } else if (1 < avgRating && avgRating < 2){
+        return  (<div><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>)
+    } else if (avgRating === 2){
+      return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>)
+  }  else if (2 < avgRating&& avgRating < 3){
+    return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>)
+}  else if (avgRating === 3){
+  return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>)
+}  else if (3 < avgRating && avgRating < 4){
+  return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></div>)
+}  else if (avgRating === 4){
+  return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>)
+}  else if (4 < avgRating  && avgRating < 5){
+  return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i></div>)
+}  else if (avgRating === 5){
+  return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>)
+}
+  }  
+
+
+
+
+    function starRating(star){
+      if(star === 1){
+        return  (<div><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>)
+      } else if  (star === 2 ){
+          return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>)
+      }else if  (star === 3 ){
+          return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>)
+      }else if  (star === 4 ){
+          return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>)
+      }else if  (star === 5 ){
+          return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>)
+      }
+  }  
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -70,7 +126,7 @@ console.log(typeof productId)
   if (!sessionUser) return null
   if(!reviews) return null
   return (
-    <div className="productdetails-container">
+    <div className="productdetails-container" >
             <div className="productdetails-subcontainer">
              <div className="product-galary-image-galary">
               <div className="product-detail-thumbnail">
@@ -87,14 +143,15 @@ console.log(typeof productId)
             <h2 className="productdetails-h2">{product.name}</h2>
             <h3 className="productdetails-h3">{product.product_shortdescription}</h3>
             <div>
-            <span>Seller</span>
-            <span>Avg Rating</span>
-            <span>Rating count</span>
+            {/* <span>Seller</span> */}
+            <span>Avg Rating: {starAvgRating(Number(avgRating(reviews)))}</span>
+            <span>{reviews.length}</span><span>{reviews.length === 1? <span>Review</span>:<span> Reviews</span>}</span>
             </div>
             <p className="productdetails-review-text">{product.product_longdescription}</p>
             <div>Price: {product.price}</div>
             <div className="productdetails-cart-form">
                     <form onSubmit={onSubmit}>
+                    <div className="productdetails-cart-form-elements">
                                 <div><label htmlFor='quantity'>Quantity</label></div>
                                 <div><select id="quantity" className="product-unit-select" value={quantity}
                                   onChange={(e) => setQuantity(e.target.value)}>
@@ -111,6 +168,7 @@ console.log(typeof productId)
                                 </select></div>
 
                                 <button type="sumbit" className="product-details-shoppingcart-button" >Add to Cart</button>
+                                </div>
                     </form>
                     </div>
             </div>
@@ -118,13 +176,15 @@ console.log(typeof productId)
 
 
             <h2 className="productdetails-h2">Reviews</h2>
-            <div><OpenModalButton buttonText="Post your Review" className="postReview" modalComponent={<CreateReviewModal id={product.id} />} /></div>
+            {/* <div>< OpenModalButton buttonText="Post your Review" className="postReview" modalComponent={<CreateReviewModal id={product.id} />} /></div> */}
+            <span>{userNoReview ? <div  ><OpenModalButton buttonText="Post your Review" className="postReview" modalComponent={<CreateReviewModal id={product.id} />} /></div> : null}</span>
 
             <div>{reviews.map((ele)=>
 
             <div className= "productdetails-review">
+              <div className="productdetails-review-name-rating"><span style={{paddingRight:'10px'}}>{ele.first_name} {ele.last_name}</span><span style={{paddingRight:'10px'}}> • </span><span>{starRating(ele.rating)}</span></div>
+              
             <p className="productdetails-review-text">{ele.review}</p>
-            <div>{ele.rating}</div>
             </div>
             )}</div>
             </div>

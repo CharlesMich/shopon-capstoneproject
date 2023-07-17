@@ -17,7 +17,7 @@ function AllReviews(){
    
 
     let allReviews = useSelector((state)=>Object.values(state.review.allReviews))
-    console.log(allReviews)
+    allReviews.sort((a,b)=> b.id-a.id)
 
     useEffect(() => {
         dispatch(getAllReviews())
@@ -33,17 +33,38 @@ function AllReviews(){
     if(!sessionUser) return history.push('/')
     if (!sessionUser) return <Redirect to="/login" />;
 
+
+    function starRating(star){
+        if(star === 1){
+            return  (<div><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>)
+
+        } else if  (star === 2 ){
+            return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>)
+        }else if  (star === 3 ){
+            return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>)
+        }else if  (star === 4 ){
+            return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>)
+        }else if  (star === 5 ){
+            return  (<div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>)
+        }
+    }
+
     return(
         <div className="review-container">
                             <div className="review-sub-container">
                                             <h1 className="review-h1">Manage All Reviews</h1>
                                             <div className="reviewMap">{allReviews.map((ele)=> 
-                                                        <div className="review-each-review">   
-                                                        <div>Review id: {ele.id}</div>                                               
+                                                        <div className="review-each-review"> 
+                                                        <img className="review-img" src={ele.img1} ale="" style={{width:"50px"}}></img>
+                                                        <h2 className ="review-h2">{ele.name}</h2>
+                                                        <div>{starRating(ele.rating)}</div>
+                                                        {/* <div>Review id: {ele.id}</div>                                                */}
                                                         <p className="review-text">{ele.review}</p>
-                                                        <div>{ele.rating}</div>
-                                                        <div><OpenModalButton buttonText="Update" className="postReview" modalComponent={<UpdateReviewModal id={ele.id} />} /></div>
-                                                        <button key={ele.id} onClick={handleDelete} data-value ={ele.id}>Delete</button>
+                                                        <div className="review-update-del-button">
+                                                        
+                                                        <div><OpenModalButton buttonText="Update" className="review-button" style={{backgroundColor:'black', }} modalComponent={<UpdateReviewModal id={ele.id} />} /></div>
+                                                        <button key={ele.id} className="review-button" onClick={handleDelete} data-value ={ele.id}>Delete</button>
+                                                        </div>
                                                         </div>
                                             )}</div>
                             </div>

@@ -63,9 +63,11 @@ function CreateReviewModal(id) {
     let newReview = await dispatch(fetchPostReview(postReviewForm))
     // console.log(newReview)
          if(newReview) closeModal()
+
+         history.push(`/reviews`);
+
     };
 
-    history.push(`/products/${product_id}`);
 
 
 const onChange = (number) => {
@@ -87,7 +89,7 @@ return (
             placeholder='What did you like or dislike? What did you use this product for?'
                 onChange={(e) => setReview(e.target.value)} />
             <span>{hasSubmitted && errors.review && `${errors.review}`}</span>
-            <div ><StarRatingInput disabled={false} onChange={onChange} rating={rating} /></div>
+            <div ><StarRatingInput disabled={false} onChange={onChange} stars={rating} /></div>
             <span>{hasSubmitted && errors.stars && `${errors.stars}`}</span>
             <div><button 
             className="revSubButton"
