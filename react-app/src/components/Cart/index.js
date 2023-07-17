@@ -100,9 +100,9 @@ function Cart() {
                                 <p className="cart-map-p">{ele.description}</p>
                             </div>
                             <div className="cart-quanity-buttons"></div>
-                                <button key={ele.id} className="cart-minus" onClick={() => dispatch(fetchUpdateCartItem(Math.max(ele.quantity - 1, 1), ele.id))}><i class="fa-solid fa-circle-minus fa-2x"></i> </button>
+                                <div><button key={ele.id} className="cart-minus" onClick={() => dispatch(fetchUpdateCartItem(Math.max(ele.quantity - 1, 1), ele.id))}><i class="fa-solid fa-circle-minus fa-2x"></i> </button></div>
                                 <span className="cart-quanity-update">{ele.quantity}</span>
-                                <button key={ele.id} className="cart-minus" onClick={() => dispatch(fetchUpdateCartItem(ele.quantity + 1, ele.id))}><i class="fa-solid fa-circle-plus fa-2x"></i></button>
+                                <div><button key={ele.id} className="cart-minus" onClick={() => dispatch(fetchUpdateCartItem(ele.quantity + 1, ele.id))}><i class="fa-solid fa-circle-plus fa-2x"></i></button></div>
                                 
                                 <div>${(ele.price * ele.quantity).toFixed(2)}</div>
                                 <div><button onClick={handleDelete} key={ele.id} data-value={ele.id}>Delete</button></div>
