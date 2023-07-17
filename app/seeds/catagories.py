@@ -3,22 +3,28 @@ from sqlalchemy.sql import text
 
 def seed_catagories():
     catagory1 = Catagory(
-        catagory='Electronics'
+        catagory='Electronics',
+        img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/iphone-1.webp'
     )
     catagory2 = Catagory(
-        catagory='Books'
+        catagory='Books',
+        img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/iphone-1.webp'
     )
     catagory3 = Catagory(
-        catagory='Movies'
+        catagory='Movies',
+        img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/iphone-1.webp'
     )
     catagory4 = Catagory(
-        catagory='Clothes'
+        catagory='Clothes',
+        img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/iphone-1.webp'
     )
     catagory5 = Catagory(
-        catagory='Cologne'
+        catagory='Cologne',
+        img = 'https://myaaprojects.s3.us-east-2.amazonaws.com/cologne/kencole1.jpg'
     )
     catagory6 = Catagory(
-        catagory='Shoes'
+        catagory='Shoes',
+        img="https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/Kezhiho1.jpg"
     )
 
     db.session.add(catagory1)

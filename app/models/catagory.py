@@ -12,6 +12,7 @@ class Catagory(db.Model):
     #columns
     id = db.Column(db.Integer, primary_key=True)
     catagory = db.Column(db.String(100), nullable=False, unique=True)
+    img = db.Column(db.String, nullable=False)
     created_at = db.Column(db.Date, default=datetime.date.today, nullable=False)
     updated_at = db.Column(db.Date, default=datetime.date.today, nullable=False)
 
@@ -22,6 +23,7 @@ class Catagory(db.Model):
         return {
             'id': self.id,
             'catagory': self.catagory,
+            'img': self.img
             # 'name' : self.product_catagory.name,
             # 'product_shortdescription': self.catagory_product.product_shortdescription,
             # 'product_longdescription': self.catagory_product.product_longdescription,

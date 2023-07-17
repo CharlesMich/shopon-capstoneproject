@@ -29,30 +29,41 @@ function Catagories(){
     if (!sessionUser) return <Redirect to="/login" />;
    
     console.log(catagories)
+    // return(
+    //     <div className="catagories-container">
+    //         <div className="catagories-card">
+    //         <div className="catagories-map">{catagories.map((ele)=> 
+    //         <div>    
+    //                     <div>{ele.catagory}</div>
+
+    //                     <div className="catagories-product-map">
+    //                     <div className="catagories-product-map-each-element">
+    //                         {<img src={allProducts.find(ele.catagory_id === ele.id).img1}></img>}
+    //                        </div>
+    //                      </div>
+    //                     <Link to={`/products`} key={ele.id}>Product of Catagory</Link>
+    //         </div>
+    //         )}
+    //         </div>
+    //         </div>
+    //     </div>
+    // )
+   
     return(
         <div className="catagories-container">
             <div className="catagories-card">
             <div className="catagories-map">{catagories.map((ele)=> 
-            <div>    
-                        <div>{ele.catagory}</div>
+             <Link to={`/products`} key={ele.id}><div class="catagories-each-card">    
 
-                        <div className="catagories-product-map">
-                            {allProducts.map((item)=> 
-                           
-                            <div className="catagories-product-map-each-element">
-                                {ele.id === item.catagory_id && <img className="cat-img" src ={item.img1} alt=""></img>}
-                                </div>
-                               
-                            )}
-                         </div>
-                        <Link to={`/products`} key={ele.id}>Product of Catagory</Link>
-            </div>
+                        <div>{<img className="cat-img" src={ele.img}></img>}</div>
+                        <h2 className= "catagories-h1">{ele.catagory}</h2>
+                      
+            </div> </Link>
             )}
             </div>
             </div>
         </div>
     )
-   
     
 }
 export default Catagories
