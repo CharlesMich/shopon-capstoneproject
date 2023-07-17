@@ -53,7 +53,7 @@ function Catagories(){
         <div className="catagories-container">
             <div className="catagories-card">
             <div className="catagories-map">{catagories.map((ele)=> 
-             <Link to={`/products`} key={ele.id}><div class="catagories-each-card">    
+             <Link to={`/products/all/${ele.id}`} catagoryId={ele.id}><div class="catagories-each-card">    
 
                         <div>{<img className="cat-img" src={ele.img}></img>}</div>
                         <h2 className= "catagories-h1">{ele.catagory}</h2>

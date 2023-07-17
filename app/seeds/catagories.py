@@ -7,16 +7,16 @@ def seed_catagories():
         img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/iphone-1.webp'
     )
     catagory2 = Catagory(
-        catagory='Books',
-        img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/iphone-1.webp'
+        catagory='Clothes',
+        img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/clothes-catagory.png'
     )
     catagory3 = Catagory(
-        catagory='Movies',
-        img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/iphone-1.webp'
+        catagory='Books',
+        img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/books-catagory.png'
     )
     catagory4 = Catagory(
-        catagory='Clothes',
-        img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/iphone-1.webp'
+        catagory='Sports and Fitness',
+        img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/sports-catagory.png'
     )
     catagory5 = Catagory(
         catagory='Cologne',

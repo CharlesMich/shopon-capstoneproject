@@ -18,18 +18,15 @@ function Navigation({ isLoaded }) {
 
 
 	let abc;
-	dispatch(fetchGetCart()).then(abc = cartItemArr.length)
+	dispatch(fetchGetCart()).then(abc = cartItemArr.length).then(dispatch(fetchGetCart()))
 	
 	const count = cartItemArr.length
 	useEffect(() => {
 		dispatch(fetchGetCart())
-    }, [dispatch]);
+    }, [dispatch, abc]);
 
-	console.log(count)
+	
 
-	useEffect(() => {
-		dispatch(fetchGetCart())
-    }, [dispatch]);
 
 	return (
 		<>
@@ -37,11 +34,13 @@ function Navigation({ isLoaded }) {
 		{sessionUser &&
 		<div className="navigation-container">
 			<div className="nav-topbar">
-				<div><img className="nav-imgClass" src="https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-logo.png" alt="logo"></img></div>
-				<i class="fa-solid fa-cart-shopping fa-2x" style={{color:'white', paddingRight:"30px", paddingTop:"10px"}}></i>
+				<div><NavLink exact to="/"><img className="nav-imgClass" src="https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-logo.png" alt="logo"></img></NavLink></div>
 				<span style={{color:"white"}}>{abc}</span>
-				<ProfileButton user={sessionUser} />
-				<NavLink exact to="/">Home</NavLink>
+				<div className= "nav-right-element">
+				<i class="fa-solid fa-cart-shopping fa-2x" style={{color:'white', paddingRight:"10px"}}></i>
+				<ProfileButton user={sessionUser}/>
+				</div>
+				
 				</div>
 				
 			
@@ -50,7 +49,7 @@ function Navigation({ isLoaded }) {
 				<NavLink className= "nav-link-item" exact to='/'>Catagories</NavLink>
 			
 			
-				<NavLink className= "nav-link-item" exact to='/products'>Products</NavLink>
+				{/* <NavLink className= "nav-link-item" exact to='/products'>Products</NavLink> */}
 
 			
 			

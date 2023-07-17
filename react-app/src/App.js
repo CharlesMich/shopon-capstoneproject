@@ -36,10 +36,10 @@ function App() {
           <Route path="/reviews">
             <AllReviews/>
           </Route>
-          <Route exact path="/products">
+          <Route exact path="/products/all/:catagoryId">
             <AllProducts/>
           </Route>
-          <Route path="/products/:productId">
+          <Route path="/products/productdetails/:productId">
           <ProductDetails/>
           </Route>
           <Route path ="/"><Catagories/></Route>
