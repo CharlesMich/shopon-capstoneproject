@@ -1,13 +1,13 @@
 .login-title {
     font-weight: 100;
-    font-size: 18px;
+    /* font-size: 18px; */
 }
 
 .auth-main{
     width: 100%;
     max-width: 700px;
   
-    margin: 100px auto;
+    margin: 250px auto;
     padding: 40px 20px;
   
     background-color: #fff;
