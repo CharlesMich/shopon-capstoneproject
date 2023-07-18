@@ -36,20 +36,13 @@
     width:100px;
   }
   
-  .auth-slogan{
-    margin: 20px 50px;
-    color: rgb(90, 90, 90);
-  }
+
   
   .auth-container-section{
     flex: 1 1 50%;
     padding: 10px;
   }
-  
-  .auth-container-section:not(:last-child){
-    border-right: 1px solid rgb(225, 225, 225);
-  }
-  
+    
   .signupform-container {
     display: flex;
     flex-direction: column;

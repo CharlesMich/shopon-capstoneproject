@@ -15,16 +15,16 @@ function LandingPage() {
     <div className="login-container">
     <div className="landing-main">
       <img className="landing-logo" src="https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-logo.png" id='logo' alt='logo' />
-      {/* <p className="auth-slogan">A platform for exchanging knowledge and gaining a deeper insight into the world</p> */}
       <div className="auth-container">
         <div className="auth-container-section signupform-container">
-          {/* <p className="auth-terms">By continuing you indicate that you agree to Koras’s Terms of Service and Privacy Policy.</p> */}
+         
           <DemoUser
             itemText="Log in as Demo User"
           />
           <OpenModalButton
             buttonText="Sign Up"
             className="signup-btn"
+        
             modalComponent={<SignupFormModal />}
           />
         </div>

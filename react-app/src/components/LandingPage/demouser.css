@@ -5,8 +5,10 @@
     font-size: medium;
     border-radius: 3px;
     padding: 3px;
-    color: white;
-    background-color: rgb(18 24 30);
-    width:300px
+    color: rgb(28 42 53);
+    background-color: rgb(230 234 234);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width:313px
 }
 

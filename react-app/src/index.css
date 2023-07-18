@@ -2,3 +2,12 @@
 body{
     background-color: rgb(234, 237, 237);;
 }
+
+.review-button{
+    background-color: black;
+    border:none;
+    color:white;
+    padding: 5px 30px;
+    margin: 0px 10px 0px 0px;
+    border-radius: 3px;
+  }
