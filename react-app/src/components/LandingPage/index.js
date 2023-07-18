@@ -12,7 +12,7 @@ function LandingPage() {
   return (
     // <div className="landing-main" style={{backgroundImage:`url(https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-landingpage-bg.png)`}}>
        <div className="landing-main">
-              <div className="landing-sub-main">
+             
                               {/* <p className="landing-slogan">Tell about the site</p> */}
                     <div className="landing-container">
                                
@@ -36,7 +36,7 @@ function LandingPage() {
                                  </div>
                               
                     </div>
-              </div>
+           
     </div>
   );
 }
