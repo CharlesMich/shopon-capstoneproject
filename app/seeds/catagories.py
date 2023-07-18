@@ -4,7 +4,7 @@ from sqlalchemy.sql import text
 def seed_catagories():
     catagory1 = Catagory(
         catagory='Electronics',
-        img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/iphone-1.webp'
+        img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/electronics-catagories.jpeg'
     )
     catagory2 = Catagory(
         catagory='Clothes',
@@ -20,11 +20,11 @@ def seed_catagories():
     )
     catagory5 = Catagory(
         catagory='Cologne',
-        img = 'https://myaaprojects.s3.us-east-2.amazonaws.com/cologne/kencole1.jpg'
+        img = 'https://myaaprojects.s3.us-east-2.amazonaws.com/cologne-cagatories.jpeg'
     )
     catagory6 = Catagory(
         catagory='Shoes',
-        img="https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/Kezhiho1.jpg"
+        img="https://myaaprojects.s3.us-east-2.amazonaws.com/shoes-catagories.jpeg"
     )
 
     db.session.add(catagory1)

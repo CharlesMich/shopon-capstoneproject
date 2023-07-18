@@ -30,7 +30,7 @@ function AllReviews(){
     }
 
     if(!allReviews) return null
-    if(!sessionUser) return history.push('/')
+    // if(!sessionUser) return history.push('/')
     if (!sessionUser) return <Redirect to="/login" />;
 
 

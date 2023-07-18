@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { Link } from 'react-router-dom'
+import { Link, Redirect} from 'react-router-dom'
 import { getSingleProduct } from "../../store/product";
 import { fetchAddCartItem } from "../../store/cartproduct"
 import { getSingleReview } from "../../store/review"
@@ -24,9 +24,10 @@ function ProductDetails() {
   let sessionUser = useSelector((state) => state.session.user);
   let product = useSelector((state) => (state.product.singleProduct))
   let reviews = useSelector((state) => Object.values((state.review.singleReview)))
-  const cartItems = useSelector(state => Object.values(state.cartProducts))
+  let cartItems = useSelector(state => Object.values(state.cartProducts))
 
-  const [previmg, setPrevimg] = useState(1)
+  
+  const [previmg, setPrevimg] = useState(product.img1)
   const [quantity, setQuantity] = useState(1)
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
@@ -59,8 +60,6 @@ function ProductDetails() {
     }
     return sum / reviews.length
   }
-
-  console.log(avgRating(reviews))
 
   function starAvgRating(avgRating) {
     if (avgRating === 1) {
@@ -112,14 +111,19 @@ function ProductDetails() {
     let newCartItem = await dispatch(fetchAddCartItem(createCartForm))
 
     if (newCartItem) {
+     
       history.push(`/`);
     }
 
   }
+  useEffect(() => {
+    dispatch(fetchGetCart())
+  }, [dispatch], onSubmit);
 
   if (!product) return null
   if (!sessionUser) return null
   if (!reviews) return null
+  if (!sessionUser) return <Redirect to="/login" />;
   return (
     <div className="productdetails-container" >
       <div className="productdetails-subcontainer">
@@ -143,7 +147,7 @@ function ProductDetails() {
               <span>{reviews.length}</span><span>{reviews.length === 1 ? <span>Review</span> : <span> Reviews</span>}</span>
             </div>
             <p className="productdetails-review-text">{product.product_longdescription}</p>
-            <div>Price: {product.price}</div>
+            <div>Price: {Number(product.price).toFixed(2)}</div>
             <div className="productdetails-cart-form">
               <form onSubmit={onSubmit}>
                 <div className="productdetails-cart-form-elements">

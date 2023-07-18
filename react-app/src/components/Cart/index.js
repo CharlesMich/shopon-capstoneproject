@@ -86,38 +86,46 @@ function Cart() {
 
     return (
         <div className="cart-container">
-            <div className="cart-items">
-                <h1 className="cart-h1">Shopping Cart</h1>
-                {!cartItemArr.length ? <h2 className="cart-h2">Your Shopon Cart is empty</h2> : null}
-                <div className="cart-map">
-                    {cartItemArr && cartItemArr.map((ele) => (
-                        <div className="cart-map-one">
-                            <div className="cart-map-img-div"><img className="cart-map-img" src={ele.img1}></img></div>
+                                <h1 className="cart-h1">Shopping Cart</h1>
+            <div className="cart-sub-container">
+                    <div className="cart-items">
+                                {!cartItemArr.length ? <h2 className="cart-h2">Your Shopon Cart is empty</h2> : null}
+                                <div className="cart-map">
+                                    {cartItemArr && cartItemArr.map((ele) => (
+                                        <div className="cart-map-one">
+                                            <div className="cart-map-img-div"><img className="cart-map-img" src={ele.img1}></img></div>
 
 
-                            <div className="cart-map-text-div">
-                                <h2 className="cart-map-h2">{ele.name}</h2>
-                                <p className="cart-map-p">{ele.description}</p>
-                            </div>
-                            <div className="cart-quanity-buttons"></div>
-                                <div><button key={ele.id} className="cart-minus" onClick={() => dispatch(fetchUpdateCartItem(Math.max(ele.quantity - 1, 1), ele.id))}><i class="fa-solid fa-circle-minus fa-2x"></i> </button></div>
-                                <span className="cart-quanity-update">{ele.quantity}</span>
-                                <div><button key={ele.id} className="cart-minus" onClick={() => dispatch(fetchUpdateCartItem(ele.quantity + 1, ele.id))}><i class="fa-solid fa-circle-plus fa-2x"></i></button></div>
-                                
-                                <div>${(ele.price * ele.quantity).toFixed(2)}</div>
-                                <div><button onClick={handleDelete} key={ele.id} data-value={ele.id}>Delete</button></div>
-                            </div>
+                                            <div className="cart-map-text-div">
+                                                <h2 className="cart-map-h2">{ele.name}</h2>
+                                                <p className="cart-map-p">{ele.description}</p>
+                                            </div>
+                                            <div className="cart-quanity-buttons"></div>
+                                                <div><button key={ele.id} className="cart-minus" onClick={() => dispatch(fetchUpdateCartItem(Math.max(ele.quantity - 1, 1), ele.id))}><i class="fa-solid fa-circle-minus fa-2x"></i> </button></div>
+                                                <span className="cart-quanity-update">{ele.quantity}</span>
+                                                <div><button key={ele.id} className="cart-minus" onClick={() => dispatch(fetchUpdateCartItem(ele.quantity + 1, ele.id))}><i class="fa-solid fa-circle-plus fa-2x"></i></button></div>
+                                                
+                                                <div className="cart-one-price">${(ele.price * ele.quantity).toFixed(2)}</div>
+                                                <div className="cart-one-button"><button onClick={handleDelete} key={ele.id} data-value={ele.id}>Delete</button></div>
+                                            </div>
 
-                    ))}
-                </div>
-                <div className="cart-itemcount-total">
-                <div>Total Items: {countCart()}</div>
-                {cartItemArr.length ? <div>Subtotal: {subTotal(cartItemArr).toFixed(2)}</div> : null}
-                </div>
-            </div>
-            <div className="cart-buttons">
-                <div>{cartItemArr.length ? <button className="product-details-shoppingcart-button" onClick={emptyCart}>Empty Cart</button> : null}</div>
-                <div>{cartItemArr.length ? <button className="product-details-shoppingcart-button" style={{ backgroundColor: "yellow", width: "270px" }} onClick={completeOrder}>Buy Now</button> : null}</div>
+                                    ))}
+                                </div>
+                                {/* <div className="cart-itemcount-total">
+                                <div>Total Items: {countCart()}</div>
+                                {cartItemArr.length ? <div>Subtotal: {subTotal(cartItemArr).toFixed(2)}</div> : null}
+                                </div> */}
+                    </div>
+                    {/* <div className="cart-buttons">
+                        <div>{cartItemArr.length ? <button className="product-details-shoppingcart-button" onClick={emptyCart}>Empty Cart</button> : null}</div>
+                        <div>{cartItemArr.length ? <button className="product-details-shoppingcart-button" style={{ backgroundColor: "yellow", width: "270px" }} onClick={completeOrder}>Buy Now</button> : null}</div>
+                    </div> */}
+                    <div>{cartItemArr.length?<div className="cart-summary">
+                        <div>{cartItemArr.length? <div>Total Items: {countCart()}</div>: null}</div>
+                        {cartItemArr.length ? <div>Subtotal: {subTotal(cartItemArr).toFixed(2)}</div> : null}
+                        <div>{cartItemArr.length ? <button className="product-details-shoppingcart-button" onClick={emptyCart}>Empty Cart</button> : null}</div>
+                        <div>{cartItemArr.length ? <button className="product-details-shoppingcart-button" style={{ backgroundColor: "yellow", width: "270px" }} onClick={completeOrder}>Buy Now</button> : null}</div>
+                    </div>:null}</div>
             </div>
         </div>
 

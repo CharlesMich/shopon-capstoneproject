@@ -8,13 +8,11 @@
     align-items: center;
 }
 
-.cart-items{
-    margin-top: 200px;
-    width: 80%
-}
+
 .cart-h1{
     color: rgb(18 24 30);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top:200px;
 }
 .cart-buttons{
     display: flex;
@@ -52,7 +50,7 @@
 }
 
 .cart-map-img{
-   width:100px;
+   width:60px;
    
 }
 
@@ -65,16 +63,21 @@
 }
 
 .cart-map-text-div{
-    width:500px;
+    width:300px;
     text-overflow: ellipsis; 
     white-space: nowrap;
     overflow: hidden;
+    font-size: 10px;
 }
 
 .cart-minus{
     border:none;
     background-color: white;
+    padding: 50px;
 
+}
+.cart-one-price{
+    padding: 20px;
 }
 
 .cart-itemcount-total{
@@ -86,4 +89,34 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding-left: 50px;
     padding-bottom: 50px;
+}
+.cart-summary{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    background-color: white;
+    width: fit-content;
+    height:fit-content;
+    margin-left: 20px;
+    border-radius: 3px
+   
+   }
+.cart-summary > * {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px;
+
+}
+
+.cart-sub-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin-top: 50px;
+}
+
+.cart-one-button{
+    text-decoration: none;
+    border:none;
+    background-color: rgb(18 30 24);
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
@@ -11,19 +11,24 @@ function Navigation({ isLoaded }) {
 	const dispatch = useDispatch()
 
 	const sessionUser = useSelector(state => state.session.user);
-	const cartItems = useSelector(state => state.cartProducts)
+	// const cartItems = useSelector(state => state.cartProducts)
 
-	const cartItemArr = Object.values(cartItems)
+	useEffect(() => {
+		dispatch(fetchGetCart())
+    }, [dispatch]);
+
+	// const cartItemArr = Object.values(cartItems)
 
 	// let abc;
 	// useEffect(()=> {
 	// 	dispatch(fetchGetCart()).then(abc = cartItemArr.length).then(dispatch(fetchGetCart()))
 	// }, [dispatch])
 	
-	const count = cartItemArr.length
-	useEffect(() => {
-		dispatch(fetchGetCart())
-    }, [dispatch, count, cartItemArr]);
+	// const count = cartItemArr.length
+	// useEffect(() => {
+	// 	dispatch(fetchGetCart())
+    // }, [dispatch, count]);
+
 
 	return (
 		<>
@@ -32,9 +37,9 @@ function Navigation({ isLoaded }) {
 		<div className="navigation-container">
 			<div className="nav-topbar">
 				<div><NavLink exact to="/"><img className="nav-imgClass" src="https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-logo.png" alt="logo"></img></NavLink></div>
-				<span style={{color:"white"}}>{count}</span>
+				{/* <span style={{color:"white"}}>{count}</span> */}
 				<div className= "nav-right-element">
-				<i class="fa-solid fa-cart-shopping fa-2x" style={{color:'white', paddingRight:"10px"}}></i>
+				<Link to ="/cart"><i class="fa-solid fa-cart-shopping fa-2x" style={{color:'white', paddingRight:"10px"}}></i></Link>
 				<ProfileButton user={sessionUser}/>
 				</div>
 				
@@ -44,7 +49,7 @@ function Navigation({ isLoaded }) {
 				<NavLink className= "nav-link-item" exact to='/'>Catagories</NavLink>
 			
 				{/* <NavLink className= "nav-link-item" exact to='/products'>Products</NavLink> */}
-			
+				<NavLink className= "nav-link-item" exact to='/'>Top Rated</NavLink>
 				<NavLink className= "nav-link-item" exact to='/reviews'>Reviews</NavLink>	
 				<NavLink className= "nav-link-item" exact to='/cart'>Cart</NavLink>
 				<NavLink className= "nav-link-item" exact to='/order'>Order</NavLink>
