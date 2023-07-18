@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import OpenModalButton from "../OpenModalButton";
 import SignupFormModal from "../SignupFormModal";
 import LoginForm from "../LoginFormPage";
@@ -21,12 +22,13 @@ function LandingPage() {
           <DemoUser
             itemText="Log in as Demo User"
           />
-          <OpenModalButton
+          {/* <OpenModalButton
             buttonText="Sign Up"
             className="signup-btn"
         
             modalComponent={<SignupFormModal />}
-          />
+          /> */}
+          <Link to="/signup" className="landing-signup-link">Sign Up</Link>
         </div>
         <div className="auth-container-section loginform-container">
         

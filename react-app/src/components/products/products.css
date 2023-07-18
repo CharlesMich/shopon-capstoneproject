@@ -1,5 +1,5 @@
 .product-container{
-    background-color: rgb(223, 222, 222);
+    background-color: rgb(230 234 234);
     margin-top: 0px 0px;
     display: flex;
     flex-direction: column;
@@ -8,8 +8,8 @@
 }
 
 .products-inner-container{
-    background-color: rgb(223, 222, 222);
-    margin-top: 100px;
+    background-color: rgb(230 234 234);
+    margin-top: 150px;
      display:flex;
     flex-direction: row;
    justify-content: center;

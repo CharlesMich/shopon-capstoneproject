@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { signUp } from "../../store/session";
+import  '../LandingPage/landingpage.css'
 import './SignupForm.css';
 
 function SignupFormPage() {
@@ -28,51 +29,89 @@ function SignupFormPage() {
   };
 
   return (
-    <>
-      <h1>Sign Up</h1>
+    <div className="signup-container">
+      <div className="landing-main">
+      <img className="landing-logo" src="https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-logo.png" id='logo' alt='logo' />
+      <div className="signup-subtext">If you are a current user, <Link to ="/login"> Log in</Link></div>
+      <h1 className="signup-h1">Create New Account</h1>
+      <div className="signup-sub-container">
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
-        <label>
-          Email
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Username
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Confirm Password
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Sign Up</button>
+        <div className="signup-form-container">
+        <div className="signup-form-container-1">
+                        <div className="signup-form-sub-container">
+                                            <div><label>
+                                              First Name   
+                                              <input className="signup-input"
+                                                type="text"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                                required
+                                              />
+                                            </label></div>
+                                            <div><label>
+                                              Last Name
+                                              <input 
+                                              input className="signup-input"
+                                                type="text"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                                required
+                                              />
+                                            </label></div>
+                                            <div><label>
+                                              Email
+                                              <input
+                                              input className="signup-input"
+                                                type="text"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                                required
+                                              />
+
+                                            </label></div>
+                        </div>
+                        <div className="signup-form-sub-container">
+                                            <div><label>
+                                              Username
+                                              <input
+                                              input className="signup-input"
+                                                type="text"
+                                                value={username}
+                                                onChange={(e) => setUsername(e.target.value)}
+                                                required
+                                              />
+                                            </label></div>
+                                            <div><label>
+                                              Password
+                                              <input
+                                              input className="signup-input"
+                                                type="password"
+                                                value={password}
+                                                onChange={(e) => setPassword(e.target.value)}
+                                                required
+                                              />
+                                            </label></div>
+                                            <div><label>
+                                              Confirm Password
+                                              <input
+                                              input className="signup-input"
+                                                type="password"
+                                                value={confirmPassword}
+                                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                                required
+                                              />
+                                            </label></div>
+                          </div>
+        </div>
+                          <div><button className="signup-button" type="submit">Sign Up</button></div>
+                          </div>
       </form>
-    </>
+      </div>
+      </div>
+    </div>
   );
 }
 

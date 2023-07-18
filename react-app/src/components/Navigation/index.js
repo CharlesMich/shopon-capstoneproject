@@ -49,10 +49,10 @@ function Navigation({ isLoaded }) {
 				<NavLink className= "nav-link-item" exact to='/'>Catagories</NavLink>
 			
 				{/* <NavLink className= "nav-link-item" exact to='/products'>Products</NavLink> */}
-				<NavLink className= "nav-link-item" exact to='/'>Top Rated</NavLink>
+				{/* <NavLink className= "nav-link-item" exact to='/'>Top Rated</NavLink>
 				<NavLink className= "nav-link-item" exact to='/reviews'>Reviews</NavLink>	
 				<NavLink className= "nav-link-item" exact to='/cart'>Cart</NavLink>
-				<NavLink className= "nav-link-item" exact to='/order'>Order</NavLink>
+				<NavLink className= "nav-link-item" exact to='/order'>Order</NavLink> */}
 
 			</div>
 			</div>		
