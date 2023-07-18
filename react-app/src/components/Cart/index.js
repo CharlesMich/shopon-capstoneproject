@@ -16,7 +16,7 @@ function Cart() {
 
     const userId = useSelector(state => state.session.user.id)
     let sessionUser = useSelector((state) => state.session.user);
-    const cartId = useSelector(state => state.cart)
+    // const cartId = useSelector(state => state.cart)
     const product = useSelector(state => state.product)
     const cartItems = useSelector(state => state.cartProducts)
 
@@ -29,8 +29,8 @@ function Cart() {
     }, [dispatch]);
 
     const cartItemArr = Object.values(cartItems)
-    cartItemArr.forEach(ele => console.log(ele.name))
-    console.log('cartitemsarr', cartItemArr)
+    // cartItemArr.forEach(ele => console.log(ele.name))
+    // console.log('cartitemsarr', cartItemArr)
 
     // delete single item
     const handleDelete = async (e) => {
