@@ -1,16 +1,17 @@
-.login-title {
-    font-weight: 100;
-    /* font-size: 18px; */
+.login-container{
+    background-size: cover;
+    width:100%;
+    height: 100%;
 }
 
-.auth-main{
+.landing-main{
     width: 100%;
     max-width: 700px;
   
     margin: 250px auto;
     padding: 40px 20px;
   
-    background-color: #fff;
+    background-color: rgb(28 42 53);
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
@@ -24,17 +25,13 @@
     color: rgb(131, 131, 131);
   }
   
-  .login-title {
-    border-bottom: 1px solid rgb(225, 225, 225);
-  
-    padding-bottom: 10px;
-  }
+
   .auth-container {
     display: flex;
     justify-content: space-between;
   }
   
-  .auth-kora-logo{
+  .landing-logo{
     margin: auto 43%;
     width:100px;
   }
@@ -70,15 +67,7 @@
     background-color: white;
   }
   
-  .signup-btn:hover{
-    border: 1px solid whie;
-    border-radius: 15px;
   
-    transition: all 0.7s;
-  
-    color: white;
-    background-color: #B92B27;
-  }
   
   .login-form {
     margin-top: auto 100px;

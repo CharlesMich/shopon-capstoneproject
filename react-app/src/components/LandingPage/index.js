@@ -12,9 +12,9 @@ import "./demouser.css"
 function LandingPage() {
 
   return (
-    <div className="login-container" style={{backgroundImage:`url(https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-landingpage-bg.png)`}}>
-    <div className="auth-main">
-      <img className="auth-kora-logo" src="https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-dark-logo.png" id='logo' alt='logo' />
+    <div className="login-container">
+    <div className="landing-main">
+      <img className="landing-logo" src="https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-logo.png" id='logo' alt='logo' />
       {/* <p className="auth-slogan">A platform for exchanging knowledge and gaining a deeper insight into the world</p> */}
       <div className="auth-container">
         <div className="auth-container-section signupform-container">
@@ -29,7 +29,7 @@ function LandingPage() {
           />
         </div>
         <div className="auth-container-section loginform-container">
-          {/* <h1 className="login-title">Log In</h1> */}
+        
           <LoginForm />
         </div>
       </div>
