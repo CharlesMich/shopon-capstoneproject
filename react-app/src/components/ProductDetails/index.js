@@ -141,13 +141,11 @@ function ProductDetails() {
           <div className="product-detail-text">
             <h2 className="productdetails-h2">{product.name}</h2>
             <h3 className="productdetails-h3">{product.product_shortdescription}</h3>
-            <div>
-              {/* <span>Seller</span> */}
-              <span>Avg Rating: {starAvgRating(Number(avgRating(reviews)))}</span>
-              <span>{reviews.length}</span><span>{reviews.length === 1 ? <span>Review</span> : <span> Reviews</span>}</span>
-            </div>
+            <div className="products-review-reviewsummary-div">
+        <span style={{marginRight:"5px"}}>Avg Rating:</span><span style={{marginRight:"15px"}}>{starAvgRating(Number(avgRating(reviews)))}</span>
+              <span style={{marginRight:"5px"}} className="products-review-reviewsummary" >{reviews.length}</span><span className="products-review-reviewsummary">{reviews.length === 1 ? <span>Review</span> : <span> Reviews</span>}</span>
+        </div>
             <p className="productdetails-review-text">{product.product_longdescription}</p>
-            <div>{count}</div>
             <div>Price: {Number(product.price).toFixed(2)}</div>
             <div className="productdetails-cart-form">
               <form onSubmit={onSubmit}>
@@ -167,8 +165,8 @@ function ProductDetails() {
                     <option value={10}>10</option>
                   </select></div>
 
-                  <button type="sumbit" className="product-details-shoppingcart-button" >Add to Cart</button>
                 </div>
+                  <button style={{marginTop:"20px"}} type="sumbit" className="product-details-shoppingcart-button" >Add to Cart</button>
               </form>
             </div>
           </div>
@@ -176,7 +174,12 @@ function ProductDetails() {
 
         <h2 className="productdetails-h2">Reviews</h2>
         {/* <div>< OpenModalButton buttonText="Post your Review" className="postReview" modalComponent={<CreateReviewModal id={product.id} />} /></div> */}
-        <span>{userNoReview ? <div  ><OpenModalButton buttonText="Post your Review" className="postReview" modalComponent={<CreateReviewModal id={product.id} />} /></div> : null}</span>
+        <div className="products-review-reviewsummary-div">
+        <span style={{marginRight:"5px"}}>Avg Rating:</span><span style={{marginRight:"15px"}}>{starAvgRating(Number(avgRating(reviews)))}</span>
+              <span style={{marginRight:"5px"}} className="products-review-reviewsummary" >{reviews.length}</span><span className="products-review-reviewsummary">{reviews.length === 1 ? <span>Review</span> : <span> Reviews</span>}</span>
+        </div>
+        {userNoReview ? <div style={{marginTop:"20px", marginBottom:"20px"}} ><OpenModalButton buttonText="Post your Review" className="postReview" modalComponent={<CreateReviewModal id={product.id} />} /></div> : null}
+    
         <div>{reviews.map((ele) =>
           <div className="productdetails-review">
             <div className="productdetails-review-name-rating"><span style={{ paddingRight: '10px' }}>{ele.first_name} {ele.last_name}</span><span style={{ paddingRight: '10px' }}> • </span><span>{starRating(ele.rating)}</span></div>
