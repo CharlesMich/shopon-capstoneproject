@@ -106,20 +106,14 @@ function Cart() {
 
                                     ))}
                                 </div>
-                                {/* <div className="cart-itemcount-total">
-                                <div>Total Items: {countCart()}</div>
-                                {cartItemArr.length ? <div>Subtotal: {subTotal(cartItemArr).toFixed(2)}</div> : null}
-                                </div> */}
+                               
                     </div>
-                    {/* <div className="cart-buttons">
-                        <div>{cartItemArr.length ? <button className="product-details-shoppingcart-button" onClick={emptyCart}>Empty Cart</button> : null}</div>
-                        <div>{cartItemArr.length ? <button className="product-details-shoppingcart-button" style={{ backgroundColor: "yellow", width: "270px" }} onClick={completeOrder}>Buy Now</button> : null}</div>
-                    </div> */}
+                   
                     <div>{cartItemArr.length?<div className="cart-summary">
                         <div>{cartItemArr.length? <div>Total Items: {countCart()}</div>: null}</div>
                         {cartItemArr.length ? <div>Subtotal: {subTotal(cartItemArr).toFixed(2)}</div> : null}
-                        <div>{cartItemArr.length ? <button className="product-details-shoppingcart-button" onClick={emptyCart}>Empty Cart</button> : null}</div>
-                        <div>{cartItemArr.length ? <button className="product-details-shoppingcart-button" style={{ backgroundColor: "yellow", width: "270px" }} onClick={completeOrder}>Buy Now</button> : null}</div>
+                        <div>{cartItemArr.length ? <button className="cart-shoppingcart-button" style={{maxWidth:'270px'}} onClick={emptyCart}>Empty Cart</button> : null}</div>
+                        <div>{cartItemArr.length ? <button className="cart-shoppingcart-button" style={{ backgroundColor: "yellow", width:'270px'}} onClick={completeOrder}>Buy Now</button> : null}</div>
                     </div>:null}</div>
             </div>
         </div>

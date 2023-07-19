@@ -1,22 +1,26 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useHistory } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import { fetchLoadCartItem } from '../../store/cartproduct';
 import './Navigation.css';
+import { searchProducts } from '../../store/product'
 
 function Navigation({ isLoaded }) {
 
 	const dispatch = useDispatch()
+	const history = useHistory()
 
 	const sessionUser = useSelector(state => state.session.user);
-	const cartItems = useSelector(state => state.cartProducts)
+	const cartItems = useSelector(state => state.cartProducts);
 
 	let user_id;
 	if(sessionUser){
 		user_id = sessionUser.id
 	}
+
+	const [searchtext, setSearchtext] = useState('')
 
 	const cartItemArr = Object.values(cartItems)
 
@@ -31,7 +35,22 @@ function Navigation({ isLoaded }) {
 
 	useEffect(()=> {
 		dispatch(fetchLoadCartItem(user_id))
-	}, [dispatch, user_id])		
+	}, [dispatch, user_id])	
+	
+	const handleSearchInput =  (e) => {
+		setSearchtext(e.target.value)
+	}
+
+	const handleSearchSubmit = async (e) => {
+		e.preventdefault();
+		console.log('search text', searchtext)
+		let response = await dispatch(searchProducts(searchtext))
+		if(response){
+			history.push('/products/search-by-product')
+		}
+	}
+
+
 		 
 	return (
 		<>
@@ -40,6 +59,12 @@ function Navigation({ isLoaded }) {
 		<div className="navigation-container">
 			<div className="nav-topbar">
 							<div><NavLink exact to="/"><img className="nav-imgClass" src="https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-logo.png" alt="logo"></img></NavLink></div>
+							<div className="nav-search">
+							<form>
+								<input className="nav-search-input" placeholder="Work in Progress" type="text" onChange={handleSearchInput} value = {searchtext}></input>
+							<button className= 'nav-search-icon' onClick={handleSearchSubmit}><i class="fa-solid fa-magnifying-glass"></i></button>
+							</form>
+							</div>
 							<div className= "nav-right-element">
 											<p className="nav-p">Hello, {sessionUser.first_name}</p>
 									<div>

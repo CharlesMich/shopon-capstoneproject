@@ -14,6 +14,7 @@ import LandingPage from "./components/LandingPage";
 import Order from "./components/order";
 import TopRatedProducts from "./components/TopRatedProducts";
 import NewArrivals from "./components/NewArrivals";
+import SearchByProduct from "./components/SearchByProduct";
 
 function App() {
   const dispatch = useDispatch();
@@ -49,6 +50,7 @@ function App() {
           <ProductDetails/>
           </Route>
           <Route path ="/"><Catagories/></Route>
+          <Route path ="/products/search-by-product"><SearchByProduct/></Route>
 
         </Switch>
       )}

@@ -1,5 +1,6 @@
 const LOAD_PRODUCTS = "products/LOAD_PRODUCTS"
 const SINGLE_PRODUCT = "products/SINGLE_PRODUCT"
+const SEARCH_PRODUCT = "products/SEARCH_PRODUCT"
 
 
 // all products
@@ -14,6 +15,11 @@ const single_product = payload => ({
     payload
 })
 
+// search products
+const search_products = payload => ({
+    type: SEARCH_PRODUCT,
+    payload
+})
 
 
 // Thunk
@@ -22,11 +28,19 @@ export const getAllProducts = () => async dispatch => {
     const response = await fetch(`/api/product/`);
     if (response.ok){
         const payload = await response.json();
-        
         dispatch(load_products(payload));
     }
 }
 
+// get search product
+export const searchProducts = (searchtext) => async dispatch => {
+    console.log('inside search fetch', searchtext)
+    const response = await fetch(`/api/product/${searchtext}`)
+    if(response.ok){
+        const payload = await response.json();
+        dispatch(search_products(payload));
+    }
+}
 // get single product
 export const getSingleProduct = (id) => async dispatch => {
     const response = await fetch(`/api/product/${id}`)
@@ -37,7 +51,7 @@ export const getSingleProduct = (id) => async dispatch => {
     }
 }
 
-const initialState = {allProducts:{}, singleProduct:{}}
+const initialState = {allProducts:{}, singleProduct:{}, searchProduct:{}}
 // const initialState = {allProducts:{}, singleProduct:{}}
 export default function productReducer(state = initialState, action){
     switch(action.type){
@@ -48,9 +62,13 @@ export default function productReducer(state = initialState, action){
 
         case SINGLE_PRODUCT:
             const singleProduct = {...action.payload}
-            
             return {...state, singleProduct}
 
+        case SEARCH_PRODUCT:
+            const searchProducts = {}
+            action.payload.forEach(ele => allProducts[ele.id]=ele)
+            return {...state, searchProducts}; 
+              
         default: 
             return state;
     }
