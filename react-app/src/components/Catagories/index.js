@@ -5,6 +5,8 @@ import './catagories.css'
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import {getAllCatagories} from "../../store/catagories"
 import { getAllProducts } from "../../store/product";
+import { fetchLoadCartItem } from "../../store/cartproduct";
+
 
 function Catagories(){
     const dispatch = useDispatch()
@@ -13,6 +15,12 @@ function Catagories(){
     const sessionUser = useSelector(state=> state.session.user)
     const catagories = useSelector(state=> Object.values(state.catagory.allCatagories))
     const allProducts = useSelector(state => Object.values(state.product.allProducts))
+    const cartItems = useSelector(state => Object.values(state.cartProducts))
+
+    let user_id;
+    if(sessionUser){
+        user_id = sessionUser.id
+    }
     
     useEffect(()=> {
         dispatch(getAllCatagories())
@@ -21,6 +29,12 @@ function Catagories(){
     useEffect(()=> {
         dispatch(getAllProducts())
     }, [dispatch])
+
+    useEffect(()=> {
+        dispatch(fetchLoadCartItem(user_id))
+    }, [dispatch, user_id])
+
+    
 
    
     

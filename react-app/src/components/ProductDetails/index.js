@@ -6,7 +6,7 @@ import { Link, Redirect} from 'react-router-dom'
 import { getSingleProduct } from "../../store/product";
 import { fetchAddCartItem } from "../../store/cartproduct"
 import { getSingleReview } from "../../store/review"
-import { fetchGetCart } from '../../store/cart';
+import { fetchLoadCartItem } from '../../store/cartproduct';
 import CreateReviewModal from '../AddReview';
 import OpenModalButton from '../OpenModalButton';
 import './allproducts.css'
@@ -26,14 +26,15 @@ function ProductDetails() {
   let reviews = useSelector((state) => Object.values((state.review.singleReview)))
   let cartItems = useSelector(state => Object.values(state.cartProducts))
 
+  const user_id = sessionUser.id
   
   const [previmg, setPrevimg] = useState(product.img1)
   const [quantity, setQuantity] = useState(1)
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
   useEffect(() => {
-    dispatch(fetchGetCart())
-  }, [dispatch]);
+    dispatch(fetchLoadCartItem(user_id))
+  }, [dispatch, user_id]);
 
   useEffect(() => {
     dispatch(getSingleProduct(productId))
@@ -43,7 +44,8 @@ function ProductDetails() {
     dispatch(getSingleReview(productId))
   }, [dispatch, productId]);
 
-  const user_id = sessionUser.id
+
+  const count = cartItems.length
 
   // check if user has no reviews
   let userNoReview = true;
@@ -99,7 +101,15 @@ function ProductDetails() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    await dispatch(fetchLoadCartItem(user_id))
 
+    const countCart = ()=>{
+      let count = 0                       
+      for (let item of cartItems){
+          count = count + item.quantity
+      }
+      return count;
+     }
     const createCartForm = {
       cart_id,
       productId,
@@ -111,13 +121,12 @@ function ProductDetails() {
     let newCartItem = await dispatch(fetchAddCartItem(createCartForm))
 
     if (newCartItem) {
-     
       history.push(`/`);
     }
 
   }
   useEffect(() => {
-    dispatch(fetchGetCart())
+    dispatch(fetchLoadCartItem())
   }, [dispatch], onSubmit);
 
   if (!product) return null
@@ -147,6 +156,7 @@ function ProductDetails() {
               <span>{reviews.length}</span><span>{reviews.length === 1 ? <span>Review</span> : <span> Reviews</span>}</span>
             </div>
             <p className="productdetails-review-text">{product.product_longdescription}</p>
+            <div>{count}</div>
             <div>Price: {Number(product.price).toFixed(2)}</div>
             <div className="productdetails-cart-form">
               <form onSubmit={onSubmit}>

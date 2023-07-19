@@ -8,6 +8,8 @@ import './SignupForm.css';
 function SignupFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
+  const [first_name, setFirst_name] = useState("");
+  const [last_name, setLast_name] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +21,7 @@ function SignupFormPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
-        const data = await dispatch(signUp(username, email, password));
+        const data = await dispatch(signUp(first_name, last_name, username, email, password));
         if (data) {
           setErrors(data)
         }
@@ -37,7 +39,7 @@ function SignupFormPage() {
       <div className="signup-sub-container">
       <form onSubmit={handleSubmit}>
         <ul>
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+          {errors.map((error, idx) => <li style={{color:'white', listStyle:"none"}} key={idx}>{error}</li>)}
         </ul>
         <div className="signup-form-container">
         <div className="signup-form-container-1">
@@ -46,8 +48,8 @@ function SignupFormPage() {
                                               First Name   
                                               <input className="signup-input"
                                                 type="text"
-                                                value={email}
-                                                onChange={(e) => setEmail(e.target.value)}
+                                                value={first_name}
+                                                onChange={(e) => setFirst_name(e.target.value)}
                                                 required
                                               />
                                             </label></div>
@@ -56,8 +58,8 @@ function SignupFormPage() {
                                               <input 
                                               input className="signup-input"
                                                 type="text"
-                                                value={email}
-                                                onChange={(e) => setEmail(e.target.value)}
+                                                value={last_name}
+                                                onChange={(e) => setLast_name(e.target.value)}
                                                 required
                                               />
                                             </label></div>

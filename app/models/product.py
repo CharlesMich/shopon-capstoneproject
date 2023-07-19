@@ -45,6 +45,7 @@ class Product(db.Model):
             'img3':self.img3,
             'img4':self.img4,
             'img5':self.img5,
+            'created_at':self.created_at
         }
 
 

@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
-import { fetchGetCart } from '../../store/cart';
+import { fetchLoadCartItem } from '../../store/cartproduct';
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
@@ -11,44 +11,52 @@ function Navigation({ isLoaded }) {
 	const dispatch = useDispatch()
 
 	const sessionUser = useSelector(state => state.session.user);
-	// const cartItems = useSelector(state => state.cartProducts)
+	const cartItems = useSelector(state => state.cartProducts)
 
-	useEffect(() => {
-		dispatch(fetchGetCart())
-    }, [dispatch]);
+	let user_id;
+	if(sessionUser){
+		user_id = sessionUser.id
+	}
 
-	// const cartItemArr = Object.values(cartItems)
+	const cartItemArr = Object.values(cartItems)
 
-	// let abc;
-	// useEffect(()=> {
-	// 	dispatch(fetchGetCart()).then(abc = cartItemArr.length).then(dispatch(fetchGetCart()))
-	// }, [dispatch])
-	
-	// const count = cartItemArr.length
-	// useEffect(() => {
-	// 	dispatch(fetchGetCart())
-    // }, [dispatch, count]);
+	let count = 0                       
+		
+		const countCart = () => {
+			for (let item of cartItemArr){
+				count = count + item.quantity
+			}
+			return count;
+		}
 
-
+	useEffect(()=> {
+		dispatch(fetchLoadCartItem(user_id))
+	}, [dispatch, user_id])		
+		 
 	return (
 		<>
 		
 		{sessionUser &&
 		<div className="navigation-container">
 			<div className="nav-topbar">
-				<div><NavLink exact to="/"><img className="nav-imgClass" src="https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-logo.png" alt="logo"></img></NavLink></div>
-				{/* <span style={{color:"white"}}>{count}</span> */}
-				<div className= "nav-right-element">
-				<Link to ="/cart"><i class="fa-solid fa-cart-shopping fa-2x" style={{color:'white', paddingRight:"10px"}}></i></Link>
-				<ProfileButton user={sessionUser}/>
-				</div>
+							<div><NavLink exact to="/"><img className="nav-imgClass" src="https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-logo.png" alt="logo"></img></NavLink></div>
+							<div className= "nav-right-element">
+											<p className="nav-p">Hello, {sessionUser.first_name}</p>
+									<div>
+											<span className = "nav-count" style={{color:"white"}}>{countCart()}</span>
+											<Link to ="/cart"><img src="https://myaaprojects.s3.us-east-2.amazonaws.com/cart.png" style={{width:'50px'}}></img></Link>
+									</div>		
+											<ProfileButton user={sessionUser}/>
+							</div>
 				
-				</div>
+			</div>
 						
 			<div className= "nav-bottom-bar">
 				<NavLink className= "nav-link-item" exact to='/'>Catagories</NavLink>
 			
-				{/* <NavLink className= "nav-link-item" exact to='/products'>Products</NavLink> */}
+				<NavLink className= "nav-link-item" exact to='/products/top-rated-products'>Top Rated Products</NavLink>
+				<NavLink className= "nav-link-item" exact to='/products/new-arrivals'>New Arrivals</NavLink>
+
 				{/* <NavLink className= "nav-link-item" exact to='/'>Top Rated</NavLink>
 				<NavLink className= "nav-link-item" exact to='/reviews'>Reviews</NavLink>	
 				<NavLink className= "nav-link-item" exact to='/cart'>Cart</NavLink>

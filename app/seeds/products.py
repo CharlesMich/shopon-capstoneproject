@@ -39,28 +39,28 @@ def seed_products():
         img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/apple-watch/watch5.jpg'
     )
     product4 = Product(
-        name = 'Apple Watch',
-        product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
+        name = 'Ipad',
+        product_shortdescription = 'Apple iPad (10th Generation): with A14 Bionic chip, 10.9-inch Liquid Retina Display, 64GB, Wi-Fi 6, 12MP ',
         product_longdescription = 'All the essentials to help you monitor your fitness, keep connected, track your health, and stay safe. Now up to 20 percent faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. EASILY CUSTOMIZABLE — Available in a range of sizes and colors, with dozens of bands to choose from and watch faces with complications tailored to whatever you’re into.',
-        price = 499,
+        price = 399,
         catagory_id = 1,
-        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/apple-watch/watch1.jpg',
-        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/apple-watch/watch2.jpg',
-        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/apple-watch/watch3.jpg",
-        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/apple-watch/watch4.jpg',
-        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/apple-watch/watch5.jpg'
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/ipad/ipad1.jpeg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/ipad/ipad2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/ipad/ipad3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/ipad/ipad4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/ipad/ipad5.jpg'
     )
     product5 = Product(
-        name = 'Apple Watch',
+        name = 'MacBook',
         product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
         product_longdescription = 'All the essentials to help you monitor your fitness, keep connected, track your health, and stay safe. Now up to 20 percent faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. EASILY CUSTOMIZABLE — Available in a range of sizes and colors, with dozens of bands to choose from and watch faces with complications tailored to whatever you’re into.',
         price = 499,
         catagory_id = 1,
-        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/apple-watch/watch1.jpg',
-        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/apple-watch/watch2.jpg',
-        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/apple-watch/watch3.jpg",
-        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/apple-watch/watch4.jpg',
-        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/imgs-shopon/apple-watch/watch5.jpg'
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/macbook/macbook1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/macbook/macbook2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/macbook/macbook3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/macbook/macbook4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/macbook/macbook5.jpg'
     )
     product6 = Product(
         name = 'ARMAF club de nuit',

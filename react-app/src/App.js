@@ -12,6 +12,8 @@ import Cart from "./components/Cart";
 import Catagories from "./components/Catagories";
 import LandingPage from "./components/LandingPage";
 import Order from "./components/order";
+import TopRatedProducts from "./components/TopRatedProducts";
+import NewArrivals from "./components/NewArrivals";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +39,8 @@ function App() {
           <Route path="/reviews">
             <AllReviews/>
           </Route>
+          <Route path ="/products/top-rated-products"><TopRatedProducts/></Route>
+          <Route path="/products/new-arrivals"><NewArrivals/></Route>
           <Route path = "/order"><Order/></Route>
           <Route exact path="/products/all/:catagoryId">
             <AllProducts/>

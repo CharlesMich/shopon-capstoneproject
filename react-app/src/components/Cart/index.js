@@ -4,11 +4,9 @@ import { useHistory } from "react-router-dom";
 import { Link, Redirect } from 'react-router-dom'
 import { getAllProducts } from "../../store/product";
 import { fetchLoadCartItem } from '../../store/cartproduct';
-import { fetchGetCart } from '../../store/cart';
 import { fetchDeleteCartItem } from '../../store/cartproduct';
 import { fetchUpdateCartItem } from '../../store/cartproduct';
 import './cart.css'
-
 
 function Cart() {
     const dispatch = useDispatch()
@@ -16,22 +14,15 @@ function Cart() {
 
     const userId = useSelector(state => state.session.user.id)
     let sessionUser = useSelector((state) => state.session.user);
-    // const cartId = useSelector(state => state.cart)
     const product = useSelector(state => state.product)
     const cartItems = useSelector(state => state.cartProducts)
-
-    useEffect(() => {
-        dispatch(fetchGetCart())
-    }, [dispatch]);
 
     useEffect(() => {
         dispatch(getAllProducts())
     }, [dispatch]);
 
     const cartItemArr = Object.values(cartItems)
-    // cartItemArr.forEach(ele => console.log(ele.name))
-    // console.log('cartitemsarr', cartItemArr)
-
+  
     // delete single item
     const handleDelete = async (e) => {
         e.preventDefault();
