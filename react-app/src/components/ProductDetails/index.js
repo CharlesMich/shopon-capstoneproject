@@ -11,7 +11,6 @@ import CreateReviewModal from '../AddReview';
 import OpenModalButton from '../OpenModalButton';
 import './allproducts.css'
 
-
 function ProductDetails() {
   const dispatch = useDispatch()
   const history = useHistory()
@@ -26,7 +25,10 @@ function ProductDetails() {
   let reviews = useSelector((state) => Object.values((state.review.singleReview)))
   let cartItems = useSelector(state => Object.values(state.cartProducts))
 
-  const user_id = sessionUser.id
+  let user_id; 
+  if(sessionUser){
+    user_id = sessionUser.id
+  }
   
   const [previmg, setPrevimg] = useState(product.img1)
   const [quantity, setQuantity] = useState(1)
@@ -43,7 +45,6 @@ function ProductDetails() {
   useEffect(() => {
     dispatch(getSingleReview(productId))
   }, [dispatch, productId]);
-
 
   const count = cartItems.length
 
@@ -103,13 +104,6 @@ function ProductDetails() {
     e.preventDefault();
     await dispatch(fetchLoadCartItem(user_id))
 
-    const countCart = ()=>{
-      let count = 0                       
-      for (let item of cartItems){
-          count = count + item.quantity
-      }
-      return count;
-     }
     const createCartForm = {
       cart_id,
       productId,
@@ -123,16 +117,13 @@ function ProductDetails() {
     if (newCartItem) {
       history.push(`/`);
     }
-
   }
-  useEffect(() => {
-    dispatch(fetchLoadCartItem())
-  }, [dispatch], onSubmit);
-
+  
   if (!product) return null
-  if (!sessionUser) return null
   if (!reviews) return null
+
   if (!sessionUser) return <Redirect to="/login" />;
+
   return (
     <div className="productdetails-container" >
       <div className="productdetails-subcontainer">

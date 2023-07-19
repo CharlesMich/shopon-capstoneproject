@@ -12,10 +12,15 @@ function Cart() {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const userId = useSelector(state => state.session.user.id)
+    
     let sessionUser = useSelector((state) => state.session.user);
     const product = useSelector(state => state.product)
     const cartItems = useSelector(state => state.cartProducts)
+
+    let userId;
+    if(sessionUser){
+        userId = sessionUser.id
+    }
 
     useEffect(() => {
         dispatch(getAllProducts())
@@ -73,8 +78,7 @@ function Cart() {
     }
     return count;
    }
-   console.log(countCart())
-
+   
     return (
         <div className="cart-container">
                                 <h1 className="cart-h1">Shopping Cart</h1>
