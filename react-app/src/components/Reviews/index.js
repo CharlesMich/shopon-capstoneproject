@@ -14,19 +14,24 @@ function AllReviews(){
     const history = useHistory()
 
     let sessionUser = useSelector((state)=> state.session.user);
+
+    let userId;
+    if(sessionUser){
+        userId = sessionUser.id
+    }
    
 
     let allReviews = useSelector((state)=>Object.values(state.review.allReviews))
     allReviews.sort((a,b)=> b.id-a.id)
 
     useEffect(() => {
-        dispatch(getAllReviews())
-    },[dispatch]);
+        dispatch(getAllReviews(userId))
+    },[dispatch, userId]);
 
     const handleDelete =  (e) => {
         e.preventDefault()
         const {value} = e.target.dataset
-         dispatch(fetchDeleteReview(value)).then(dispatch(getAllReviews())).then(dispatch(getAllReviews()))
+         dispatch(fetchDeleteReview(value)).then(dispatch(getAllReviews(userId))).then(dispatch(getAllReviews(userId)))
     }
 
     if(!allReviews) return null

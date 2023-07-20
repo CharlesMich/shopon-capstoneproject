@@ -11,7 +11,7 @@ class Cart_Product(db.Model):
 
     #columns
     id = db.Column(db.Integer, primary_key=True) 
-    cart_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('carts.id')), nullable=False)
+    # cart_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('carts.id')), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False) 
     product_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('products.id')), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
@@ -20,14 +20,14 @@ class Cart_Product(db.Model):
     updated_at = db.Column(db.Date, default=datetime.date.today, nullable=False)
 
     # relationships
-    cartproduct_cart = db.relationship('Cart', back_populates='cart_cartproduct')
+    # cartproduct_cart = db.relationship('Cart', back_populates='cart_cartproduct')
     cartproduct_product = db.relationship('Product', back_populates='product_cartproduct')
     cartproduct_user = db.relationship('User', back_populates='user_cartproduct')
 
     def to_dict(self):
         return {
             'id': self.id,
-            'cart_id' : self.cart_id,
+            # 'cart_id' : self.cart_id,
             'user_id': self.user_id,
             'product_id': self.product_id,
             'img1': self.cartproduct_product.img1,

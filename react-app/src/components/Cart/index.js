@@ -101,7 +101,7 @@ function Cart() {
                                                 <div><button key={ele.id} className="cart-minus" onClick={() => dispatch(fetchUpdateCartItem(ele.quantity + 1, ele.id))}><i class="fa-solid fa-circle-plus fa-2x"></i></button></div>
                                                 
                                                 <div className="cart-one-price">${(ele.price * ele.quantity).toFixed(2)}</div>
-                                                <div className="cart-one-button"><button onClick={handleDelete} key={ele.id} data-value={ele.id}>Delete</button></div>
+                                                <div className="cart-one-button"><button  className="cart-one-button" onClick={handleDelete} key={ele.id} data-value={ele.id}>Delete</button></div>
                                             </div>
 
                                     ))}

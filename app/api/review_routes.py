@@ -7,14 +7,14 @@ review_route = Blueprint('review', __name__)
 
 
 #  get all reviews
-@review_route.route('/', methods=["GET"])
-def getReviews():
-    reviews = Review.query.order_by(Review.id.desc())
+@review_route.route('/user/<int:id>', methods=["GET"])
+def getReviews(id):
+    reviews = Review.query.filter(Review.user_id == id).order_by(Review.id.desc())
     return [review.to_dict() for review in reviews]
 
 
 #  get all reviews of a product(single)
-@review_route.route('/<int:id>', methods=["GET"])
+@review_route.route('/product/<int:id>', methods=["GET"])
 def singleReviews(id):
     reviews = Review.query.filter(Review.product_id == id).all()
     return [review.to_dict() for review in reviews]

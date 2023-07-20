@@ -49,8 +49,8 @@ function App() {
           <Route path="/products/productdetails/:productId">
           <ProductDetails/>
           </Route>
-          <Route path ="/"><Catagories/></Route>
           <Route path ="/products/search-by-product"><SearchByProduct/></Route>
+          <Route path ="/"><Catagories/></Route>
 
         </Switch>
       )}

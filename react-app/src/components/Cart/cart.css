@@ -10,7 +10,7 @@
 
 
 .cart-h1{
-    color: rgb(18 24 30);
+    color: rgb(28 42 53);;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-top:200px;
 }
@@ -39,6 +39,7 @@
     background-color: white;
     border-radius: 3px;
     padding: 10px 10px 10px 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 .cart-map-img-div{
@@ -85,11 +86,13 @@
     flex-direction: row;
     justify-content: flex-end;
 }
+
 .cart-itemcount-total > *{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding-left: 50px;
     padding-bottom: 50px;
 }
+
 .cart-summary{
     display: flex;
     flex-direction: column;
@@ -98,13 +101,13 @@
     width: fit-content;
     height:fit-content;
     margin-left: 20px;
-    border-radius: 3px
-   
+    border-radius: 3px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
    }
+
 .cart-summary > * {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 10px;
-
 }
 
 .cart-sub-container{
@@ -118,7 +121,11 @@
 .cart-one-button{
     text-decoration: none;
     border:none;
-    background-color: rgb(18 30 24);
+    background-color: rgb(28 42 53);
+    color: white;
+    font-size: 10px;
+    padding: 3px 15px;
+    border-radius: 4px;
 }
 .cart-shoppingcart-button{
     background-color: orange;

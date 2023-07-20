@@ -3,7 +3,6 @@ import thunk from 'redux-thunk';
 import session from './session'
 import productReducer from './product';
 import cartItemReducer from './cartproduct';
-import cartReducer from './cart';
 import orderReducer from './order';
 import orderItemReducer from './orderitem';
 import reviewReducer from './review';
@@ -13,7 +12,6 @@ const rootReducer = combineReducers({
   session,
   product:productReducer,
   cartProducts:cartItemReducer,
-  cart: cartReducer,
   order:orderReducer,
   orderItems: orderItemReducer,
   review: reviewReducer,

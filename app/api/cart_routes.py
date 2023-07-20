@@ -1,36 +1,36 @@
-from flask import Blueprint, request
-from app.models import db, Cart
-from app.forms import CartForm
-from flask_login import login_required, current_user
+# from flask import Blueprint, request
+# from app.models import db, Cart
+# from app.forms import CartForm
+# from flask_login import login_required, current_user
 
-cart_route = Blueprint('cart', __name__)
+# cart_route = Blueprint('cart', __name__)
 
 
 # Get all items in cart
-@cart_route.route('/', methods = ["GET"])
-def getCartProduct():
-    id = current_user.id
-    carts = Cart.query.filter(Cart.userId == id).first()
+# @cart_route.route('/', methods = ["GET"])
+# def getCartProduct():
+#     id = current_user.id
+#     carts = Cart.query.filter(Cart.userId == id).first()
    
-    # return [cart.to_dict() for cart in carts]
-    return [carts.to_dict()]
+#     # return [cart.to_dict() for cart in carts]
+#     return [carts.to_dict()]
 
 
 # Post item to cart
-@cart_route.route('/new/', methods = ["POST"])
-def postCart():
-    form = CartForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    data = form.data
+# @cart_route.route('/new/', methods = ["POST"])
+# def postCart():
+#     form = CartForm()
+#     form['csrf_token'].data = request.cookies['csrf_token']
+#     data = form.data
 
-    if form.validate_on_submit():
-        newCart = Cart(
-            userId =data['userId'],
-        ) 
+#     if form.validate_on_submit():
+#         newCart = Cart(
+#             userId =data['userId'],
+#         ) 
 
-        db.session.add(newCart)
-        db.session.commit()
-        return newCart.to_dict()
+#         db.session.add(newCart)
+#         db.session.commit()
+#         return newCart.to_dict()
     
     
 

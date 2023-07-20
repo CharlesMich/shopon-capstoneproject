@@ -18,7 +18,7 @@ function ProductDetails() {
   let { productId } = useParams()
 
   productId = Number(productId)
-  const cart_id = 1
+  
 
   let sessionUser = useSelector((state) => state.session.user);
   let product = useSelector((state) => (state.product.singleProduct))
@@ -105,7 +105,6 @@ function ProductDetails() {
     await dispatch(fetchLoadCartItem(user_id))
 
     const createCartForm = {
-      cart_id,
       productId,
       user_id,
       quantity
@@ -178,6 +177,7 @@ function ProductDetails() {
         <span style={{marginRight:"5px"}}>Avg Rating:</span><span style={{marginRight:"15px"}}>{starAvgRating(Number(avgRating(reviews)))}</span>
               <span style={{marginRight:"5px"}} className="products-review-reviewsummary" >{reviews.length}</span><span className="products-review-reviewsummary">{reviews.length === 1 ? <span>Review</span> : <span> Reviews</span>}</span>
         </div>
+        
         {userNoReview ? <div style={{marginTop:"20px", marginBottom:"20px"}} ><OpenModalButton buttonText="Post your Review" className="postReview" modalComponent={<CreateReviewModal id={product.id} />} /></div> : null}
     
         <div>{reviews.map((ele) =>

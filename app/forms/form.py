@@ -31,12 +31,12 @@ class OrderItemForm(FlaskForm):
     quantity = IntegerField('Quantity', validators=[DataRequired()])
 
 
-class CartForm(FlaskForm):
-    user_id = IntegerField('UserId', validators=[DataRequired()])
+# class CartForm(FlaskForm):
+#     user_id = IntegerField('UserId', validators=[DataRequired()])
 
 
 class CartProductForm(FlaskForm):
-    cart_id = IntegerField('CartId', validators=[DataRequired()])
+    # cart_id = IntegerField('CartId', validators=[DataRequired()])
     user_id = IntegerField('UserId', validators=[DataRequired()])
     productId = IntegerField('ProductId', validators=[DataRequired()])
     quantity = IntegerField('Quantity', validators=[DataRequired()])

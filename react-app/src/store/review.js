@@ -39,8 +39,8 @@ const update_review = payload => ({
 
 // Thunk
 // get all reviews of user
-export const getAllReviews = () => async dispatch => {
-    const response = await fetch(`/api/review/`);
+export const getAllReviews = (userId) => async dispatch => {
+    const response = await fetch(`/api/review/user/${userId}`);
     if (response.ok){
         const payload = await response.json();
         
@@ -50,7 +50,7 @@ export const getAllReviews = () => async dispatch => {
 
 // get single product review
 export const getSingleReview = (productid) => async dispatch => {
-    const response = await fetch(`/api/review/${productid}`)
+    const response = await fetch(`/api/review/product/${productid}`)
     if (response.ok){
         const payload = await response.json();
         dispatch(single_review(payload))

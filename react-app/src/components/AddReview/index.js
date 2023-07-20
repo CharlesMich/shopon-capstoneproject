@@ -75,10 +75,11 @@ const onChange = (number) => {
 };
 
 return (
-    <div className="addReviewContainer" style={{ width: "300px", height: " 250px" }}>
+    <div className="addReviewContainer">
 
+            {/* <div class="create-review-form">  */}
         <form onSubmit={onSubmit}>
-            <div ><h1 style={{ color: "rgb(18 24 30)" }}>Add a written review</h1></div>
+            <div ><h1 style={{ color: "rgb(18 24 30)", fontFamily:"helvetica", fontSize:"20px" }}>Add a written review</h1></div>
 
             <div><img src={product.img1} style={{width:"50px"}}></img></div>
             <div>{product.name}</div>
@@ -93,12 +94,13 @@ return (
             <span>{hasSubmitted && errors.stars && `${errors.stars}`}</span>
             <div><button 
             className="revSubButton"
-            style={{ width: "400px", height: "25px", marginTop: "10px", color: "white", border: "none", backgroundColor: "rgb(18 24 30)", borderRadius: "3px" }}
+            style={{ width: "300px", height: "25px", marginTop: "10px", color: "white", border: "none", backgroundColor: "rgb(18 24 30)", borderRadius: "3px" }}
             disabled= {errors.review || errors.stars? true : false}
           
             >Submit Your Review</button></div>
-            <div><button  style={{ width: "400px", height: "25px", marginTop: "10px", backgroundColor: "rgb(18 24 30)", color: "white", border: "none", borderRadius: "3px" }} onClick={closeModal}>Cancel</button></div>
+            <div><button  style={{ width: "300px", height: "25px", marginTop: "10px", backgroundColor: "rgb(18 24 30)", color: "white", border: "none", borderRadius: "3px" }} onClick={closeModal}>Cancel</button></div>
         </form>
+            {/* </div> */}
 
     </div>
 )

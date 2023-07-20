@@ -9,7 +9,7 @@ cartproduct_route = Blueprint('cartproduct', __name__)
 # Get all items in cart
 @cartproduct_route.route('/<int:id>', methods = ["GET"])
 def getCartProduct(id):
-    cartProducts = Cart_Product.query.filter(Cart_Product.cart_id == id).all()
+    cartProducts = Cart_Product.query.filter(Cart_Product.user_id == id).all()
     print([cartProduct.to_dict() for cartProduct in cartProducts])
     return [cartProduct.to_dict() for cartProduct in cartProducts]
 
@@ -24,7 +24,7 @@ def postCartProduct():
             print('data', data, 'userid', current_user.id)
             if form.validate_on_submit():
                 newCartItem = Cart_Product(
-                    cart_id = data['cart_id'],
+                    # cart_id = data['cart_id'],
                     user_id = data['user_id'],
                     product_id = data['productId'],
                     quantity = data['quantity'],

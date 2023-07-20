@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 3a9f32ccee69
+Revision ID: 83ca6904c0a1
 Revises: ffdc0a98111c
-Create Date: 2023-07-13 18:05:17.947966
+Create Date: 2023-07-19 23:05:29.632975
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '3a9f32ccee69'
+revision = '83ca6904c0a1'
 down_revision = 'ffdc0a98111c'
 branch_labels = None
 depends_on = None
@@ -21,16 +21,11 @@ def upgrade():
     op.create_table('catagories',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('catagory', sa.String(length=100), nullable=False),
+    sa.Column('img', sa.String(), nullable=False),
     sa.Column('created_at', sa.Date(), nullable=False),
     sa.Column('updated_at', sa.Date(), nullable=False),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('catagory')
-    )
-    op.create_table('carts',
-    sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('userId', sa.Integer(), nullable=False),
-    sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
-    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('orders',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -59,13 +54,11 @@ def upgrade():
     )
     op.create_table('cart_products',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('cart_id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('product_id', sa.Integer(), nullable=False),
     sa.Column('quantity', sa.Integer(), nullable=False),
     sa.Column('created_at', sa.Date(), nullable=False),
     sa.Column('updated_at', sa.Date(), nullable=False),
-    sa.ForeignKeyConstraint(['cart_id'], ['carts.id'], ),
     sa.ForeignKeyConstraint(['product_id'], ['products.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -123,6 +116,5 @@ def downgrade():
     op.drop_table('cart_products')
     op.drop_table('products')
     op.drop_table('orders')
-    op.drop_table('carts')
     op.drop_table('catagories')
     # ### end Alembic commands ###

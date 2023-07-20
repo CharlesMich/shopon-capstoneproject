@@ -5,7 +5,7 @@ from .catagories import seed_catagories, undo_catagories
 from .reviews import seed_reviews, undo_reviews
 from .orders import seed_orders, undo_orders
 from .orderitems import seed_orderitems, undo_orderitem
-from .carts import seed_carts, undo_carts
+# from .carts import seed_carts, undo_carts
 from .cartproducts import seed_cartproducts, undo_cartproducts 
 from .productimages import seed_productimages, undo_productimages
 
@@ -26,7 +26,7 @@ def seed():
         # Make sure to add all your other model's undo functions below
         undo_productimages()
         undo_cartproducts()
-        undo_carts()
+        # undo_carts()
         undo_orderitem()
         undo_orders()
         undo_reviews()
@@ -39,7 +39,7 @@ def seed():
     seed_reviews()
     seed_orders()
     seed_orderitems()
-    seed_carts()
+    # seed_carts()
     seed_cartproducts()
     seed_productimages()
     # Add other seed functions here
@@ -50,7 +50,7 @@ def seed():
 def undo():
     undo_productimages()
     undo_cartproducts()
-    undo_carts()
+    # undo_carts()
     undo_orderitem()
     undo_orders()
     undo_reviews()

@@ -8,21 +8,17 @@ import '../products/products.css'
 function SearchByProduct(){
     const dispatch = useDispatch()
     const history = useHistory()
-    const {catagoryId} = useParams()
 
     let sessionUser = useSelector((state)=> state.session.user);
     if(!sessionUser) history.push('/')
 
-    let allProducts = useSelector((state)=> Object.values(state.product.allProducts))
-    let newArr= allProducts.filter(ele => ele.catagory_id===Number(catagoryId))
-   
-
+    let newArr = useSelector((state)=> Object.values(state.product.searchProducts))
 
     useEffect(() => {
         dispatch(getAllProducts())
     },[dispatch]);
 
-    if(!allProducts) return null
+    if(!newArr) return null
 
     if (!sessionUser) return <Redirect to="/login" />;
 

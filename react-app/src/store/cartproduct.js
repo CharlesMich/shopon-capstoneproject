@@ -13,21 +13,21 @@ const add_cartitem = payload => ({
     payload
 })
 
-const edit_caritem =payload => ({
+const edit_cartitem =payload => ({
     type: EDIT_CARTITEM,
     payload
 })
 
 
-const delete_caritem = payload => ({
+const delete_cartitem = payload => ({
     type: DELETE_CARTITEM,
     payload
 })
 
 // Thunks
 // Get
-export const fetchLoadCartItem = (cartId) => async dispatch => {
-    const response = await fetch(`/api/cartproduct/${cartId}`)
+export const fetchLoadCartItem = (userId) => async dispatch => {
+    const response = await fetch(`/api/cartproduct/${userId}`)
     if (response.ok){
         const payload = await response.json()
         dispatch(all_cartitems(payload))
@@ -59,7 +59,7 @@ export const fetchDeleteCartItem = (cartItemId) => async dispatch => {
         method:"POST"
     });
     if (response.ok){
-        dispatch(delete_caritem(cartItemId))
+        dispatch(delete_cartitem(cartItemId))
     }
 
 }
@@ -76,7 +76,7 @@ export const fetchUpdateCartItem = (quantity, cartItemId) => async dispatch => {
     })
     if (response.ok){
         const payload = await response.json();
-        dispatch(edit_caritem(payload));
+        dispatch(edit_cartitem(payload));
         return payload
     }
 }

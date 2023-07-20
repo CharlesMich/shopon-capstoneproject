@@ -42,15 +42,13 @@ function Navigation({ isLoaded }) {
 	}
 
 	const handleSearchSubmit = async (e) => {
-		e.preventdefault();
+		e.preventDefault();
 		console.log('search text', searchtext)
-		let response = await dispatch(searchProducts(searchtext))
-		if(response){
-			history.push('/products/search-by-product')
-		}
+		await dispatch(searchProducts(searchtext))
+		history.push('/products/search-by-product')
+		setSearchtext('')
+		
 	}
-
-
 		 
 	return (
 		<>
@@ -60,10 +58,10 @@ function Navigation({ isLoaded }) {
 			<div className="nav-topbar">
 							<div><NavLink exact to="/"><img className="nav-imgClass" src="https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-logo.png" alt="logo"></img></NavLink></div>
 							<div className="nav-search">
-							<form>
+							{/* <form> */}
 								<input className="nav-search-input" placeholder="Work in Progress" type="text" onChange={handleSearchInput} value = {searchtext}></input>
 							<button className= 'nav-search-icon' onClick={handleSearchSubmit}><i class="fa-solid fa-magnifying-glass"></i></button>
-							</form>
+							{/* </form> */}
 							</div>
 							<div className= "nav-right-element">
 											<p className="nav-p">Hello, {sessionUser.first_name}</p>
