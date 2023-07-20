@@ -1,21 +1,29 @@
-const LOAD_REVIEWS = "reviews/LOAD_REVIEWS"
+const USER_REVIEWS = "reviews/USER_REVIEWS"
+const ALL_REVIEWS = "reviews/ALL_REVIEWS"
 const ADD_REVIEW = "review/LOAD_REVIEW"
-const SINGLE_REVIEW = "review/SINGLE_REVIEW"
+const PRODUCT_REVIEW = "review/PRODUCT_REVIEW"
 const DELETE_REVIEW = "review/DELETE_REVIEW"
 const UPDATE_REVIEW = "review/UPDATE_REVIEW"
 
 
 
-
-// allreviews
-const load_reviews = payload => ({
-    type: LOAD_REVIEWS,
+// all reviews
+const all_reviews = payload => ({
+    type: ALL_REVIEWS,
     payload
 })
 
-// single product review
-const single_review = payload => ({
-    type: SINGLE_REVIEW,
+
+
+// user reviews
+const user_reviews = payload => ({
+    type: USER_REVIEWS,
+    payload
+})
+
+// product reviews
+const product_review = payload => ({
+    type: PRODUCT_REVIEW,
     payload
 })
 
@@ -38,13 +46,24 @@ const update_review = payload => ({
 })
 
 // Thunk
+
+// get all reviews
+export const fetchAllReviews = () => async dispatch => {
+    const response = await fetch(`/api/review/`);
+    if(response.ok){
+        const payload = await response.json();
+        dispatch(all_reviews(payload))
+    }
+}
+
+
 // get all reviews of user
 export const getAllReviews = (userId) => async dispatch => {
     const response = await fetch(`/api/review/user/${userId}`);
     if (response.ok){
         const payload = await response.json();
         
-        dispatch(load_reviews(payload));
+        dispatch(user_reviews(payload));
     }
 }
 
@@ -53,7 +72,7 @@ export const getSingleReview = (productid) => async dispatch => {
     const response = await fetch(`/api/review/product/${productid}`)
     if (response.ok){
         const payload = await response.json();
-        dispatch(single_review(payload))
+        dispatch(product_review(payload))
     }
 }
 
@@ -98,16 +117,23 @@ export const fetchUpdateReview = (reviewUpdateform, reviewId) => async dispatch 
        }
 }
 
-const initialState = {allReviews:{}, singleReview:{}}
+const initialState = {allReviews:{}, singleReview:{}, reviews:{}}
 
 export default function reviewReducer(state = initialState, action){
     switch(action.type){
-        case LOAD_REVIEWS:
+
+        case ALL_REVIEWS:
+            const reviews = {}
+            action.payload.forEach(ele => reviews[ele.id] = ele)
+            return {...state, reviews}
+
+
+        case USER_REVIEWS:
             const allReviews = {}
             action.payload.forEach(ele=> allReviews[ele.id]=ele)
             return {...state, allReviews}
 
-        case SINGLE_REVIEW:
+        case PRODUCT_REVIEW:
             const singleReview = {}
             action.payload.forEach(ele=> singleReview[ele.id]=ele)
             return {...state, singleReview}

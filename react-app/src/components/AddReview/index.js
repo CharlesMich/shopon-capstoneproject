@@ -79,10 +79,10 @@ return (
 
             {/* <div class="create-review-form">  */}
         <form onSubmit={onSubmit}>
-            <div ><h1 style={{ color: "rgb(18 24 30)", fontFamily:"helvetica", fontSize:"20px" }}>Add a written review</h1></div>
 
             <div><img src={product.img1} style={{width:"50px"}}></img></div>
-            <div>{product.name}</div>
+            <div style={{ color: "rgb(18 24 30)", fontFamily:"helvetica", fontSize:"14px" }}>{product.name}</div>
+            <div ><h1 style={{ color: "rgb(18 24 30)", fontFamily:"helvetica", fontSize:"20px" }}>Add a review</h1></div>
 
             <textarea id="description" 
             type="text" 

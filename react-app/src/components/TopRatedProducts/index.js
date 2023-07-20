@@ -4,7 +4,8 @@ import { useHistory, useParams } from "react-router-dom";
 import { Link, Redirect } from 'react-router-dom'
 import { getAllProducts } from "../../store/product";
 import '../products/products.css'
-import { getAllReviews } from '../../store/review';
+import { fetchAllReviews } from '../../store/review';
+import './topratedproducts.css'
 
 
 
@@ -17,27 +18,37 @@ function TopRatedProducts(){
     if(!sessionUser) history.push('/')
 
     let allProducts = useSelector((state)=> Object.values(state.product.allProducts))
-    let reviews = useSelector((state)=> Object.values(state.review.allReviews))
-    // let newArr= allProducts.filter(ele => ele.catagory_id===Number(catagoryId))
+    let reviews = useSelector((state)=> Object.values(state.review.reviews))
+   
    
     useEffect(() => {
         dispatch(getAllProducts())
     },[dispatch]);
 
     useEffect(()=> {
-        dispatch(getAllReviews())
+        dispatch(fetchAllReviews())
     }, [dispatch])
 
     // function to get avg reviews of a product
-    function AvgRevByProduct(prodId){
-        let allRevOfProduct = reviews.filter(ele => ele.product_id === Number(prodId))
+    function AvgRevByProduct(){
+      let newArr = []
+      allProducts.forEach(ele=> {
+
+        let allRevOfProduct = reviews.filter(element => element.product_id === Number(ele.id))
         let revTotal = 0
         for(let i = 0; i < allRevOfProduct.length; i++){
             revTotal = revTotal + allRevOfProduct[i].rating
         }
-
-        return revTotal / allRevOfProduct.length;
+        let prodRat = revTotal / allRevOfProduct.length;
+        newArr.push({'product': ele.name, 'avgRating': prodRat})
+       
+        // prodObj[ele.name] = prodRat;
+      })
+      return newArr.sort((a,b)=> b.avgRating-a.avgRating).slice(0,6)
+      // return Object.entries(prodObj).sort((a,b) => b>a);
     }
+    console.log(AvgRevByProduct())
+
     function starAvgRating(avgRating) {
         if (avgRating === 1) {
           return (<div><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>)
@@ -60,9 +71,6 @@ function TopRatedProducts(){
         }
       }
 
-      function numOfReviews(prodId){
-        
-      }
 
     if(!allProducts) return null
     if(!reviews) return null
@@ -70,20 +78,28 @@ function TopRatedProducts(){
 
     return(
         <div className="product-container">
-           
+          <div className="product-sub-container">
+                    <div style={{textAlign:"left"}}><h1 className="product-h1">Top Rated Products</h1></div>
                 <div className='products-inner-container'>
-                    <div className="productMap">{allProducts.map((ele)=> 
-                                        <div className="products-each-product">  
-                                       
-                                       <Link to={`/products/productdetails/${ele.id}`} key={ele.id}> <div className="products-name">{ele.name}</div>
-                                                <div className="products-sub-name">{ele.product_shortdescription}</div>
-                                                {<img className="products-cat-img" src ={ele.img1} alt=""></img>}
-                                                <div className="products-sub-name">Price: {Number(ele.price).toFixed(2)}</div>
-                                                <div className = "products-sub-name">{starAvgRating(Number(AvgRevByProduct(ele.id)))}</div>
-                                                </Link> 
-                                               
-                                        </div> 
-                    )}</div>
+                  <div className="productMap">{AvgRevByProduct().map(item => (
+                    <div className="products-each-product">  
+                     <div >{allProducts.map((ele)=> ele.name === item.product &&
+                     
+                     <Link to={`/products/productdetails/${ele.id}`} key={ele.id}> 
+                              <div className="products-sub-name-new-1">Avg Rating: {item.avgRating}</div>
+                     <div className="products-name">{ele.name}</div>
+                              <div className="products-sub-name">{ele.product_shortdescription}</div>
+                              {<img className="products-cat-img" src ={ele.img1} alt=""></img>}
+                              <div className="products-sub-name">Price: {Number(ele.price).toFixed(2)}</div>
+                              {/* <div className = "products-sub-name">{starAvgRating(Number(AvgRevByProduct(ele.id)))}</div> */}
+                              </Link> 
+                             
+                             )}</div>
+                             </div> 
+
+                  ))}</div>
+                   
+                </div>
                 </div>
          
         </div>

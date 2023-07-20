@@ -2,6 +2,7 @@ const ALL_CARTITEMS = "cartitems/ALL_CARTITEMS"
 const ADD_CARTITEM = "cartitems/ADD_CARTITEM"
 const DELETE_CARTITEM = "cartitems/DELETE_CARTITEM"
 const EDIT_CARTITEM = "cartitems/EDIT_CARTITEM"
+const EMPTY_CART = "cartitems/EMPTY_CART"
 
 const all_cartitems = payload => ({
     type: ALL_CARTITEMS,
@@ -22,6 +23,10 @@ const edit_cartitem =payload => ({
 const delete_cartitem = payload => ({
     type: DELETE_CARTITEM,
     payload
+})
+
+export const empty_cart =() => ({
+    type: EMPTY_CART,
 })
 
 // Thunks
@@ -101,7 +106,11 @@ export default function cartItemReducer(state=initialState, action){
         case DELETE_CARTITEM:
             const delState = {...state};
             delete delState[action.payload]
-            return delState    
+            return delState  
+        
+        case EMPTY_CART:
+            return {};
+
                
         default: return state;        
     }

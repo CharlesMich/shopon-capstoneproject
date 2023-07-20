@@ -6,6 +6,7 @@ import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import "./Navigation.css"
+import { empty_cart } from "../../store/cartproduct";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function ProfileButton({ user }) {
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logout());
+    dispatch(empty_cart());
   };
 
   const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
@@ -50,7 +52,7 @@ function ProfileButton({ user }) {
           <>
             <li className="profile-button-li">{user.username}</li>
             <li className="profile-button-li">{user.email}</li>
-            <li className="profile-button-li"><Link to="/reviews" style={{textDecoration:'none', color:"black"}}>Manage Reviews</Link></li>
+            <li className="profile-button-li"><Link to="/reviews" style={{textDecoration:'none', color:"black"}} onClick={closeMenu}>Manage Reviews</Link></li>
             <li className="profile-button-li">
               <button  onClick={handleLogout}>Log Out</button>
             </li>

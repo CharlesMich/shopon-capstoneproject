@@ -68,7 +68,7 @@ return(
     <div className="addReviewContainer">
 
         <form onSubmit={onSubmit}>
-            <div ><h1 style={{ color: "rgb(18 24 30)" }}>Update your written review</h1></div>
+            <div ><h1 style={{ color: "rgb(18 24 30)", fontFamily:'helvetica', fontSize:"18px" }}>Update your review</h1></div>
 
             <textarea id="description" 
             type="text" 

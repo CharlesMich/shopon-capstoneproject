@@ -6,16 +6,25 @@ from flask_login import login_required, current_user
 review_route = Blueprint('review', __name__)
 
 
-#  get all reviews
+# get all reviews;
+@review_route.route('/', methods=["GET"])
+def getAllReviews():
+    reviews = Review.query.all()
+    return [review.to_dict() for review in reviews]
+
+
+
+
+#  get all reviews of a user
 @review_route.route('/user/<int:id>', methods=["GET"])
-def getReviews(id):
+def getUserReviews(id):
     reviews = Review.query.filter(Review.user_id == id).order_by(Review.id.desc())
     return [review.to_dict() for review in reviews]
 
 
 #  get all reviews of a product(single)
 @review_route.route('/product/<int:id>', methods=["GET"])
-def singleReviews(id):
+def getProductReviews(id):
     reviews = Review.query.filter(Review.product_id == id).all()
     return [review.to_dict() for review in reviews]
 

@@ -24,7 +24,8 @@ function SearchByProduct(){
 
     return(
         <div className="product-container">
-           
+            <div className="product-sub-container">
+            <div style={{textAlign:"left"}}><h1 className="product-h1"></h1></div>
                 <div className='products-inner-container'>
                     <div className="productMap">{newArr.map((ele)=> 
                                         <div className="products-each-product">  
@@ -36,6 +37,7 @@ function SearchByProduct(){
                                                
                                         </div> 
                     )}</div>
+                </div>
                 </div>
          
         </div>
