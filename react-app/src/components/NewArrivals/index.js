@@ -5,6 +5,7 @@ import { Link, Redirect } from 'react-router-dom'
 import { getAllProducts } from "../../store/product";
 import '../products/products.css'
 import { getAllReviews } from '../../store/review';
+import './newarrivals.css'
 
 
 
@@ -20,7 +21,8 @@ function NewArrivals(){
     let reviews = useSelector((state)=> Object.values(state.review.allReviews))
     // let newArr= allProducts.filter(ele => ele.catagory_id===Number(catagoryId))
 
-    allProducts.sort((a,b)=> b.created_at-a.created_at)
+    allProducts.sort((a,b) => b.id-a.id)
+    
    
     useEffect(() => {
         dispatch(getAllProducts())
@@ -69,25 +71,28 @@ function NewArrivals(){
     if (!sessionUser) return <Redirect to="/login" />;
 
     return(
-        <div className="product-container">
-           
+          <div className="product-container">
+          <div className="product-sub-container">
+          <div style={{textAlign:"left"}}><h1 className="product-h1">New Arrivals</h1></div>
                 <div className='products-inner-container'>
-                    <div className="productMap">{allProducts.map((ele)=> 
-                                        <div className="products-each-product">  
-                                       
-                                       <Link to={`/products/productdetails/${ele.id}`} key={ele.id}> <div className="products-name">{ele.name}</div>
-                                                <div className="products-sub-name">{ele.product_shortdescription}</div>
-                                                {<img className="products-cat-img" src ={ele.img1} alt=""></img>}
-                                                <div className="products-sub-name">Price: {Number(ele.price).toFixed(2)}</div>
-                                                <div className = "products-sub-name">{starAvgRating(Number(AvgRevByProduct(ele.id)))}</div>
-                                                {/* <div className = "products-sub-name">{ele.created_at}</div> */}
-                                                </Link> 
-                                               
-                                        </div> 
-                    )}</div>
+                              <div className="productMap">{allProducts.slice(0,6).map((ele)=> 
+                                                  <div className="products-each-product">  
+                                                
+                                                <Link to={`/products/productdetails/${ele.id}`} key={ele.id}> 
+                                                          <div className = "products-sub-name-new">New</div>
+                                                <div className="products-name">{ele.name}</div>
+                                                          <div className="products-sub-name">{ele.product_shortdescription}</div>
+                                                          {<img className="products-cat-img" src ={ele.img1} alt=""></img>}
+                                                          <div className="products-sub-name">Price: {Number(ele.price).toFixed(2)}</div>
+                                                          <div className = "products-sub-name">{starAvgRating(Number(AvgRevByProduct(ele.id)))}</div>
+                                                          </Link> 
+                                                        
+                                                  </div> 
+                              )}</div>
+                </div>
                 </div>
          
-        </div>
+          </div>
 
     )
        

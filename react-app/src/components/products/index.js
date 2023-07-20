@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useHistory, useParams } from "react-router-dom";
 import { Link, Redirect } from 'react-router-dom'
 import { getAllProducts } from "../../store/product";
+import {getSingleCatagory} from "../../store/catagories"
 
 import './products.css'
 
@@ -17,13 +18,20 @@ function AllProducts(){
     if(!sessionUser) history.push('/')
 
     let allProducts = useSelector((state)=> Object.values(state.product.allProducts))
+    const catagory = useSelector((state=> (state.catagory.singleCatagory)))
     let newArr= allProducts.filter(ele => ele.catagory_id===Number(catagoryId))
    
-
+    // console.log(catagory.catagory)
 
     useEffect(() => {
         dispatch(getAllProducts())
     },[dispatch]);
+
+    useEffect(() => {
+        dispatch(getSingleCatagory(catagoryId))
+    },[dispatch]);
+
+
 
     if(!allProducts) return null
 
@@ -31,7 +39,8 @@ function AllProducts(){
 
     return(
         <div className="product-container">
-           
+                <div className="product-sub-container">
+                    <div style={{textAlign:"left"}}><h1 className="product-h1">{catagory && catagory.catagory}</h1></div>
                 <div className='products-inner-container'>
                     <div className="productMap">{newArr.map((ele)=> 
                                         <div className="products-each-product">  
@@ -40,9 +49,11 @@ function AllProducts(){
                                                 <div className="products-sub-name">{ele.product_shortdescription}</div>
                                                 {<img className="products-cat-img" src ={ele.img1} alt=""></img>}
                                                 <div className="products-sub-name">Price: {Number(ele.price).toFixed(2)}</div></Link> 
+                                                
                                                
                                         </div> 
                     )}</div>
+                </div>
                 </div>
          
         </div>
