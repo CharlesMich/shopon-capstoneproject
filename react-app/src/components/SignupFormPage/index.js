@@ -15,10 +15,23 @@ function SignupFormPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const [validationErrors, setValidationErrors] = useState({})
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+
+
+  useEffect(()=> {
+    let newError = {}
+    if (!(email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g))) newError.email = 'Not a valid email address'
+    setValidationErrors(newError)
+  }, [email])
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (!email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) setErrors(['Not a valid email address'])
+    // if (!(email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))) setErrors(['Not a valid email address'])
+
+    setHasSubmitted(true);
+    if (Object.keys(validationErrors).length > 0) return;
+    
     if (password === confirmPassword) {
       const data = await dispatch(signUp(first_name, last_name, username, email, password));
       if (data) {
@@ -43,6 +56,7 @@ function SignupFormPage() {
         <ul>
           {errors.map((error, idx) => <li style={{color:'white', listStyle:"none"}} key={idx}>{error}</li>)}
         </ul>
+        <div className="signup-email-error">{hasSubmitted && validationErrors.email && `${validationErrors.email}`}</div>
         <div className="signup-form-container">
         <div className="signup-form-container-1">
       
