@@ -31,7 +31,6 @@ export const fetchLoadorderItem = () => async dispatch => {
     if (response.ok){
         const payload = await response.json()
         dispatch(all_orderitems(payload))
-        console.log('fetch orderitem', payload)
     }
 }
 

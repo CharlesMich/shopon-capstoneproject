@@ -48,7 +48,6 @@ export const fetchAddCartItem = (createCartForm) => async dispatch => {
         body: JSON.stringify(createCartForm),
         
     })
-    console.log('fetch/send/cartform', createCartForm)
    
     if (response.ok){
         const payload = await response.json();
@@ -71,7 +70,6 @@ export const fetchDeleteCartItem = (cartItemId) => async dispatch => {
 
 // Update
 export const fetchUpdateCartItem = (quantity, cartItemId) => async dispatch => {
-    console.log(JSON.stringify({quantity}))
     const response = await fetch(`/api/cartproduct/update-cart/${cartItemId}`,{
         method:"POST",
         headers: {

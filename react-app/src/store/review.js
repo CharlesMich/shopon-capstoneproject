@@ -78,7 +78,6 @@ export const getSingleReview = (productid) => async dispatch => {
 
 // post review
 export const fetchPostReview = (postReviewForm) => async dispatch => {
-    console.log(postReviewForm)
     const response = await fetch('/api/review/new', {
         method:"POST",
         headers: { "Content-Type": "application/json",

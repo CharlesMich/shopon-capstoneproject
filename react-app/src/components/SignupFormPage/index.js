@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { signUp } from "../../store/session";
@@ -15,21 +15,23 @@ function SignupFormPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
-
-  if (sessionUser) return <Redirect to="/" />;
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // if (!email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) setErrors(['Not a valid email address'])
     if (password === confirmPassword) {
-        const data = await dispatch(signUp(first_name, last_name, username, email, password));
-        if (data) {
-          setErrors(data)
-        }
+      const data = await dispatch(signUp(first_name, last_name, username, email, password));
+      if (data) {
+        setErrors(data)
+      }
     } else {
-        setErrors(['Confirm Password field must be the same as the Password field']);
+      setErrors(['Confirm Password field must be the same as the Password field']);
     }
   };
-
+  
+  
+  if (sessionUser) return <Redirect to="/" />;
+  
   return (
     <div className="signup-container">
       <div className="landing-main">
@@ -43,6 +45,7 @@ function SignupFormPage() {
         </ul>
         <div className="signup-form-container">
         <div className="signup-form-container-1">
+      
                         <div className="signup-form-sub-container">
                                             <div><label>
                                               First Name   

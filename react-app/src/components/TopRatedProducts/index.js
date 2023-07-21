@@ -44,9 +44,10 @@ function TopRatedProducts(){
        
         // prodObj[ele.name] = prodRat;
       })
-      return newArr.sort((a,b)=> b.avgRating-a.avgRating).slice(0,6)
+      return newArr.filter(ele => typeof ele.avgRating === 'number').sort((a,b)=> b.avgRating - a.avgRating).slice(0,6)
       // return Object.entries(prodObj).sort((a,b) => b>a);
     }
+
     console.log(AvgRevByProduct())
 
     function starAvgRating(avgRating) {

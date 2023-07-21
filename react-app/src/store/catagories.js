@@ -32,7 +32,6 @@ export const getSingleCatagory = (id) => async dispatch => {
     const response = await fetch(`/api/catagory/${id}`)
     if (response.ok){
         const payload = await response.json();
-        console.log(payload)
         dispatch(single_catagory(payload))
     }
 }

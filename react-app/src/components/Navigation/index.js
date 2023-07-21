@@ -43,7 +43,6 @@ function Navigation({ isLoaded }) {
 
 	const handleSearchSubmit = async (e) => {
 		e.preventDefault();
-		console.log('search text', searchtext)
 		await dispatch(searchProducts(searchtext))
 		history.push('/products/search-by-product')
 		setSearchtext('')

@@ -34,7 +34,6 @@ export const getAllProducts = () => async dispatch => {
 
 // get search product
 export const searchProducts = (searchtext) => async dispatch => {
-    console.log('inside search fetch', searchtext)
     const response = await fetch(`/api/product/${searchtext}`)
     if(response.ok){
         const payload = await response.json();

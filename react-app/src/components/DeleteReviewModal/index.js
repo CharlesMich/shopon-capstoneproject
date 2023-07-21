@@ -14,7 +14,6 @@
 
 //     const answerId = answer;
 
-//     // console.log("inside component", answerId)
 //     const handleSubmit = (e) => {
 //         e.preventDefault()
 

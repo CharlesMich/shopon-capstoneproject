@@ -42,7 +42,6 @@ function Catagories(){
     if(!catagories) return null
     if (!sessionUser) return <Redirect to="/login" />;
    
-    console.log(catagories)
     // return(
     //     <div className="catagories-container">
     //         <div className="catagories-card">

@@ -20,7 +20,6 @@ function AllReviews(){
         userId = sessionUser.id
     }
    
-
     let allReviews = useSelector((state)=>Object.values(state.review.allReviews))
     allReviews.sort((a,b)=> b.id-a.id)
 

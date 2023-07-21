@@ -21,7 +21,6 @@ function AllProducts(){
     const catagory = useSelector((state=> (state.catagory.singleCatagory)))
     let newArr= allProducts.filter(ele => ele.catagory_id===Number(catagoryId))
    
-    // console.log(catagory.catagory)
 
     useEffect(() => {
         dispatch(getAllProducts())
