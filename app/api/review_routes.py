@@ -41,6 +41,7 @@ def postReview():
         newReview = Review(
             product_id = data['product_id'],
             user_id = data['user_id'],
+            title = data['title'],
             review = data['review'],
             rating= data['rating']
         )
@@ -57,6 +58,8 @@ def updateReview(id):
         data = request.get_json()
         update_review_review = data.get('review')
         review.review = update_review_review
+        update_review_title = data.get('title')
+        review.title = update_review_title
         update_review_rating = data.get('rating')
         review.rating = update_review_rating
         db.session.commit()

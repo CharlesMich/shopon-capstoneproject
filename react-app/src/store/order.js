@@ -25,12 +25,18 @@ export const fetchGetOrder =() => async dispatch=> {
 } 
 
 // Add cart
-export const fetchAddOrder =() => async dispatch => {
-    const response = await fetch(`/api/order/new`)
-    if(response.ok){
+export const fetchAddOrder =(userId) => async dispatch => {
+    const response = await fetch(`/api/order/new`, {
+        method:"POST",
+        headers: { "Content-Type": "application/json",
+        },
+        body: JSON.stringify({user_id:userId}),
+    })
+    // if(response.ok){
         const payload = await response.json();
         dispatch(add_order(payload))
-    }
+        return payload
+    // }
 }
 
 const initialState = {}

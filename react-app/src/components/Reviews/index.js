@@ -57,11 +57,21 @@ function AllReviews(){
         <div className="review-container">
                             <div className="review-sub-container">
                                             <h1 className="review-h1">Manage All Reviews</h1>
-                                            <div className="reviewMap">{allReviews.map((ele)=> 
+                                           {allReviews.length > 0 ? <div className="reviewMap">{allReviews.map((ele)=> 
                                                         <div className="review-each-review"> 
                                                         <img className="review-img" src={ele.img1} ale="" style={{width:"50px"}}></img>
                                                         <h2 className ="review-h2">{ele.name}</h2>
-                                                        <div>{starRating(ele.rating)}</div>
+                                                        {/* <h3 className = "review-h3">{ele.created_at}</h3> */}
+                                                        <div style={{float:"left", 
+                                                        display:"flex", 
+                                                        alignItems:"center",
+                                                        
+                                                        }}><span style={{display:'inline', 
+                                                        fontFamily:"helvetica", 
+                                                        fontWeight:"bold", 
+                                                        fontSize:"18px",
+                                                        paddingRight:"5px"
+                                                        }}>{ele.title}</span><span style={{display:'inline'}}>{starRating(ele.rating)}</span></div>
                                                         {/* <div>Review id: {ele.id}</div>                                                */}
                                                         <p className="review-text">{ele.review}</p>
                                                         <div className="review-update-del-button">
@@ -72,7 +82,7 @@ function AllReviews(){
                                                         }} onClick={handleDelete} data-value ={ele.id}>Delete</button>
                                                         </div>
                                                         </div>
-                                            )}</div>
+                                            )}</div>: "You currently have no reviews"}
                             </div>
         </div>
 

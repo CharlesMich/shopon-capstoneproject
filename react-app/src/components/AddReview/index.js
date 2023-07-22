@@ -22,6 +22,7 @@ function CreateReviewModal(id) {
         user_id = sessionUser.id
     }
 
+    const [title, setTitle] = useState("");
     const [review, setReview] = useState("");
     const [rating, setRating] = useState(0);
     const [errors, setErrors] = useState({});
@@ -29,14 +30,24 @@ function CreateReviewModal(id) {
 
     useEffect(()=> {
         let errors = {};
+        if(title.length < 10){
+            errors.title = "Title must be 10 Character or more"
+        }
+        if(title.length > 100){
+            errors.title = "Title must be less than 100 characters"
+        }
         if(review.length < 10){
             errors.review = "Review must be 10 Character or more"
         }
+        if(review.length > 5000){
+            errors.review = "Review must be less than 5000 characters"
+        }
+
         if(rating < 1 || !rating || rating === 0){
             errors.rating = "Rating input has no stars"
         }
         setErrors(errors);
-    }, [review, rating]);
+    }, [review, rating, title]);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -45,6 +56,7 @@ function CreateReviewModal(id) {
         const postReviewForm = {
             product_id,
             user_id,
+            title,
             review,
             rating
         }
@@ -53,6 +65,7 @@ function CreateReviewModal(id) {
         if (Object.keys(errors).length > 0) return;
 
         setReview('')
+        setTitle('')
         setRating()
         closeModal()
         setErrors({});
@@ -78,6 +91,13 @@ return (
             <div><img src={product.img1} style={{width:"50px"}}></img></div>
             <div style={{ color: "rgb(18 24 30)", fontFamily:"helvetica", fontSize:"14px" }}>{product.name}</div>
             <div ><h1 style={{ color: "rgb(18 24 30)", fontFamily:"helvetica", fontSize:"20px" }}>Add a review</h1></div>
+            <textarea id="reviewInput" 
+            type="text" 
+            style={{width:"100%"}}
+            value={title} 
+            placeholder='Give a title to your experience with the product'
+            onChange={(e) => setTitle(e.target.value)} />
+            <div className="add-review-error">{hasSubmitted && errors.title && `${errors.title}`}</div>
             <textarea id="description" 
             type="text" 
             value={review} 

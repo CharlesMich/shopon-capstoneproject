@@ -20,11 +20,14 @@ def postCartProduct():
     form = OrderItemForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     data = form.data
+    print('data', data)
     if form.validate_on_submit():
         newOrderItem = Order_Item(
             order_id =data['order_id'],
             product_id = data['product_id'],
             quantity = data['quantity'],
+            product=data['product'],
+            price = data['price']
         ) 
 
         db.session.add(newOrderItem)

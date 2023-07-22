@@ -5,180 +5,210 @@ def seed_reviews():
     review1 = Review(
         user_id = 1,
         product_id = 1,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 5
     )
     review2 = Review(
         user_id = 1,
         product_id = 2,
+         title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 4
     )
     review3 = Review(
         user_id = 1,
         product_id = 3,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 3
     )
     review4 = Review(
         user_id = 1,
         product_id = 4,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 2
     )
     review5 = Review(
         user_id = 1,
         product_id = 5,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 1
     )
     review6 = Review(
         user_id = 1,
         product_id = 6,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 5
     )
     review7 = Review(
         user_id = 1,
         product_id = 7,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 4
     )
     review8 = Review(
         user_id = 1,
         product_id = 8,
+         title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 3
     )
     review9 = Review(
         user_id = 1,
         product_id = 9,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 2
     )
     review10 = Review(
         user_id = 1,
         product_id = 10,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 1
     )
     review11 = Review(
         user_id = 2,
         product_id = 11,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 5
     )
     review12 = Review(
         user_id = 2,
         product_id = 12,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 4
     )
     review13 = Review(
         user_id = 2,
         product_id = 13,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 3
     )
     review14 = Review(
         user_id = 2,
         product_id = 14,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 2
     )
     review15 = Review(
         user_id = 2,
         product_id = 15,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 1
     )
     review16 = Review(
         user_id = 2,
         product_id = 16,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 5
     )
     review17 = Review(
         user_id = 2,
         product_id = 17,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 4
     )
     review18 = Review(
         user_id = 2,
         product_id = 18,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 3
     )
     review19 = Review(
         user_id = 2,
         product_id = 19,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 2
     )
     review20 = Review(
         user_id = 2,
         product_id = 20,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 1
     )
     review21 = Review(
         user_id = 3,
         product_id = 21,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 5
     )
     review22 = Review(
         user_id = 3,
         product_id = 22,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 4
     )
     review23 = Review(
         user_id = 3,
         product_id = 23,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 3
     )
     review24 = Review(
         user_id = 3,
         product_id = 24,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 2
     )
     review25 = Review(
         user_id = 3,
         product_id = 25,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 1
     )
     review26 = Review(
         user_id = 3,
         product_id = 26,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 5
     )
     review27 = Review(
         user_id = 3,
         product_id = 27,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 4
     )
     review28 = Review(
         user_id = 3,
         product_id = 28,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 3
     )
     review29 = Review(
         user_id = 3,
         product_id = 29,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 2
     )
     review30 = Review(
         user_id = 3,
         product_id = 30,
+        title = 'Great phone',
         review = 'I like this phone, it’s better than the 11 I had before this. Only thing I got upset about, that they do not mention in any of their responses to questions or any part of their whole big long drawn out detailed description, is that you can’t port or transfer your phone number. This is because, when you buy the SIM card and phone plan, for this, due to it being Amazon exclusive, Amazon manages it and runs it. They set up your cricket account for you, and immediately upon purchasing the phone and phone plan, get you a number and activate your card.',
         rating = 1
     )

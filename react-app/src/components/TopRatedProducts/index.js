@@ -40,7 +40,7 @@ function TopRatedProducts(){
             revTotal = revTotal + allRevOfProduct[i].rating
         }
         let prodRat = revTotal / allRevOfProduct.length;
-        newArr.push({'product': ele.name, 'avgRating': prodRat})
+        if(prodRat > 1) newArr.push({'product': ele.name, 'avgRating': prodRat})
        
         // prodObj[ele.name] = prodRat;
       })

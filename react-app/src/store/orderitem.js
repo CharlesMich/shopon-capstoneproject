@@ -35,8 +35,14 @@ export const fetchLoadorderItem = () => async dispatch => {
 }
 
 // Add
-export const fetchAddOrderItem = () => async dispatch => {
-    const response = await fetch('/api/orderitem/new')
+export const fetchAddOrderItem = (newOrderItemForm) => async dispatch => {
+    const response = await fetch('/api/orderitem/new', {
+        method:"POST",
+        headers: { "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newOrderItemForm),
+    })
+    
     if (response.ok){
         const payload = await response.json();
         dispatch(add_orderitem(payload))

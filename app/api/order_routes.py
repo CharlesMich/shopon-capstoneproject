@@ -23,7 +23,8 @@ def postCart():
 
     if form.validate_on_submit():
         newOrder = Order(
-            userId =current_user.id,
+    
+            user_id =current_user.id,
         ) 
 
         db.session.add(newOrder)

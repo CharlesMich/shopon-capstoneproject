@@ -6,13 +6,14 @@ import { getAllProducts } from "../../store/product";
 import { fetchLoadCartItem } from '../../store/cartproduct';
 import { fetchDeleteCartItem } from '../../store/cartproduct';
 import { fetchUpdateCartItem } from '../../store/cartproduct';
+import { fetchAddOrder } from '../../store/order';
+import { fetchAddOrderItem} from '../../store/orderitem'
 import './cart.css'
 
 function Cart() {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    
     let sessionUser = useSelector((state) => state.session.user);
     const product = useSelector(state => state.product)
     const cartItems = useSelector(state => state.cartProducts)
@@ -50,6 +51,32 @@ function Cart() {
         }
         history.push('/order')
     }
+
+    // const checkOut = async (e) => {
+    //     e.preventDefault()
+    //     const newOrder = await dispatch(fetchAddOrder(userId))
+    //     console.log(newOrder)
+    //     if(newOrder){
+    //         const order_id = newOrder.id;
+    //         for (let item of cartItemArr){
+    //             console.log(item.price)
+    //             const newOrderItemForm  ={
+    //                 order_id,
+    //                 product_id:item.product_id,
+    //                 product:item.name,
+    //                 quantity:item.quantity,
+    //                 price:Number(item.price)
+    //             }   
+    //            await dispatch(fetchAddOrderItem(newOrderItemForm))
+    //            for (let item of cartItemArr) {
+    //             await dispatch(fetchDeleteCartItem(item.id))
+    //             }
+    //             history.push('/order')
+    //         }
+    //     }
+    // }
+
+
 
     // update an item
     useEffect(() => {

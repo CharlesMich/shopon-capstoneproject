@@ -13,6 +13,7 @@ class Product(db.Model):
     # columns
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
+    seller = db.Column(db.String(100), nullable=False)
     product_shortdescription = db.Column(db.String(500), nullable=False)    
     product_longdescription = db.Column(db.String(5000), nullable=False)
     price = db.Column(db.Numeric, nullable=False)
@@ -36,6 +37,7 @@ class Product(db.Model):
         return {
             'id': self.id,
             'name' : self.name,
+            'seller': self.seller,
             'product_shortdescription': self.product_shortdescription,
             'product_longdescription': self.product_longdescription,
             'price': self.price,

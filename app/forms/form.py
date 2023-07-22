@@ -8,7 +8,8 @@ class CatagoryForm(FlaskForm):
     img = StringField('Img', validators=[DataRequired()])
 
 class ProductForm(FlaskForm):
-    name = StringField('Name', validators=[DataRequired()])    
+    name = StringField('Name', validators=[DataRequired()]) 
+    seller = StringField('Seller', validators = [DataRequired()])   
     product_shortdescription = StringField('product_shortdescription', validators=[DataRequired()])
     product_longdescription = StringField('product_longdescription', validators=[DataRequired()])
     price = DecimalField('Price', validators=[DataRequired()])
@@ -17,6 +18,7 @@ class ProductForm(FlaskForm):
 class ReviewForm(FlaskForm):
     user_id = IntegerField('UserId', validators=[DataRequired()])
     product_id = IntegerField('ProductId', validators=[DataRequired()])
+    title = StringField('Title', validators=[DataRequired()])
     review = StringField('Review', validators=[DataRequired()])
     rating = IntegerField('Rating', validators=[DataRequired()])
 
@@ -27,8 +29,8 @@ class OrderItemForm(FlaskForm):
     order_id = IntegerField('OrderId')
     product_id = IntegerField('ProductId', validators=[DataRequired()])
     product = StringField('Product', validators=[DataRequired()])
-    price = IntegerField('Price', validators=[DataRequired()])
     quantity = IntegerField('Quantity', validators=[DataRequired()])
+    price = IntegerField('Price', validators=[DataRequired()])
 
 
 # class CartForm(FlaskForm):
