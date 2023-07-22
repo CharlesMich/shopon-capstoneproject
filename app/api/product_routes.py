@@ -20,7 +20,7 @@ def singleProduct(id):
 @product_route.route('/<text>', methods = ["GET"])
 def searchProduct(text):
     formatted_text = f'%{text}%'
-    product = Product.query.filter(Product.name.like(formatted_text)).all()
+    product = Product.query.filter(Product.name.ilike(formatted_text)).all()
     print(product)
     return [prod.to_dict() for prod in product]
 
