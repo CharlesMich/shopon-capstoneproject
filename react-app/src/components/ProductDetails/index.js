@@ -9,6 +9,7 @@ import { getSingleReview } from "../../store/review"
 import { fetchLoadCartItem } from '../../store/cartproduct';
 import CreateReviewModal from '../AddReview';
 import OpenModalButton from '../OpenModalButton';
+import CartSummary from '../CartSummary'
 import './allproducts.css'
 
 function ProductDetails() {
@@ -33,6 +34,7 @@ function ProductDetails() {
   const [previmg, setPrevimg] = useState(product.img1)
   const [quantity, setQuantity] = useState(1)
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   useEffect(() => {
     dispatch(fetchLoadCartItem(user_id))
@@ -102,7 +104,7 @@ function ProductDetails() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(fetchLoadCartItem(user_id))
+    // await dispatch(fetchLoadCartItem(user_id))
 
     const createCartForm = {
       productId,
@@ -114,7 +116,9 @@ function ProductDetails() {
     let newCartItem = await dispatch(fetchAddCartItem(createCartForm))
 
     if (newCartItem) {
-      history.push(`/`);
+      dispatch(fetchLoadCartItem(user_id))
+     setShowCart(true)
+      // history.push(`/`);
     }
   }
   
@@ -170,6 +174,18 @@ function ProductDetails() {
             </div>
           </div>
         </div>
+
+        <div
+        className="sidebar"
+        style={showCart ? { transform: 'translateX(-100%)' } : {}}
+      >
+        <div className="sidebar-header">
+          <button className="arrow-button" onClick={() => setShowCart(false)}>
+          <i class="fa-solid fa-x"></i>
+          </button>
+        </div>
+        <CartSummary/>
+      </div>
 
         <h2 className="productdetails-h2">Reviews</h2>
         {/* <div>< OpenModalButton buttonText="Post your Review" className="postReview" modalComponent={<CreateReviewModal id={product.id} />} /></div> */}
