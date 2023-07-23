@@ -31,7 +31,6 @@ function AllProducts(){
     },[dispatch]);
 
 
-
     if(!allProducts) return null
 
     if (!sessionUser) return <Redirect to="/login" />;

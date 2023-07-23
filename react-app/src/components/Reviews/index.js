@@ -56,7 +56,7 @@ function AllReviews(){
     return(
         <div className="review-container">
                             <div className="review-sub-container">
-                                            <h1 className="review-h1">Manage All Reviews</h1>
+                                            <h1 className="review-h1">Manage Reviews</h1>
                                            {allReviews.length > 0 ? <div className="reviewMap">{allReviews.map((ele)=> 
                                                         <div className="review-each-review"> 
                                                         <img className="review-img" src={ele.img1} ale="" style={{width:"50px"}}></img>

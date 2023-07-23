@@ -111,7 +111,7 @@ function Cart() {
                                 <h1 className="cart-h1">Shopping Cart</h1>
             <div className="cart-sub-container">
                     <div className="cart-items">
-                                {!cartItemArr.length ? <h2 className="cart-h2">Your Shopon Cart is empty</h2> : null}
+                                {!cartItemArr.length ? <div><h2 className="cart-h2" style={{color:'black', fontFamily:"helvetica", fontSize:"17px"}}>Your Shopon Cart is empty</h2><Link to="/"><h2 className="cart-h2" style={{color:'black', fontFamily:"helvetica", fontSize:"17px"}}>Continue Shopping...</h2></Link></div> : null}
                                 <div className="cart-map">
                                     {cartItemArr && cartItemArr.map((ele) => (
                                         <div className="cart-map-one">

@@ -81,7 +81,7 @@ def seed_products():
         img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/clothes/cardigan5.jpg'
     )
     product7 = Product(
-        name = 'Hooded',
+        name = 'Hooded Sweatshirt',
         seller = 'Shopon',
         product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
         product_longdescription = 'All the essentials to help you monitor your fitness, keep connected, track your health, and stay safe. Now up to 20 percent faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. EASILY CUSTOMIZABLE — Available in a range of sizes and colors, with dozens of bands to choose from and watch faces with complications tailored to whatever you’re into.',

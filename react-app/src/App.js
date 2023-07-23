@@ -15,6 +15,7 @@ import Order from "./components/order";
 import TopRatedProducts from "./components/TopRatedProducts";
 import NewArrivals from "./components/NewArrivals";
 import SearchByProduct from "./components/SearchByProduct";
+import Footer from "./components/footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ function App() {
     <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
+         <div className="main">
         <Switch>
           <Route path="/login" >
             <LandingPage />
@@ -53,6 +55,8 @@ function App() {
           <Route path ="/"><Catagories/></Route>
 
         </Switch>
+        {/* <Footer></Footer> */}
+         </div>
       )}
     </>
   );
