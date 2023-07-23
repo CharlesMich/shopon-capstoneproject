@@ -144,8 +144,9 @@ function ProductDetails() {
           <div className="product-detail-text">
             <h2 className="productdetails-h2">{product.name}</h2>
             <h3 className="productdetails-h3">{product.product_shortdescription}</h3>
+            <p className="productdetails-p">Seller: {product.seller}</p>
             <div className="products-review-reviewsummary-div">
-        <span style={{marginRight:"5px"}}>Avg Rating:</span><span style={{marginRight:"15px"}}>{starAvgRating(Number(avgRating(reviews)))}</span>
+        {reviews.length ? <div className="productdeatils-avgstar-rating"><span style={{marginRight:"5px"}}>Avg Rating:</span><span style={{marginRight:"15px"}}>{starAvgRating(Number(avgRating(reviews)))}</span></div>:null}
               <span style={{marginRight:"5px"}} className="products-review-reviewsummary" >{reviews.length}</span><span className="products-review-reviewsummary">{reviews.length === 1 ? <span>Review</span> : <span> Reviews</span>}</span>
         </div>
             <p className="productdetails-review-text">{product.product_longdescription}</p>
