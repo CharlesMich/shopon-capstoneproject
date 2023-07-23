@@ -198,7 +198,9 @@ function ProductDetails() {
     
         <div>{reviews.map((ele) =>
           <div className="productdetails-review">
-            <div className="productdetails-review-name-rating"><span style={{ paddingRight: '10px' }}>{ele.first_name} {ele.last_name}</span><span style={{ paddingRight: '10px' }}> • </span><span>{starRating(ele.rating)}</span></div>
+            <div className="productdetails-review-name-rating"><span></span><img src="https://myaaprojects.s3.us-east-2.amazonaws.com/profile-circle.png" style={{width:"30px", paddingRight:"10px"}} alt = ""></img><span style={{ paddingRight: '10px' }}>{ele.first_name} {ele.last_name}</span><span style={{ paddingRight: '10px' }}> • </span><span style={{color:"rgb(2467 126 40)"}}>{starRating(ele.rating)}</span></div>
+            <div style={{fontFamily:"helvetica", fontSize:'14px', paddingTop:'10px' }}> Reviewed on {(ele.created_at).split(' ').slice(1,4).join(' ')}</div>
+            <h3 style={{fontFamily:"helvetica", fontSize:'14px'}}>{ele.title}</h3>
             <p className="productdetails-review-text">{ele.review}</p>
           </div>
         )}</div>

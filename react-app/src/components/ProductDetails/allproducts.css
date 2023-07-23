@@ -111,7 +111,9 @@ box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
 .productdetails-review-name-rating{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
+
 .productdetails-cart-form-elements{
     display: flex;
     flex-direction: row;

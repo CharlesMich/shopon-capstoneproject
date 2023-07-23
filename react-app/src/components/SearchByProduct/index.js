@@ -27,7 +27,7 @@ function SearchByProduct(){
             <div className="product-sub-container">
             <div style={{textAlign:"left"}}><h1 className="product-h1"></h1></div>
                 <div className='products-inner-container'>
-                    <div className="productMap">{newArr.map((ele)=> 
+                    {newArr.length?<div className="productMap">{newArr.map((ele)=> 
                                         <div className="products-each-product">  
                                        
                                        <Link to={`/products/productdetails/${ele.id}`} key={ele.id}> <div className="products-name">{ele.name}</div>
@@ -36,7 +36,7 @@ function SearchByProduct(){
                                                 <div className="products-sub-name">Price: {Number(ele.price).toFixed(2)}</div></Link> 
                                                
                                         </div> 
-                    )}</div>
+                    )}</div>:<h3 style={{width: '500px', fontSize:'18px',  fontFamily:'helvetica'}}> Your search did not match any products.</h3> }
                 </div>
                 </div>
          
