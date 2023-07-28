@@ -25,7 +25,7 @@ check out [Shopon](https://shopon-308z.onrender.com/login)
 ## Getting started
 1. Clone this repository:
    `
-   https://github.com/itsmaica/Remotebnb.git
+ https://github.com/CharlesMich/shopon-capstoneproject.git
    `
 
 3. Install dependencies
@@ -169,3 +169,33 @@ your site just below the name of the Web Service at the top of the page.
 
 [Render.com]: https://render.com/
 [Dashboard]: https://dashboard.render.com/
+
+# Features
+
+## Shopping Cart
+* Users can add items to their cart
+* Users can read/view their cart
+* Users can delete items in their cart
+* Users can update their cart
+
+## Reviews
+* Users can create Reviews on a product
+* Users can read/view all of the Reviews of a product
+* Users can delete their reviews on a Product
+* Users can update their reviews on a product
+
+## Products
+* Users can add products
+* Users can read/view all products
+* Users can update their products
+* Users can delete their products
+
+
+## Catagories
+* Users can add Catagories
+* Users can read/view all Catagories
+* Users can update their Catagories
+* Users can delete their Catagories
+  
+
+
