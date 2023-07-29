@@ -1,0 +1,56 @@
+.createproduct-container{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+}
+.createproduct-subcontainer{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 20px;
+    border: 1px solid grey;
+    background-color: rgb(238, 237, 236);
+    border-radius: 10px;
+    margin: 200px auto;
+}
+
+h2{
+    font-size: 20px;
+}
+
+h3{
+    font-size: 15px;
+}
+
+p{
+    font-size: 15px;
+}
+
+label {
+     display:inline-block;
+     font-size: 15px;
+    }
+input {
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 0;
+}    
+textarea{
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 0;
+}  
+.spotbutton{
+    background-color: rgb(230, 3, 60);
+    color: white;
+    font-size: 8px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+  
+}
+.error{
+    color: rgb(230, 3, 60);
+    font-size: 15px;
+}
+

@@ -53,6 +53,7 @@ function ProfileButton({ user }) {
             <li className="profile-button-li">{user.username}</li>
             <li className="profile-button-li">{user.email}</li>
             <li className="profile-button-li"><Link to="/reviews" style={{textDecoration:'none', color:"black"}} onClick={closeMenu}>Manage Reviews</Link></li>
+            <li className="profile-button-li"><Link to="/manageproducts" style={{textDecoration:'none', color:"black"}} onClick={closeMenu}>Manage Products</Link></li>
             <li className="profile-button-li">
               <button  onClick={handleLogout}>Log Out</button>
             </li>

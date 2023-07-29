@@ -52,31 +52,29 @@ function Cart() {
         history.push('/order')
     }
 
-    // const checkOut = async (e) => {
-    //     e.preventDefault()
-    //     const newOrder = await dispatch(fetchAddOrder(userId))
-    //     console.log(newOrder)
-    //     if(newOrder){
-    //         const order_id = newOrder.id;
-    //         for (let item of cartItemArr){
-    //             console.log(item.price)
-    //             const newOrderItemForm  ={
-    //                 order_id,
-    //                 product_id:item.product_id,
-    //                 product:item.name,
-    //                 quantity:item.quantity,
-    //                 price:Number(item.price)
-    //             }   
-    //            await dispatch(fetchAddOrderItem(newOrderItemForm))
-    //            for (let item of cartItemArr) {
-    //             await dispatch(fetchDeleteCartItem(item.id))
-    //             }
-    //             history.push('/order')
-    //         }
-    //     }
-    // }
-
-
+    const checkOut = async (e) => {
+        e.preventDefault()
+        const newOrder = await dispatch(fetchAddOrder(userId))
+        console.log(newOrder)
+        if(newOrder){
+            const order_id = newOrder.id;
+            for (let item of cartItemArr){
+                console.log(item.price)
+                const newOrderItemForm  ={
+                    order_id,
+                    product_id:item.product_id,
+                    product:item.name,
+                    quantity:item.quantity,
+                    price:Number(item.price)
+                }   
+               await dispatch(fetchAddOrderItem(newOrderItemForm))
+               for (let item of cartItemArr) {
+                await dispatch(fetchDeleteCartItem(item.id))
+                }
+                history.push(`/order/${order_id}`)
+            }
+        }
+    }
 
     // update an item
     useEffect(() => {
@@ -140,7 +138,7 @@ function Cart() {
                         <div>{cartItemArr.length? <div>Total Items: {countCart()}</div>: null}</div>
                         {cartItemArr.length ? <div>Subtotal: {subTotal(cartItemArr).toFixed(2)}</div> : null}
                         <div>{cartItemArr.length ? <button className="cart-shoppingcart-button" style={{maxWidth:'270px'}} onClick={emptyCart}>Empty Cart</button> : null}</div>
-                        <div>{cartItemArr.length ? <button className="cart-shoppingcart-button" style={{ backgroundColor: "yellow", width:'270px'}} onClick={completeOrder}>Buy Now</button> : null}</div>
+                        <div>{cartItemArr.length ? <button className="cart-shoppingcart-button" style={{ backgroundColor: "yellow", width:'270px'}} onClick={checkOut}>Buy Now</button> : null}</div>
                     </div>:null}</div>
             </div>
         </div>

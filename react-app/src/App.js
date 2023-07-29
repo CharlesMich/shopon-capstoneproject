@@ -15,6 +15,8 @@ import Order from "./components/order";
 import TopRatedProducts from "./components/TopRatedProducts";
 import NewArrivals from "./components/NewArrivals";
 import SearchByProduct from "./components/SearchByProduct";
+import ManageProducts from "./components/ProductsMain/ManageProducts";
+import CreateProduct from "./components/ProductsMain/CreateProducts";
 import Footer from "./components/footer";
 
 function App() {
@@ -30,30 +32,19 @@ function App() {
       {isLoaded && (
          <div className="main">
         <Switch>
-          <Route path="/login" >
-            <LandingPage />
-          </Route>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-          <Route path="/cart">
-            <Cart/>
-          </Route>
-          <Route path="/reviews">
-            <AllReviews/>
-          </Route>
+          <Route path="/login" ><LandingPage /></Route>
+          <Route path="/signup"><SignupFormPage /></Route>
+          <Route path="/cart"><Cart/></Route>
+          <Route path="/reviews"><AllReviews/></Route>
+          <Route path ="/manageproducts/createproduct"><CreateProduct/></Route>
           <Route path ="/products/top-rated-products"><TopRatedProducts/></Route>
           <Route path="/products/new-arrivals"><NewArrivals/></Route>
-          <Route path = "/order"><Order/></Route>
-          <Route exact path="/products/all/:catagoryId">
-            <AllProducts/>
-          </Route>
-          <Route path="/products/productdetails/:productId">
-          <ProductDetails/>
-          </Route>
+          <Route path = "/order/:orderId"><Order/></Route>
+          <Route exact path="/products/all/:catagoryId"><AllProducts/></Route>
+          <Route path="/products/productdetails/:productId"><ProductDetails/></Route>
+          <Route path ="/manageproducts"><ManageProducts/></Route>
           <Route path ="/products/search-by-product"><SearchByProduct/></Route>
           <Route path ="/"><Catagories/></Route>
-
         </Switch>
         {/* <Footer></Footer> */}
          </div>

@@ -1,7 +1,7 @@
 const LOAD_PRODUCTS = "products/LOAD_PRODUCTS"
 const SINGLE_PRODUCT = "products/SINGLE_PRODUCT"
+const ADD_PRODUCT = "products/ADD_PRODUCT"
 const SEARCH_PRODUCT = "products/SEARCH_PRODUCT"
-
 
 // all products
 const load_products = payload => ({
@@ -12,6 +12,12 @@ const load_products = payload => ({
 // single product
 const single_product = payload => ({
     type: SINGLE_PRODUCT,
+    payload
+})
+
+// add product
+const add_product = payload => ({
+    type: ADD_PRODUCT,
     payload
 })
 
@@ -49,6 +55,21 @@ export const getSingleProduct = (id) => async dispatch => {
     }
 }
 
+// add a product
+export const fetchAddProduct = (formData) => async dispatch => {
+    const response = await fetch(`/api/product/new`, {
+        method:'POST',
+        body: formData
+    })
+    console.log(formData)
+    if(response.ok){
+        const payload = await response.json();
+        dispatch(add_product(payload))
+    } else {
+        console.log("There was an error making your post!")
+    }
+}
+
 const initialState = {allProducts:{}, singleProduct:{}, searchProducts:{}}
 // const initialState = {allProducts:{}, singleProduct:{}}
 export default function productReducer(state = initialState, action){
@@ -66,6 +87,9 @@ export default function productReducer(state = initialState, action){
             const searchProducts = {}
             action.payload.forEach(ele => searchProducts[ele.id]=ele)
             return {...state, searchProducts}; 
+
+        case ADD_PRODUCT:
+            return {...state, singleProduct: { ...state.singleProduct, [action.payload.id]: action.payload }}    
               
         default: 
             return state;

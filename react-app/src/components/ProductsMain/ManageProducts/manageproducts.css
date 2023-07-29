@@ -1,0 +1,17 @@
+.manageproducts-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.manageproducts-subcontainer{
+    width: 60%;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.manageproduct-linkto-addproduct{
+    color:black;
+}
