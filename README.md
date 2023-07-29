@@ -1,27 +1,50 @@
-# Flask React Project
 
-This is the starter for the Flask React project.
+# Shopon
+Shopon is a soft clone of Amazon and Etsy. It is a marketplace where users can sell thier products, browse and sell their products.
+
+check out [Shopon](https://shopon-308z.onrender.com/login)
+
+## Index
+[MVP Feature List] |
+[Database Schema] |
+[User Stories] |
+[Wire Frames] |
+
+## Technologies Used
+<img src ="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" /><img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" /><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /><img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" /><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+
+## Splash Page
+![splash](https://myaaprojects.s3.us-east-2.amazonaws.com/screenshots/shopon-screenshot.jpg)
+
+## Products Page
+![product](https://myaaprojects.s3.us-east-2.amazonaws.com/screenshots/shopon-product-screenshot.png)
+
+## Reviews Page
+![Review](https://myaaprojects.s3.us-east-2.amazonaws.com/screenshots/shopon-review-screenshot.png)
 
 ## Getting started
-1. Clone this repository (only this branch)
+1. Clone this repository:
+   `
+ https://github.com/CharlesMich/shopon-capstoneproject.git
+   `
 
-2. Install dependencies
+3. Install dependencies
 
       ```bash
       pipenv install -r requirements.txt
       ```
 
-3. Create a **.env** file based on the example with proper settings for your
+4. Create a **.env** file based on the example with proper settings for your
    development environment
 
-4. Make sure the SQLite3 database connection URL is in the **.env** file
+5. Make sure the SQLite3 database connection URL is in the **.env** file
 
-5. This starter organizes all tables inside the `flask_schema` schema, defined
+6. This starter organizes all tables inside the `flask_schema` schema, defined
    by the `SCHEMA` environment variable.  Replace the value for
    `SCHEMA` with a unique name, **making sure you use the snake_case
    convention**.
 
-6. Get into your pipenv, migrate your database, seed your database, and run your Flask app
+7. Get into your pipenv, migrate your database, seed your database, and run your Flask app
 
    ```bash
    pipenv shell
@@ -39,7 +62,7 @@ This is the starter for the Flask React project.
    flask run
    ```
 
-7. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+8. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
 
 
 ## Deployment through Render.com
@@ -146,3 +169,33 @@ your site just below the name of the Web Service at the top of the page.
 
 [Render.com]: https://render.com/
 [Dashboard]: https://dashboard.render.com/
+
+# Features
+
+## Shopping Cart
+* Users can add items to their cart
+* Users can read/view their cart
+* Users can delete items in their cart
+* Users can update their cart
+
+## Reviews
+* Users can create Reviews on a product
+* Users can read/view all of the Reviews of a product
+* Users can delete their reviews on a Product
+* Users can update their reviews on a product
+
+## Products
+* Users can add products
+* Users can read/view all products
+* Users can update their products
+* Users can delete their products
+
+
+## Catagories
+* Users can add Catagories
+* Users can read/view all Catagories
+* Users can update their Catagories
+* Users can delete their Catagories
+  
+
+
