@@ -106,6 +106,6 @@ def AddProduct():
     db.session.commit()
     return newProduct.to_dict()
 
-    print(request.form)
-    return{"message": "still working"}
+    # print(request.form)
+    # return{"message": "still working"}
 
