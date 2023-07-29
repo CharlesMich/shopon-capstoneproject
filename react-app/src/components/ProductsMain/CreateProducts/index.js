@@ -67,20 +67,6 @@ function CreateProduct() {
         formData.append("img4", img4);
         formData.append("img5", img5);
 
-        // const createProductFrom = {
-        //     name,
-        //     seller,
-        //     product_shortdescription,
-        //     product_longdescription,
-        //     price,
-        //     catagory_id,
-        //     img1,
-        //     img2,
-        //     img3,
-        //     img4,
-        //     img5
-        // };
-        console.log(formData)
         setHasSubmitted(true);
         if (Object.keys(validationErrors).length > 0) return;
 
@@ -97,8 +83,10 @@ function CreateProduct() {
 
         setImageLoading(true);
         let newProduct = await dispatch(fetchAddProduct(formData))
+        console.log(newProduct)
         if (newProduct) {
-                    history.push(`/products/${newProduct.id}`);
+            setImageLoading(false);
+             history.push(`/products/productdetails/${newProduct.id}`);
                 }
     }
 
@@ -127,6 +115,7 @@ function CreateProduct() {
                 {/* <p>Help people find what they are looking for.</p>      */}
                      <span><label htmlFor='catagory_id'>Catagory: </label></span>
                 <select defaultValue={null} value={catagory_id} onChange={(e) => setCatagory_id(e.target.value)} >
+                        {/* <option value = ""></option> */}
                         <option value={1}>Electronics</option>
                         <option value={2}>Clothes</option>
                         <option value={3}>Books</option>

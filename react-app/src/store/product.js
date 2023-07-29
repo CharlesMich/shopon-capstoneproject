@@ -61,13 +61,12 @@ export const fetchAddProduct = (formData) => async dispatch => {
         method:'POST',
         body: formData
     })
-    console.log(formData)
-    if(response.ok){
+    // if(response.ok){
         const payload = await response.json();
+        console.log(payload)
         dispatch(add_product(payload))
-    } else {
-        console.log("There was an error making your post!")
-    }
+        return payload
+    // } 
 }
 
 const initialState = {allProducts:{}, singleProduct:{}, searchProducts:{}}
