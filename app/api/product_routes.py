@@ -106,6 +106,13 @@ def AddProduct():
     db.session.commit()
     return newProduct.to_dict()
 
-    # print(request.form)
-    # return{"message": "still working"}
+# delete product
+@product_route.route('/delete/<int:id>', methods = ["GET", "POST"])
+def deleteProduct(id):
+    print(id)
+    product = Product.query.filter(Product.id == id).first()
+    db.session.delete(product)
+    db.session.commit()
+    return {"message": "Successfully Deleted"}
+
 

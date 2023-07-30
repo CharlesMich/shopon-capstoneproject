@@ -70,21 +70,20 @@ function CreateProduct() {
         setHasSubmitted(true);
         if (Object.keys(validationErrors).length > 0) return;
 
-        setName('');
-        setProduct_longdescription('');
-        setProduct_shortdescription('');
-        setPrice('');
-        setCatagory_id('');
-        setImg1(null);
-        setImg2(null);
-        setImg3(null);
-        setImg4(null);
-        setImg5(null);
-
+        
         setImageLoading(true);
         let newProduct = await dispatch(fetchAddProduct(formData))
-        console.log(newProduct)
         if (newProduct) {
+            setName('');
+            setProduct_longdescription('');
+            setProduct_shortdescription('');
+            setPrice('');
+            setCatagory_id('');
+            setImg1(null);
+            setImg2(null);
+            setImg3(null);
+            setImg4(null);
+            setImg5(null);
             setImageLoading(false);
              history.push(`/products/productdetails/${newProduct.id}`);
                 }

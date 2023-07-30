@@ -2,6 +2,7 @@ const LOAD_PRODUCTS = "products/LOAD_PRODUCTS"
 const SINGLE_PRODUCT = "products/SINGLE_PRODUCT"
 const ADD_PRODUCT = "products/ADD_PRODUCT"
 const SEARCH_PRODUCT = "products/SEARCH_PRODUCT"
+const DELETE_PRODUCT = "products/DELETE_PRODUCT"
 
 // all products
 const load_products = payload => ({
@@ -27,6 +28,11 @@ const search_products = payload => ({
     payload
 })
 
+// delete product
+const delete_product = payload => ({
+    type: DELETE_PRODUCT,
+    payload
+})
 
 // Thunk
 // get all products
@@ -69,6 +75,16 @@ export const fetchAddProduct = (formData) => async dispatch => {
     // } 
 }
 
+// delete product
+export const fetchDeleteProduct = (productId) => async dispatch =>{
+    const response = await fetch(`/api/product/delete/${productId}`, {
+        method:"POST",
+    });
+    if(response.ok){
+        dispatch(delete_product(productId))
+    }
+}
+
 const initialState = {allProducts:{}, singleProduct:{}, searchProducts:{}}
 // const initialState = {allProducts:{}, singleProduct:{}}
 export default function productReducer(state = initialState, action){
@@ -88,7 +104,12 @@ export default function productReducer(state = initialState, action){
             return {...state, searchProducts}; 
 
         case ADD_PRODUCT:
-            return {...state, singleProduct: { ...state.singleProduct, [action.payload.id]: action.payload }}    
+            return {...state, singleProduct: { ...state.singleProduct, [action.payload.id]: action.payload }}   
+        
+        case DELETE_PRODUCT:
+            const delProduct = {...state.allProducts};
+            delete delProduct[action.payload]
+            return {...state}   
               
         default: 
             return state;
