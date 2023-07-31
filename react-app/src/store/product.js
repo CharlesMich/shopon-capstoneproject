@@ -2,6 +2,7 @@ const LOAD_PRODUCTS = "products/LOAD_PRODUCTS"
 const SINGLE_PRODUCT = "products/SINGLE_PRODUCT"
 const ADD_PRODUCT = "products/ADD_PRODUCT"
 const SEARCH_PRODUCT = "products/SEARCH_PRODUCT"
+const UPDATE_PRODUCT = "products/UPDATE_PRODUCT"
 const DELETE_PRODUCT = "products/DELETE_PRODUCT"
 
 // all products
@@ -25,6 +26,12 @@ const add_product = payload => ({
 // search products
 const search_products = payload => ({
     type: SEARCH_PRODUCT,
+    payload
+})
+
+// update product
+const update_product = payload => ({
+    type: UPDATE_PRODUCT,
     payload
 })
 
@@ -75,6 +82,19 @@ export const fetchAddProduct = (formData) => async dispatch => {
     // } 
 }
 
+// update product
+export const fetchUpdateProduct = (formData, productId) => async dispatch => {
+    console.log(formData)
+    const response = await fetch(`/api/product/update/${productId}`, {
+        method: 'POST',
+        body: formData
+    });
+    const payload = await response.json();
+    dispatch(update_product(payload))
+    console.log(payload)
+    return payload
+}
+
 // delete product
 export const fetchDeleteProduct = (productId) => async dispatch =>{
     const response = await fetch(`/api/product/delete/${productId}`, {
@@ -105,6 +125,9 @@ export default function productReducer(state = initialState, action){
 
         case ADD_PRODUCT:
             return {...state, singleProduct: { ...state.singleProduct, [action.payload.id]: action.payload }}   
+
+        case UPDATE_PRODUCT:
+            return {...state, singleProduct: { ...state.singleProduct, [action.payload.id]: action.payload }}    
         
         case DELETE_PRODUCT:
             const delProduct = {...state.allProducts};

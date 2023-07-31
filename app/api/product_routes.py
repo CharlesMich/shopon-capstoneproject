@@ -23,7 +23,6 @@ def singleProduct(id):
 def searchProduct(text):
     formatted_text = f'%{text}%'
     product = Product.query.filter(Product.name.ilike(formatted_text)).all()
-    print(product)
     return [prod.to_dict() for prod in product]
 
 # add a product
@@ -95,7 +94,7 @@ def AddProduct():
         product_longdescription = form["product_longdescription"],
         price = form["price"],
         catagory_id = form['catagory_id'],
-        img1 =  url1,
+        img1 = url1,
         img2 = url2,
         img3 = url3,
         img4 = url4,
@@ -109,10 +108,93 @@ def AddProduct():
 # delete product
 @product_route.route('/delete/<int:id>', methods = ["GET", "POST"])
 def deleteProduct(id):
-    print(id)
     product = Product.query.filter(Product.id == id).first()
     db.session.delete(product)
     db.session.commit()
     return {"message": "Successfully Deleted"}
+
+#update a product
+@product_route.route('/update/<int:id>', methods = ["GET", "POST"])
+def updateProduct(id):
+    print('id', id)
+    print('request.form', request.form)
+    product = Product.query.filter(Product.id == id).first()
+    if request.method == "POST":
+
+        form = request.form
+
+        if "img1" in request.files:
+            img1 = request.files["img1"]
+            img1.filename = get_unique_filename(img1.filename)
+            upload1 = upload_file_to_s3(img1)
+            url1 = upload1["url"]
+            update_product_img1 = url1
+            product.img1 = update_product_img1
+        else:
+            update_product_img1 = form['img1']
+            product.img1 = update_product_img1
+
+        if "img2" in request.files:
+            img2 = request.files["img2"]
+            img2.filename = get_unique_filename(img2.filename)
+            upload2 = upload_file_to_s3(img2)
+            url2 = upload2["url"]
+            update_product_img2 = url2
+            product.img2 = update_product_img2
+        else:
+            update_product_img2 = form['img2']
+            product.img2 = update_product_img2    
+
+        if "img3" in request.files:
+            img3 = request.files["img3"]
+            img3.filename = get_unique_filename(img3.filename)
+            upload3 = upload_file_to_s3(img3)
+            url3 = upload3["url"]
+            update_product_img3 = url3
+            product.img3 = update_product_img3
+        else:
+            update_product_img3 = form['img3']
+            product.img3 = update_product_img3    
+
+        if "img4" in request.files:
+            img4 = request.files["img4"]
+            img4.filename = get_unique_filename(img4.filename)
+            upload4 = upload_file_to_s3(img4)
+            url4 = upload4["url"]
+            update_product_img4 = url4
+            product.img4 = update_product_img4
+        else:
+            update_product_img4 = form['img4']
+            product.img4 = update_product_img4    
+
+        if "img5" in request.files:
+            img5 = request.files["img5"]
+            img5.filename = get_unique_filename(img5.filename)
+            upload5 = upload_file_to_s3(img5)
+            url5 = upload5["url"]
+            update_product_img5 = url5
+            product.img5 = update_product_img5
+        else:
+            update_product_img5 = form['img5']
+            product.img5 = update_product_img5                
+        
+        update_product_name = form['name']
+        product.name = update_product_name
+        update_product_shortdescription = form['product_shortdescription']
+        product.product_shortdescription = update_product_shortdescription
+        update_product_longdescription = form['product_longdescription']
+        product.product_longdescription = update_product_longdescription
+        update_product_catagoryId = form['catagory_id']
+        product.catagory_id = update_product_catagoryId
+        update_product_price = form['price']
+        product.price = update_product_price
+        
+        db.session.commit()
+        return product.to_dict()
+    return {"error": "Review Rejected"}
+
+
+
+    
 
 

@@ -396,6 +396,78 @@ def seed_products():
         img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/shoes/sketchers.png'
     )
 
+    product31 = Product(
+        name = 'Jewel1',
+        seller = 'Shopon',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 889,
+        catagory_id = 7,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel1img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel1img2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel1img3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel1img4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel1img5.jpg'
+    )
+
+    product32 = Product(
+        name = 'Jewel2',
+        seller = 'Shopon',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 489,
+        catagory_id = 7,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel2img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel2img2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel2img3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel2img4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel2img5.jpg'
+    )
+
+    product33 = Product(
+        name = 'Jewel3',
+        seller = 'Shopon',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 589,
+        catagory_id = 7,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel3img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel3img2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel3img3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel3img4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel3img5.jpg'
+    )
+
+    product34 = Product(
+        name = 'Jewel4',
+        seller = 'Shopon',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 689,
+        catagory_id = 7,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel4img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel4img2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel4img3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel4img4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel4img5.jpg'
+    )
+
+    product35 = Product(
+        name = 'Jewel5',
+        seller = 'Shopon',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 989,
+        catagory_id = 7,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel5img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel5img2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel5img3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel5img4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/jewelry/jewel5img5.jpg'
+    )
+
+
+
     db.session.add(product1)
     db.session.add(product2)
     db.session.add(product3)
@@ -426,7 +498,12 @@ def seed_products():
     db.session.add(product28)
     db.session.add(product29)
     db.session.add(product30)
-
+    db.session.add(product31)
+    db.session.add(product32)
+    db.session.add(product33)
+    db.session.add(product34)
+    db.session.add(product35)
+    
     db.session.commit()
 
 def undo_products():
