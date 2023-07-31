@@ -93,28 +93,29 @@ function CreateProduct() {
         <div className="createproduct-container">
             <div className="createproduct-subcontainer">
             <div>
-                <h2>Add a New Product</h2>
+                <h2 className="createproduct-h2">Add a New Product</h2>
             </div>
 
             <form onSubmit={onSubmit}>
-                <span><label htmlFor='name'>Name: </label></span><span className='error'> {hasSubmitted && validationErrors.name && `${validationErrors.name}`}</span>
-                <input id='name' placeholder='Name of Product' type="text" value={name}
+                <span><label htmlFor='create-product-name' className="createproduct-label">Name* </label></span><span className='error'> {hasSubmitted && validationErrors.name && `${validationErrors.name}`}</span>
+                <input id='create-product-name' placeholder='Name of Product' type="text" value={name}
                     onChange={(e) => setName(e.target.value)} />
 
-                <span><label htmlFor='product_shortdescription'>Short Decription: </label></span><span className='error'> {hasSubmitted && validationErrors.product_shortdescription && `${validationErrors.product_shortdescription}`}</span>
+                <span><label htmlFor='product_shortdescription' className="createproduct-label">Short Decription* </label></span><span className='error'> {hasSubmitted && validationErrors.product_shortdescription && `${validationErrors.product_shortdescription}`}</span>
                 <input id='product_shortdescription' placeholder='A short description of your product' type="text" value={product_shortdescription}
                     onChange={(e) => setProduct_shortdescription(e.target.value)} />
 
                 <span className="cityState">
-                    <span><label htmlFor='product_longdescription'>Long Description: </label></span><span className='error'> {hasSubmitted && validationErrors.product_longdescription && `${validationErrors.product_longdescription}`}</span>
+                    <span><label htmlFor='product_longdescription' className="createproduct-label">Long Description* </label></span><span className='error'> {hasSubmitted && validationErrors.product_longdescription && `${validationErrors.product_longdescription}`}</span>
                     <textarea id='product_longdescription' placeholder='A detailed description of your product' type="text" value={product_longdescription}
                         onChange={(e) => setProduct_longdescription(e.target.value)} />
                 </span>
                      {/* <h3>Pick a property type for your spot</h3> */}
                 {/* <p>Help people find what they are looking for.</p>      */}
-                     <span><label htmlFor='catagory_id'>Catagory: </label></span>
-                <select defaultValue={null} value={catagory_id} onChange={(e) => setCatagory_id(e.target.value)} >
+                    <div> <div><label htmlFor='catagory_id' className="createproduct-label">Catagory* </label></div>
+                <span><select className="createproduct-select" defaultValue={null} value={catagory_id} onChange={(e) => setCatagory_id(e.target.value)} >
                         {/* <option value = ""></option> */}
+                        <option value={"Choose one"}></option>
                         <option value={1}>Electronics</option>
                         <option value={2}>Clothes</option>
                         <option value={3}>Books</option>
@@ -122,36 +123,36 @@ function CreateProduct() {
                         <option value={5}>Cologne</option>
                         <option value={6}>Shoes</option>
                         <option value={7}>Other</option>
-          </select>
-                <span><label htmlFor='price'>Price: </label></span><span className='error'> {hasSubmitted && validationErrors.price && `${validationErrors.price}`}</span>
-                <input id='price' placeholder='Price per Night (USD)' type="text" value={price}
+          </select></span></div>
+                <span><label htmlFor='price' className="createproduct-label">Price* </label></span><span className='error'> {hasSubmitted && validationErrors.price && `${validationErrors.price}`}</span>
+                <input id='price' placeholder='Price (USD)' type="text" value={price}
                     onChange={(e) => setPrice(e.target.value)} />
 
-                <h3>Add photos of your products</h3>
+                <h3 className="createproduct-h3">Add photos of your products</h3>
 
-                <span><label htmlFor='img1'></label></span><span className='error'> {hasSubmitted && validationErrors.img1 && `${validationErrors.img1}`}</span>
+                <span><label htmlFor='img1' className="createproduct-label">Image 1*</label></span><span className='error'> {hasSubmitted && validationErrors.img1 && `${validationErrors.img1}`}</span>
                 <input id='img1' type="file" 
                     onChange={(e) => setImg2(e.target.files[0])} />
 
-                <span><label htmlFor='img2'></label></span><span className='error'> {hasSubmitted && validationErrors.img2 && `${validationErrors.img2}`}</span>
+                <span><label htmlFor='img2' className="createproduct-label">Image 2*</label></span><span className='error'> {hasSubmitted && validationErrors.img2 && `${validationErrors.img2}`}</span>
                 <input id='img2' type="file" 
                     onChange={(e) => setImg3(e.target.files[0])} />
 
-                <span><label htmlFor='img3'></label></span><span className='error'> {hasSubmitted && validationErrors.img3 && `${validationErrors.img3}`}</span>
+                <span><label htmlFor='img3' className="createproduct-label">Image 3*</label></span><span className='error'> {hasSubmitted && validationErrors.img3 && `${validationErrors.img3}`}</span>
                 <input id='img3' type="file" 
                     onChange={(e) => setImg4(e.target.files[0])} />
 
-                <span><label htmlFor='img4'></label></span><span className='error'> {hasSubmitted && validationErrors.img4 && `${validationErrors.img4}`}</span>
+                <span><label htmlFor='img4' className="createproduct-label">Image 4*</label></span><span className='error'> {hasSubmitted && validationErrors.img4 && `${validationErrors.img4}`}</span>
                 <input id='img4' type="file" 
                     onChange={(e) => setImg5(e.target.files[0])} />
 
-                <span><label htmlFor='img5'></label></span><span className='error'> {hasSubmitted && validationErrors.img5 && `${validationErrors.img5}`}</span>
+                <span><label htmlFor='img5' className="createproduct-label">Image 5*</label></span><span className='error'> {hasSubmitted && validationErrors.img5 && `${validationErrors.img5}`}</span>
                 <input id='img5' type="file"  accept=".jpg, .jpeg, .png, .webp" required
                     onChange={(e) => setImg1(e.target.files[0])} />
 
                 <button
                     type="submit"
-                    className="spotbutton" style={{ fontSize: "10px", padding: "10px", marginTop: "10px" }}>Create Product</button>
+                    className="createproduct-button" style={{ fontSize: "10px", padding: "10px", marginTop: "10px" }}>Create Product</button>
                      {(imageLoading)&& <p>Loading...</p>}
             </form >
             </div>
