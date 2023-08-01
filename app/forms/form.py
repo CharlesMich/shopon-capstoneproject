@@ -5,6 +5,7 @@ from wtforms.validators import DataRequired
 
 class CatagoryForm(FlaskForm):
     catagory = StringField('Catagory', validators=[DataRequired()])
+    seller = StringField('Seller', validators = [DataRequired()]) 
     img = StringField('Img', validators=[DataRequired()])
 
 class ProductForm(FlaskForm):

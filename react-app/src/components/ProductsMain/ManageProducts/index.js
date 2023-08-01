@@ -30,8 +30,9 @@ function ManageProducts(){
                         <div><img src ={ele.img1} style={{width:"50px"}}></img></div>
                         <div>{ele.name}</div>
                         <div>${Number(ele.price).toFixed(2)}</div>
-                        <div><OpenModalButton buttonText="Update" className="review-button"  modalComponent={<UpdateProductModal id={ele.id} />} /></div>
-                        <div><OpenModalButton buttonText="Delete" className="review-button"  modalComponent={<DeleteProductModal productId={ele.id} />} /></div>
+                        <Link to={`/manageproducts/updateproduct/${ele.id}`} className="manageproduct-button" id = {ele.id}>Edit</Link>
+                        {/* <div><OpenModalButton buttonText="Update" className="review-button"  modalComponent={<UpdateProductModal id={ele.id} />} /></div> */}
+                        <div><OpenModalButton buttonText="Delete" className="manageproduct-button"  modalComponent={<DeleteProductModal productId={ele.id} />} /></div>
                     </div>
                     
                     )}</div>

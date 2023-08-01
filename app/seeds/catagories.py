@@ -4,50 +4,62 @@ from sqlalchemy.sql import text
 def seed_catagories():
     catagory1 = Catagory(
         catagory='Electronics',
+        seller='Shopon',
         img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/electronics-catagories.jpeg'
     )
     catagory2 = Catagory(
         catagory='Clothes',
+          seller='Shopon',
         img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/clothes-catagory.png'
     )
     catagory3 = Catagory(
         catagory='Books',
+          seller='Shopon',
         img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/books-catagory.png'
     )
     catagory4 = Catagory(
         catagory='Sports and Fitness',
+          seller='Shopon',
         img= 'https://myaaprojects.s3.us-east-2.amazonaws.com/sports-catagory.png'
     )
     catagory5 = Catagory(
         catagory='Cologne',
+          seller='Shopon',
         img = 'https://myaaprojects.s3.us-east-2.amazonaws.com/cologne-cagatories.jpeg'
     )
     catagory6 = Catagory(
         catagory='Shoes',
+          seller='Shopon',
         img="https://myaaprojects.s3.us-east-2.amazonaws.com/shoes-catagories.jpeg"
     )
     catagory7 = Catagory(
         catagory='Jewelry',
+          seller='Shopon',
         img="https://myaaprojects.s3.us-east-2.amazonaws.com/jewellery-cat-img.jpeg"
     )
     catagory8 = Catagory(
         catagory='Toys',
+          seller='Shopon',
         img="https://myaaprojects.s3.us-east-2.amazonaws.com/toys-catagory.png"
     )
     catagory9 = Catagory(
         catagory='Beauty',
+          seller='Shopon',
         img="https://myaaprojects.s3.us-east-2.amazonaws.com/beauty-cat.png"
     )
     catagory10 = Catagory(
         catagory='Home Decor',
+          seller='Shopon',
         img="https://myaaprojects.s3.us-east-2.amazonaws.com/home-decor-cat.png"
     )
     catagory11 = Catagory(
         catagory='Music',
+          seller='Shopon',
         img="https://myaaprojects.s3.us-east-2.amazonaws.com/music-cat.png"
     )
     catagory12 = Catagory(
         catagory='Video Games',
+          seller='Shopon',
         img="https://myaaprojects.s3.us-east-2.amazonaws.com/video-games-cat.png"
     )
     

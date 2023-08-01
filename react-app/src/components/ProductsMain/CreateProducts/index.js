@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {fetchAddProduct} from '../../../store/product'
 // import { addPics } from '../../store/SpotImagesReducer';
@@ -52,6 +52,10 @@ function CreateProduct() {
         setValidationErrors(errors);
     }, [name, product_shortdescription, product_longdescription, price, catagory_id, img1, img2, img3, img4, img5])
 
+    const handleCancel =()=>{
+        history.push('./manageproducts')
+    }
+
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
@@ -87,7 +91,9 @@ function CreateProduct() {
             setImageLoading(false);
              history.push(`/products/productdetails/${newProduct.id}`);
                 }
+
     }
+    if (!sessionUser) return <Redirect to="/login" />;
 
     return (
         <div className="createproduct-container">
@@ -153,6 +159,9 @@ function CreateProduct() {
                 <button
                     type="submit"
                     className="createproduct-button" style={{ fontSize: "10px", padding: "10px", marginTop: "10px" }}>Create Product</button>
+                <button
+                    onClick={handleCancel}
+                    className="createproduct-button" style={{ fontSize: "10px", padding: "10px", marginTop: "10px", backgroundColor:"black", }}>Cancel</button>    
                      {(imageLoading)&& <p>Loading...</p>}
             </form >
             </div>

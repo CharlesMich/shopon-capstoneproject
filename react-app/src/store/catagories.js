@@ -2,13 +2,13 @@ const LOAD_CATAGORIES = "catagories/LOAD_CATAGORIES"
 const SINGLE_CATAGORY = "catagories/SINGLE_CATAGORY"
 
 
-// all products
+// all catagories
 const load_catagories = payload => ({
     type: LOAD_CATAGORIES,
     payload
 })
 
-// single product
+// single catagory
 const single_catagory = payload => ({
     type: SINGLE_CATAGORY,
     payload

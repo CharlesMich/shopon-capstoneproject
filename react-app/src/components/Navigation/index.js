@@ -58,7 +58,7 @@ function Navigation({ isLoaded }) {
 							<div><NavLink exact to="/"><img className="nav-imgClass" src="https://myaaprojects.s3.us-east-2.amazonaws.com/shopon-logo.png" alt="logo"></img></NavLink></div>
 							<div className="nav-search">
 							
-								<input className="nav-search-input" placeholder="Search for a product, Example - 'ipad' " type="text" onChange={handleSearchInput} value = {searchtext}></input>
+								<div className="nav-search-div"><input className="nav-search-input" placeholder="Search for a product, Example - 'ipad' " type="text" onChange={handleSearchInput} value = {searchtext}></input></div>
 							<button className= 'nav-search-icon' onClick={handleSearchSubmit}><i class="fa-solid fa-magnifying-glass"></i></button>
 							
 							</div>

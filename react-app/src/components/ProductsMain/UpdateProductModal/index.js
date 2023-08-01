@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { useModal } from "../../../context/Modal";
 import { fetchUpdateProduct, getAllProducts } from "../../../store/product";
 import './updateproductmodal.css'
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
-function UpdateProductModal(id) {
+function UpdateProductModal() {
     const history = useHistory();
     const dispatch = useDispatch();
-    const { closeModal } = useModal();
-    const productId = id.id
+    const { productId } = useParams()
+    console.log(productId)
+    // const { closeModal } = useModal();
+    // const productId = id.id
     const product = useSelector((state) => state.product.allProducts[productId])
     const sessionUser = useSelector(state=> state.session.user)
 
@@ -57,6 +60,10 @@ function UpdateProductModal(id) {
         setValidationErrors(errors);
     }, [name, product_shortdescription, product_longdescription, price, catagory_id, img1, img2, img3, img4, img5])
 
+    const handleCancel =(e)=> {
+        // closeModal()
+    }
+
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
@@ -91,20 +98,22 @@ function UpdateProductModal(id) {
             setImg5(null);
             setImageLoading(false);
         }
-        closeModal()
+        // closeModal()
         history.push(`/products/productdetails/${newProduct.id}`);
     }
 
+    
+    if (!sessionUser) return <Redirect to="/login" />;
     return (
-        <div className="createproduct-container">
-            <div className="createproduct-subcontainer">
+        <div className="updateproduct-container">
+            <div className="updateproduct-subcontainer">
             <div>
-                <h2>Edit Product</h2>
+                <h2 className="updateproduct-h2">Edit Product</h2>
             </div>
 
             <form onSubmit={onSubmit}>
                 <span><label htmlFor='name'>Name: </label></span><span className='error'> {hasSubmitted && validationErrors.name && `${validationErrors.name}`}</span>
-                <input id='name' placeholder='Name of Product' type="text" value={name}
+                <input id='update-product-name' placeholder='Name of Product' type="text" value={name}
                     onChange={(e) => setName(e.target.value)} />
 
                 <span><label htmlFor='product_shortdescription'>Short Decription: </label></span><span className='error'> {hasSubmitted && validationErrors.product_shortdescription && `${validationErrors.product_shortdescription}`}</span>
@@ -113,13 +122,13 @@ function UpdateProductModal(id) {
 
                 <span className="cityState">
                     <span><label htmlFor='product_longdescription'>Long Description: </label></span><span className='error'> {hasSubmitted && validationErrors.product_longdescription && `${validationErrors.product_longdescription}`}</span>
-                    <textarea id='product_longdescription' placeholder='A detailed description of your product' type="text" value={product_longdescription}
+                    <textarea id='update-product_longdescription' placeholder='A detailed description of your product' type="text" value={product_longdescription}
                         onChange={(e) => setProduct_longdescription(e.target.value)} />
                 </span>
                      {/* <h3>Pick a property type for your spot</h3> */}
                 {/* <p>Help people find what they are looking for.</p>      */}
-                     <span><label htmlFor='catagory_id'>Catagory: </label></span>
-                <select defaultValue={null} value={catagory_id} onChange={(e) => setCatagory_id(e.target.value)} >
+                     <div><div><label htmlFor='catagory_id'>Catagory: </label></div>
+                <select className="update-select" defaultValue={null} value={catagory_id} onChange={(e) => setCatagory_id(e.target.value)} >
                         {/* <option value = ""></option> */}
                         <option value={1}>Electronics</option>
                         <option value={2}>Clothes</option>
@@ -128,36 +137,39 @@ function UpdateProductModal(id) {
                         <option value={5}>Cologne</option>
                         <option value={6}>Shoes</option>
                         <option value={7}>Other</option>
-          </select>
+          </select></div>
                 <span><label htmlFor='price'>Price: </label></span><span className='error'> {hasSubmitted && validationErrors.price && `${validationErrors.price}`}</span>
-                <input id='price' placeholder='Price per Night (USD)' type="text" value={price}
+                <input id='update-price' placeholder='Price per Night (USD)' type="text" value={price}
                     onChange={(e) => setPrice(e.target.value)} />
 
                 <h3>Add photos of your products</h3>
 
-                <span><label htmlFor='img1'>{img1}</label></span><span className='error'> {hasSubmitted && validationErrors.img1 && `${validationErrors.img1}`}</span>
+                <span><label htmlFor='img1'><img src={img1} alt="" style={{width:'50px'}}></img></label></span><span className='error'> {hasSubmitted && validationErrors.img1 && `${validationErrors.img1}`}</span>
                 <input id='img1' type="file" 
+                    onChange={(e) => setImg1(e.target.files[0])} />
+
+                <span><label htmlFor='img2'><img src={img2}  alt="" style={{width:'50px'}}></img></label></span><span className='error'> {hasSubmitted && validationErrors.img2 && `${validationErrors.img2}`}</span>
+                <input id='img2' type="file" 
                     onChange={(e) => setImg2(e.target.files[0])} />
 
-                <span><label htmlFor='img2'></label></span><span className='error'> {hasSubmitted && validationErrors.img2 && `${validationErrors.img2}`}</span>
-                <input id='img2' type="file" 
+                <span><label htmlFor='img3'><img src={img3}  alt="" style={{width:'50px'}}></img></label></span><span className='error'> {hasSubmitted && validationErrors.img3 && `${validationErrors.img3}`}</span>
+                <input id='img3' type="file" 
                     onChange={(e) => setImg3(e.target.files[0])} />
 
-                <span><label htmlFor='img3'></label></span><span className='error'> {hasSubmitted && validationErrors.img3 && `${validationErrors.img3}`}</span>
-                <input id='img3' type="file" 
+                <span><label htmlFor='img4'><img src={img4} alt="" style={{width:'50px'}}></img></label></span><span className='error'> {hasSubmitted && validationErrors.img4 && `${validationErrors.img4}`}</span>
+                <input id='img4' type="file" 
                     onChange={(e) => setImg4(e.target.files[0])} />
 
-                <span><label htmlFor='img4'></label></span><span className='error'> {hasSubmitted && validationErrors.img4 && `${validationErrors.img4}`}</span>
-                <input id='img4' type="file" 
-                    onChange={(e) => setImg5(e.target.files[0])} />
-
-                <span><label htmlFor='img5'></label></span><span className='error'> {hasSubmitted && validationErrors.img5 && `${validationErrors.img5}`}</span>
+                <span><label htmlFor='img5'><img src={img5} alt="" style={{width:'50px'}}></img></label></span><span className='error'> {hasSubmitted && validationErrors.img5 && `${validationErrors.img5}`}</span>
                 <input id='img5' type="file"  accept=".jpg, .jpeg, .png, .webp" 
                     onChange={(e) => setImg5(e.target.files[0])} />
 
                 <button
                     type="submit"
-                    className="spotbutton" style={{ fontSize: "10px", padding: "10px", marginTop: "10px" }}>Update Product</button>
+                    className="updateproduct-button" style={{ fontSize: "10px", padding: "10px", marginTop: "10px", backgroundColor:"rgb(247 126 40)" }}>Update Product</button>
+                <button
+                   type="submit" onclick={handleCancel}
+                    className="updateproduct-button" style={{ fontSize: "10px", padding: "10px", marginTop: "10px", color:"white", backgroundColor:"black" }}>Cancel</button>    
                      {(imageLoading)&& <p>Loading...</p>}
             </form >
             </div>

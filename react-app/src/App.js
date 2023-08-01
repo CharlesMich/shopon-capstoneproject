@@ -18,6 +18,8 @@ import SearchByProduct from "./components/SearchByProduct";
 import ManageProducts from "./components/ProductsMain/ManageProducts";
 import CreateProduct from "./components/ProductsMain/CreateProducts";
 import Footer from "./components/footer";
+import UpdateProductModal from "./components/ProductsMain/UpdateProductModal";
+import ManageCatagory from "./components/CatagoriesMain/ManageCatagories";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +39,8 @@ function App() {
           <Route path="/cart"><Cart/></Route>
           <Route path="/reviews"><AllReviews/></Route>
           <Route path ="/manageproducts/createproduct"><CreateProduct/></Route>
+          <Route path ="/managecatagories"><ManageCatagory/></Route>
+          <Route path="/manageproducts/updateproduct/:productId"><UpdateProductModal/></Route>
           <Route path ="/products/top-rated-products"><TopRatedProducts/></Route>
           <Route path="/products/new-arrivals"><NewArrivals/></Route>
           <Route path = "/order/:orderId"><Order/></Route>

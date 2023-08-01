@@ -45,17 +45,18 @@ function ProfileButton({ user }) {
     <>
       <button  className ="profile-button" onClick={openMenu}>
        
-        <i className="fas fa-user-circle" />
+        <i className="fas fa-user-circle fa-2x" />
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
             <li className="profile-button-li">{user.username}</li>
             <li className="profile-button-li">{user.email}</li>
-            <li className="profile-button-li"><Link to="/reviews" style={{textDecoration:'none', color:"black"}} onClick={closeMenu}>Manage Reviews</Link></li>
-            <li className="profile-button-li"><Link to="/manageproducts" style={{textDecoration:'none', color:"black"}} onClick={closeMenu}>Manage Products</Link></li>
-            <li className="profile-button-li">
-              <button  onClick={handleLogout}>Log Out</button>
+            <li className="profile-button-li"><Link to="/reviews" style={{textDecoration:'none', color:"black"}} onClick={closeMenu}>Reviews</Link></li>
+            <li className="profile-button-li"><Link to="/manageproducts" style={{textDecoration:'none', color:"black"}} onClick={closeMenu}>Products</Link></li>
+            <li className="profile-button-li"><Link to="/managecatagories" style={{textDecoration:'none', color:"black"}} onClick={closeMenu}>Catagories</Link></li>
+            <li className="profile-button-li">Orders</li>
+            <li className="profile-button-li"><button className="profile-logout-button" onClick={handleLogout}>Log Out</button>
             </li>
           </>
         ) : (
