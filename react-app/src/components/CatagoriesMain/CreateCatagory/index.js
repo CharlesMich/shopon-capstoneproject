@@ -24,7 +24,7 @@ function CreateCatagory() {
         const errors = {};
         if (catagory.length === 0) errors.name = 'Catagory is required';
         if (catagory.length > 100) errors.name = 'Catagory must be 100 characters or less';
-        if (!img) errors.img1 = 'Image is required';
+        if (!img) errors.img = 'Image is required';
         setValidationErrors(errors);
     }, [catagory, img])
 

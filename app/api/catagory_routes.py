@@ -49,7 +49,7 @@ def AddCatagory():
     db.session.commit()
     return newCatagory.to_dict()
 
-# delete product
+# delete catagory
 @catagory_route.route('/delete/<int:id>', methods = ["GET", "POST"])
 def deleteCatagory(id):
     catagory = Catagory.query.filter(Catagory.id == id).first()
@@ -57,19 +57,21 @@ def deleteCatagory(id):
     db.session.commit()
     return {"message": "Successfully Deleted"}
 
-#update a product
+#update a catagory
 @catagory_route.route('/update/<int:id>', methods = ["GET", "POST"])
-def updateProduct(id):
+def updateCatagory(id):
     catagory = Catagory.query.filter(Catagory.id == id).first()
     if request.method == "POST":
         form = request.form
+        print(form)
+        print(request.files)
         if "img" in request.files:
             img = request.files["img"]
             img.filename = get_unique_filename(img.filename)
             upload = upload_file_to_s3(img)
             url = upload["url"]
-            update_product_img = url
-            catagory.img1 = update_product_img
+            update_catagory_img = url
+            catagory.img = update_catagory_img
         else:
             update_catagory_img = form['img']
             catagory.img = update_catagory_img

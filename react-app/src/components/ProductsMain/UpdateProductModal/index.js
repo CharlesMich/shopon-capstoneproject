@@ -11,8 +11,7 @@ function UpdateProductModal() {
     const dispatch = useDispatch();
     const { productId } = useParams()
     console.log(productId)
-    // const { closeModal } = useModal();
-    // const productId = id.id
+    
     const product = useSelector((state) => state.product.allProducts[productId])
     const sessionUser = useSelector(state=> state.session.user)
 

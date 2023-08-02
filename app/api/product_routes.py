@@ -116,13 +116,9 @@ def deleteProduct(id):
 #update a product
 @product_route.route('/update/<int:id>', methods = ["GET", "POST"])
 def updateProduct(id):
-    print('id', id)
-    print('request.form', request.form)
     product = Product.query.filter(Product.id == id).first()
     if request.method == "POST":
-
         form = request.form
-
         if "img1" in request.files:
             img1 = request.files["img1"]
             img1.filename = get_unique_filename(img1.filename)

@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom'
 import '../../ProductsMain/ManageProducts'
 import { useEffect } from 'react'
 import OpenModalButton from '../../OpenModalButton';
-// import DeleteProductModal from '../DeleteProductModal';
-// import UpdateProductModal from '../UpdateProductModal';
+import DeleteCatagoryModal from '../DeleteCatagoryModal';
 import { getAllCatagories } from '../../../store/catagories';
+// import '../../ProductsMain/DeleteProductModal/deleteproductmodal.css'
 
 function ManageCatagory(){
     const dispatch = useDispatch()
@@ -29,9 +29,9 @@ function ManageCatagory(){
                         <div><img src ={ele.img} style={{width:"50px"}}></img></div>
                         <div>{ele.catagory}</div>
                         {/* <div>${Number(ele.price).toFixed(2)}</div> */}
-                        <Link to={`/manageproducts/updateproduct/${ele.id}`} className="manageproduct-button" catagoryId = {ele.id}>Edit</Link>
-                        {/* <div><OpenModalButton buttonText="Update" className="review-button"  modalComponent={<UpdateProductModal id={ele.id} />} /></div>
-                        <div><OpenModalButton buttonText="Delete" className="manageproduct-button"  modalComponent={<DeleteProductModal productId={ele.id} />} /></div> */}
+                        <Link to={`/managecatagories/updatecatagory/${ele.id}`} className="manageproduct-button" catagoryId = {ele.id}>Edit</Link>
+                         {/* <div><OpenModalButton buttonText="Update" className="review-button"  modalComponent={<UpdateProductModal id={ele.id} />} /></div> */}
+                        <div><OpenModalButton buttonText="Delete" className="manageproduct-button"  modalComponent={<DeleteCatagoryModal catagoryId={ele.id} />} /></div>
                     </div>
                     
                     )}</div>

@@ -65,9 +65,9 @@ export const fetchAddCatagory=(formData) => async dispatch => {
     return payload
 }
 
-// update catagories
-export const fetchUpdateCatagories = (formData, catagoryId) => async dispatch => {
-    const response = await fetch(`/api/cagagories/update/${catagoryId}`, {
+// update catagory
+export const fetchUpdateCatagory = (formData, catagoryId) => async dispatch => {
+    const response = await fetch(`/api/catagory/update/${catagoryId}`, {
         method: "POST",
         body: formData
     })
@@ -78,7 +78,7 @@ export const fetchUpdateCatagories = (formData, catagoryId) => async dispatch =>
 
 // delete catagories
 export const fetchDeleteCatagory = (catagoryId) => async dispatch => {
-    const response = await fetch(`/api/catagories/delete/${catagoryId}`, {
+    const response = await fetch(`/api/catagory/delete/${catagoryId}`, {
         method: "POST",
     })
     if(response.ok){
