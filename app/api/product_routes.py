@@ -191,7 +191,7 @@ def updateProduct(id):
         
         db.session.commit()
         return product.to_dict()
-    return {"error": "Review Rejected"}
+    return {"error": "Product Rejected"}
 
 
 

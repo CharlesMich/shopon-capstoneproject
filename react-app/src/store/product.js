@@ -76,7 +76,6 @@ export const fetchAddProduct = (formData) => async dispatch => {
     })
     // if(response.ok){
         const payload = await response.json();
-        console.log(payload)
         dispatch(add_product(payload))
         return payload
     // } 
@@ -91,7 +90,6 @@ export const fetchUpdateProduct = (formData, productId) => async dispatch => {
     });
     const payload = await response.json();
     dispatch(update_product(payload))
-    console.log(payload)
     return payload
 }
 

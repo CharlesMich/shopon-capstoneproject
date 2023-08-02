@@ -598,8 +598,79 @@ def seed_products():
         img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/beauty/beauty5img2.jpg',
         img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/beauty/beauty5img3.jpg",
         img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/beauty/beauty5img4.jpg',
-        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/beauty/beauty5img5.jpg'
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/beauty/beauty5img1.jpg'
     )
+
+    product46 = Product(
+        name = 'Video Games 1',
+        seller = 'Shopon',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 98,
+        catagory_id = 10,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video1img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video1img2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video1img3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video1img4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video1img5.jpg'
+    )
+
+    product47 = Product(
+        name = 'Video Games 2',
+        seller = 'Shopon',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 98,
+        catagory_id = 10,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video2img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video2img2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video2img3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video2img4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video2img5.jpg'
+    )
+
+    product48 = Product(
+        name = 'Video Games 3',
+        seller = 'Shopon',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 98,
+        catagory_id = 10,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video3img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video3img2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video3img3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video3img4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video3img5.jpg'
+    )
+
+    product49 = Product(
+        name = 'Video Games 4',
+        seller = 'Shopon',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 98,
+        catagory_id = 10,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video4img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video4img2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video4img3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video4img4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video4img5.jpg'
+    )
+
+    product50 = Product(
+        name = 'Video Games 5',
+        seller = 'Shopon',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 98,
+        catagory_id = 10,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video5img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video5img2.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video5img3.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video5img4.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/videogames/video5img5.jpg'
+    )
+
 
     db.session.add(product1)
     db.session.add(product2)
@@ -646,6 +717,11 @@ def seed_products():
     db.session.add(product43)
     db.session.add(product44)
     db.session.add(product45)
+    db.session.add(product46)
+    db.session.add(product47)
+    db.session.add(product48)
+    db.session.add(product49)
+    db.session.add(product50)
     
     db.session.commit()
 
