@@ -7,6 +7,7 @@ import OpenModalButton from '../../OpenModalButton';
 import DeleteCatagoryModal from '../DeleteCatagoryModal';
 import { getAllCatagories } from '../../../store/catagories';
 // import '../../ProductsMain/DeleteProductModal/deleteproductmodal.css'
+import "./managecatagories.css"
 
 function ManageCatagory(){
     const dispatch = useDispatch()
@@ -29,9 +30,11 @@ function ManageCatagory(){
                         <div><img src ={ele.img} style={{width:"50px"}}></img></div>
                         <div>{ele.catagory}</div>
                         {/* <div>${Number(ele.price).toFixed(2)}</div> */}
+                        <div className="manage-catagories-update-delete">
                         <Link to={`/managecatagories/updatecatagory/${ele.id}`} className="manageproduct-button" catagoryId = {ele.id}>Edit</Link>
                          {/* <div><OpenModalButton buttonText="Update" className="review-button"  modalComponent={<UpdateProductModal id={ele.id} />} /></div> */}
                         <div><OpenModalButton buttonText="Delete" className="manageproduct-button"  modalComponent={<DeleteCatagoryModal catagoryId={ele.id} />} /></div>
+                        </div>
                     </div>
                     
                     )}</div>

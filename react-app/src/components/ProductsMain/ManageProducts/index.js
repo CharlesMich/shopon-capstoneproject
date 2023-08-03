@@ -28,11 +28,15 @@ function ManageProducts(){
                     <div>{myProducts.map((ele)=>
                     <div className="manageproduct-each-product">
                         <div><img src ={ele.img1} style={{width:"50px"}}></img></div>
-                        <div>{ele.name}</div>
-                        <div>${Number(ele.price).toFixed(2)}</div>
+                        <div className="manage-products-name-price">
+                        <p>{ele.name}</p>
+                        <p>${Number(ele.price).toFixed(2)}</p>
+                        </div>
+                        <div className="manage-catagories-update-delete">
                         <Link to={`/manageproducts/updateproduct/${ele.id}`} className="manageproduct-button" id = {ele.id}>Edit</Link>
                         {/* <div><OpenModalButton buttonText="Update" className="review-button"  modalComponent={<UpdateProductModal id={ele.id} />} /></div> */}
                         <div><OpenModalButton buttonText="Delete" className="manageproduct-button"  modalComponent={<DeleteProductModal productId={ele.id} />} /></div>
+                        </div>
                     </div>
                     
                     )}</div>

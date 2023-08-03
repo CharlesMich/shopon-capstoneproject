@@ -134,7 +134,7 @@ def seed_products():
     )
     product11 = Product(
         name = 'The Exchange',
-        seller = 'Shopon',
+        seller = 'Demo',
         product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
         product_longdescription = 'All the essentials to help you monitor your fitness, keep connected, track your health, and stay safe. Now up to 20 percent faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. EASILY CUSTOMIZABLE — Available in a range of sizes and colors, with dozens of bands to choose from and watch faces with complications tailored to whatever you’re into.',
         price = 49,
@@ -147,7 +147,7 @@ def seed_products():
     )
     product12 = Product(
         name = 'Hunger Games MockingJay',
-        seller = 'Shopon',
+        seller = 'Demo',
         product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
         product_longdescription = 'All the essentials to help you monitor your fitness, keep connected, track your health, and stay safe. Now up to 20 percent faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. EASILY CUSTOMIZABLE — Available in a range of sizes and colors, with dozens of bands to choose from and watch faces with complications tailored to whatever you’re into.',
         price = 39,
@@ -160,7 +160,7 @@ def seed_products():
     )
     product13 = Product(
         name = 'Steve Jobs Autobiography',
-        seller = 'Shopon',
+        seller = 'Demo',
         product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
         product_longdescription = 'All the essentials to help you monitor your fitness, keep connected, track your health, and stay safe. Now up to 20 percent faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. EASILY CUSTOMIZABLE — Available in a range of sizes and colors, with dozens of bands to choose from and watch faces with complications tailored to whatever you’re into.',
         price = 29,
@@ -173,7 +173,7 @@ def seed_products():
     )
     product14 = Product(
         name = 'Stephen Hawkings Autobiography',
-        seller = 'Shopon',
+        seller = 'Demo',
         product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
         product_longdescription = 'All the essentials to help you monitor your fitness, keep connected, track your health, and stay safe. Now up to 20 percent faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. EASILY CUSTOMIZABLE — Available in a range of sizes and colors, with dozens of bands to choose from and watch faces with complications tailored to whatever you’re into.',
         price = 24,
@@ -186,7 +186,7 @@ def seed_products():
     )
     product15 = Product(
         name = 'Javascript A complete Guide',
-        seller = 'Shopon',
+        seller = 'Demo',
         product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
         product_longdescription = 'All the essentials to help you monitor your fitness, keep connected, track your health, and stay safe. Now up to 20 percent faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. EASILY CUSTOMIZABLE — Available in a range of sizes and colors, with dozens of bands to choose from and watch faces with complications tailored to whatever you’re into.',
         price = 19,
@@ -199,7 +199,7 @@ def seed_products():
     )
     product16 = Product(
         name = 'Basketball',
-        seller = 'Shopon',
+        seller = 'Demo',
         product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
         product_longdescription = 'All the essentials to help you monitor your fitness, keep connected, track your health, and stay safe. Now up to 20 percent faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. EASILY CUSTOMIZABLE — Available in a range of sizes and colors, with dozens of bands to choose from and watch faces with complications tailored to whatever you’re into.',
         price = 19,
@@ -212,7 +212,7 @@ def seed_products():
     )
     product17 = Product(
         name = 'Baseball',
-        seller = 'Shopon',
+        seller = 'Demo',
         product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
         product_longdescription = 'All the essentials to help you monitor your fitness, keep connected, track your health, and stay safe. Now up to 20 percent faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. EASILY CUSTOMIZABLE — Available in a range of sizes and colors, with dozens of bands to choose from and watch faces with complications tailored to whatever you’re into.',
         price = 19,
@@ -225,7 +225,7 @@ def seed_products():
     )
     product18 = Product(
         name = 'Bike',
-        seller = 'Shopon',
+        seller = 'Demo',
         product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
         product_longdescription = 'All the essentials to help you monitor your fitness, keep connected, track your health, and stay safe. Now up to 20 percent faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. EASILY CUSTOMIZABLE — Available in a range of sizes and colors, with dozens of bands to choose from and watch faces with complications tailored to whatever you’re into.',
         price = 199,
@@ -238,7 +238,7 @@ def seed_products():
     )
     product19 = Product(
         name = 'Soccor',
-        seller = 'Shopon',
+        seller = 'Demo',
         product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
         product_longdescription = 'All the essentials to help you monitor your fitness, keep connected, track your health, and stay safe. Now up to 20 percent faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. EASILY CUSTOMIZABLE — Available in a range of sizes and colors, with dozens of bands to choose from and watch faces with complications tailored to whatever you’re into.',
         price = 29,
@@ -251,7 +251,7 @@ def seed_products():
     )
     product20 = Product(
         name = 'Treadmill',
-        seller = 'Shopon',
+        seller = 'Demo',
         product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
         product_longdescription = 'All the essentials to help you monitor your fitness, keep connected, track your health, and stay safe. Now up to 20 percent faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. EASILY CUSTOMIZABLE — Available in a range of sizes and colors, with dozens of bands to choose from and watch faces with complications tailored to whatever you’re into.',
         price = 449,
@@ -264,7 +264,7 @@ def seed_products():
     )
     product21 = Product(
         name = 'ARMAF club de nuit',
-        seller = 'Shopon',
+        seller = 'Marnie',
         product_shortdescription = 'intense Man EDT Men New in Box, Black , 3.6 Fl Oz',
         product_longdescription = 'Club de Nuit Intense Man by Armaf is a Woody Spicy fragrance for men. Club de Nuit Intense Man was launched in 2015.The initial smell was terrible, BUT after a couple of min it smelled very good on my skin. For the price this cologne is great. It is a Eau de toilette and not a parfum so it won’t last long. This is perfect for going to the gym. Skin types for matter a ton, I myself am middle eastern and this brand being middle eastern certainly helps who they tested it on for the best scent.',
         price = 99,
@@ -278,7 +278,7 @@ def seed_products():
     )
     product22 = Product(
         name = 'CR7 Play It Cool',
-        seller = 'Shopon',
+        seller = 'Marnie',
         product_shortdescription = 'CR7 Play It Cool Cristiano Ronaldo - Eau De Toilette Cologne Scent for Men - With Mandarin, Bergamot, Lavender, and Musk - From Cristiano Ronaldos Original Mens Fragrance Collection - 3.4 oz',
         product_longdescription = 'A CLASSIC, COOL BLEND. A refreshing, vibrant scent for the effortlessly self-confident and energetic man. Experience Play It Cool, and everyday Eau De Toilette cologne from Cristiano Ronaldos legendary collection of curated fragrances. INTENSE FRAGRANCE UNLEASHED. CR7 Play It Cool arrives with vibrant top notes of Mandarin, Bergamot, and Pear, with fresh middle notes of Lavender, Cardamom and Marine Accord, drying to a seductive base of Amberwood, Tonka, and Musk.',
         price = 89,
@@ -291,7 +291,7 @@ def seed_products():
     )
     product23 = Product(
         name = 'Savage for Men',
-        seller = 'Shopon',
+        seller = 'Marnie',
         product_shortdescription = '3.4 Oz Mens Eau De Toilette Spray Refreshing & Warm Masculine Scent for Daily Use Mens Casual Cologne Includes NovoGlow Carrying Pouch Smell Fresh All Day A Gift for Any Occasion',
         product_longdescription = 'A CLASSIC, COOL BLEND. A refreshing, vibrant scent for the effortlessly self-confident and energetic man. Experience Play It Cool, and everyday Eau De Toilette cologne from Cristiano Ronaldos legendary collection of curated fragrances. INTENSE FRAGRANCE UNLEASHED. CR7 Play It Cool arrives with vibrant top notes of Mandarin, Bergamot, and Pear, with fresh middle notes of Lavender, Cardamom and Marine Accord, drying to a seductive base of Amberwood, Tonka, and Musk.',
         price = 79,
@@ -304,7 +304,7 @@ def seed_products():
     )
     product24 = Product(
         name = 'Rue 21 CJ Black Men',
-        seller = 'Shopon',
+        seller = 'Marnie',
         product_shortdescription = 'Clean and Classic Cologne: The perfect head-turning accessory for any time or occasion',
         product_longdescription = 'A CLASSIC, COOL BLEND. A refreshing, vibrant scent for the effortlessly self-confident and energetic man. Experience Play It Cool, and everyday Eau De Toilette cologne from Cristiano Ronaldos legendary collection of curated fragrances. INTENSE FRAGRANCE UNLEASHED. CR7 Play It Cool arrives with vibrant top notes of Mandarin, Bergamot, and Pear, with fresh middle notes of Lavender, Cardamom and Marine Accord, drying to a seductive base of Amberwood, Tonka, and Musk.',
         price = 69,
@@ -317,7 +317,7 @@ def seed_products():
     )
     product25 = Product(
         name = 'Kenneth Cole',
-        seller = 'Shopon',
+        seller = 'Marnie',
         product_shortdescription = 'Smart Watch w/Starlight Aluminum Case & Starlight Sport Band - M/L. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant',
         product_longdescription = 'A CLASSIC, COOL BLEND. A refreshing, vibrant scent for the effortlessly self-confident and energetic man. Experience Play It Cool, and everyday Eau De Toilette cologne from Cristiano Ronaldos legendary collection of curated fragrances. INTENSE FRAGRANCE UNLEASHED. CR7 Play It Cool arrives with vibrant top notes of Mandarin, Bergamot, and Pear, with fresh middle notes of Lavender, Cardamom and Marine Accord, drying to a seductive base of Amberwood, Tonka, and Musk.',
         price = 59,
@@ -330,7 +330,7 @@ def seed_products():
     )
     product26 = Product(
         name = 'Kezhiho Steel',
-        seller = 'Shopon',
+        seller = 'Marnie',
         product_shortdescription = 'Toe Shoes for Women Air Cushion Lightweight Work Shoes Comfortable Breathable Puncture Proof Slip Resistant Sneakers',
         product_longdescription = 'Lightweight Skin-friendly Mesh Imported Air Cushion sole Air cushion The specially made heel can reduce vibration, flexible rebound, and provide maximum comfort for walking and standing. Anti-smash The sturdy European standard steel toe protects your toes against any impact. Puncture-proof The lightweight and tough Kevlar midsole protects the sole of the foot from puncture injuries from sharp objects. Non-slif Abrasion-resistant slip-resistant tread sole provides firm foot grip, giving you the traction you need to stay safe.',
         price = 59,
@@ -343,7 +343,7 @@ def seed_products():
     )
     product27 = Product(
         name = 'MLAGJSS',
-        seller = 'Shopon',
+        seller = 'Marnie',
         product_shortdescription = 'Running Shoes Women Sneakers Tennis Workout Walking Gym',
         product_longdescription = 'Lightweight Skin-friendly Mesh Imported Air Cushion sole Air cushion The specially made heel can reduce vibration, flexible rebound, and provide maximum comfort for walking and standing. Anti-smash The sturdy European standard steel toe protects your toes against any impact. Puncture-proof The lightweight and tough Kevlar midsole protects the sole of the foot from puncture injuries from sharp objects. Non-slif Abrasion-resistant slip-resistant tread sole provides firm foot grip, giving you the traction you need to stay safe.',
         price = 49,
@@ -356,7 +356,7 @@ def seed_products():
     )
     product28 = Product(
         name = 'PUMA',
-        seller = 'Shopon',
+        seller = 'Marnie',
         product_shortdescription = 'Womens Carina Sneaker New tooling with an elevated platform sole.',
         product_longdescription = 'Lightweight Skin-friendly Mesh Imported Air Cushion sole Air cushion The specially made heel can reduce vibration, flexible rebound, and provide maximum comfort for walking and standing. Anti-smash The sturdy European standard steel toe protects your toes against any impact. Puncture-proof The lightweight and tough Kevlar midsole protects the sole of the foot from puncture injuries from sharp objects. Non-slif Abrasion-resistant slip-resistant tread sole provides firm foot grip, giving you the traction you need to stay safe.',
         price = 69,
@@ -370,7 +370,7 @@ def seed_products():
 
     product29 = Product(
             name = 'Saucony',
-            seller = 'Shopon',
+            seller = 'Marnie',
             product_shortdescription = 'Saucony Mens Ride 15 Running Shoe. Lighter, Softer and Faster: A new softer PWRRUN formula means a thicker stack of cushioning with less weight, for your springiest run yet.',
             product_longdescription = 'Lightweight Skin-friendly Mesh Imported Air Cushion sole Air cushion The specially made heel can reduce vibration, flexible rebound, and provide maximum comfort for walking and standing. Anti-smash The sturdy European standard steel toe protects your toes against any impact. Puncture-proof The lightweight and tough Kevlar midsole protects the sole of the foot from puncture injuries from sharp objects. Non-slif Abrasion-resistant slip-resistant tread sole provides firm foot grip, giving you the traction you need to stay safe.',
             price = 99,
@@ -384,7 +384,7 @@ def seed_products():
 
     product30 = Product(
         name = 'Sketchers',
-        seller = 'Shopon',
+        seller = 'Marnie',
         product_shortdescription = 'Skechers Mens Afterburn Memory-Foam Lace-up Sneaker',
         product_longdescription = 'Lightweight Skin-friendly Mesh Imported Air Cushion sole Air cushion The specially made heel can reduce vibration, flexible rebound, and provide maximum comfort for walking and standing. Anti-smash The sturdy European standard steel toe protects your toes against any impact. Puncture-proof The lightweight and tough Kevlar midsole protects the sole of the foot from puncture injuries from sharp objects. Non-slif Abrasion-resistant slip-resistant tread sole provides firm foot grip, giving you the traction you need to stay safe.',
         price = 89,
@@ -398,7 +398,7 @@ def seed_products():
 
     product31 = Product(
         name = 'Jewel1',
-        seller = 'Shopon',
+        seller = 'Bobbie',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 889,
@@ -412,7 +412,7 @@ def seed_products():
 
     product32 = Product(
         name = 'Jewel2',
-        seller = 'Shopon',
+        seller = 'Bobbie',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 489,
@@ -426,7 +426,7 @@ def seed_products():
 
     product33 = Product(
         name = 'Jewel3',
-        seller = 'Shopon',
+        seller = 'Bobbie',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 589,
@@ -440,7 +440,7 @@ def seed_products():
 
     product34 = Product(
         name = 'Jewel4',
-        seller = 'Shopon',
+        seller = 'Bobbie',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 689,
@@ -454,7 +454,7 @@ def seed_products():
 
     product35 = Product(
         name = 'Jewel5',
-        seller = 'Shopon',
+        seller = 'Bobbie',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 989,
@@ -468,7 +468,7 @@ def seed_products():
 
     product36 = Product(
         name = 'Lucky Doug',
-        seller = 'Shopon',
+        seller = 'Bobbie',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 79,
@@ -482,7 +482,7 @@ def seed_products():
 
     product37 = Product(
         name = 'Lego Mario',
-        seller = 'Shopon',
+        seller = 'Bobbie',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 39,
@@ -496,7 +496,7 @@ def seed_products():
 
     product38 = Product(
         name = 'Lego Starwars',
-        seller = 'Shopon',
+        seller = 'Bobbie',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 59,
@@ -510,7 +510,7 @@ def seed_products():
 
     product39 = Product(
         name = 'Toy 4',
-        seller = 'Shopon',
+        seller = 'Bobbie',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 49,
@@ -524,7 +524,7 @@ def seed_products():
 
     product40 = Product(
         name = 'Toy 5',
-        seller = 'Shopon',
+        seller = 'Bobbie',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 98,
@@ -537,7 +537,7 @@ def seed_products():
     )
     product41 = Product(
         name = 'Beauty 1',
-        seller = 'Shopon',
+        seller = 'Fakeuser1',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 98,
@@ -550,7 +550,7 @@ def seed_products():
     )
     product42 = Product(
         name = 'Beauty 2',
-        seller = 'Shopon',
+        seller = 'Fakeuser1',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 98,
@@ -563,7 +563,7 @@ def seed_products():
     )
     product43 = Product(
         name = 'Beauty 3',
-        seller = 'Shopon',
+        seller = 'Fakeuser1',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 98,
@@ -576,7 +576,7 @@ def seed_products():
     )
     product44 = Product(
         name = 'Beauty 4',
-        seller = 'Shopon',
+        seller = 'Fakeuser1',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 98,
@@ -589,7 +589,7 @@ def seed_products():
     )
     product45 = Product(
         name = 'Beauty 5',
-        seller = 'Shopon',
+        seller = 'Fakeuser1',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 98,
@@ -603,7 +603,7 @@ def seed_products():
 
     product46 = Product(
         name = 'Video Games 1',
-        seller = 'Shopon',
+        seller = 'Fakeuser1',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 98,
@@ -617,7 +617,7 @@ def seed_products():
 
     product47 = Product(
         name = 'Video Games 2',
-        seller = 'Shopon',
+        seller = 'Fakeuser1',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 98,
@@ -631,7 +631,7 @@ def seed_products():
 
     product48 = Product(
         name = 'Video Games 3',
-        seller = 'Shopon',
+        seller = 'Fakeuser1',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 98,
@@ -645,7 +645,7 @@ def seed_products():
 
     product49 = Product(
         name = 'Video Games 4',
-        seller = 'Shopon',
+        seller = 'Fakeuser1',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 98,
@@ -659,7 +659,7 @@ def seed_products():
 
     product50 = Product(
         name = 'Video Games 5',
-        seller = 'Shopon',
+        seller = 'Fakeuser1',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 98,
@@ -672,7 +672,7 @@ def seed_products():
     )
     product51 = Product(
         name = 'Home Decor 1',
-        seller = 'Shopon',
+        seller = 'Fakeuser2',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 249,
@@ -685,7 +685,7 @@ def seed_products():
     )
     product52 = Product(
         name = 'Home Decor 2',
-        seller = 'Shopon',
+        seller = 'Fakeuser2',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 179,
@@ -698,7 +698,7 @@ def seed_products():
     )
     product53 = Product(
         name = 'Home Decor 3',
-        seller = 'Shopon',
+        seller = 'Fakeuser2',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 99,
@@ -711,7 +711,7 @@ def seed_products():
     )
     product54 = Product(
         name = 'Home Decor 4',
-        seller = 'Shopon',
+        seller = 'Fakeuser2',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 129,
@@ -724,7 +724,7 @@ def seed_products():
     )
     product55 = Product(
         name = 'Home Decor 5',
-        seller = 'Shopon',
+        seller = 'Fakeuser2',
         product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
         product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
         price = 329,
@@ -734,6 +734,71 @@ def seed_products():
         img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/decor/decor5img3.jpg",
         img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/decor/decor5img4.jpg',
         img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/decor/decor5img5.jpg'
+    )
+    product56 = Product(
+        name = 'movie 1',
+        seller = 'Fakeuser2',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 19,
+        catagory_id = 12,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/movie1img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie1img1.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/movie1img1.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie1img1.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie1img1.jpg'
+    )
+    product57 = Product(
+        name = 'movie 2',
+        seller = 'Fakeuser2',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 29,
+        catagory_id = 12,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/movie2img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie2img1.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/movie2img1.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie2img1.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie2img1.jpg'
+    )
+    product58 = Product(
+        name = 'movie 3',
+        seller = 'Fakeuser2',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 49,
+        catagory_id = 12,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/movie3img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie3img1.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/movie3img1.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie3img1.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie3img1.jpg'
+    )
+    product59 = Product(
+        name = 'movie 4',
+        seller = 'Fakeuser2',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 69,
+        catagory_id = 12,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/movie4img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie4img1.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/movie4img1.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie4img1.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie4img1.jpg'
+    )
+    product60 = Product(
+        name = 'movie 5',
+        seller = 'Fakeuser2',
+        product_shortdescription = 'UNZAI Beauty Fish Tail Necklace，Jewelry Necklaces for Women Necklace Mothers Day Birthday Gifts for Women Wife Mom',
+        product_longdescription = 'High Quality Material: Dainty 14K gold plated chain necklace with shiny pearls, tarnish resistant, no stimulation to the skin, not allergies, lead-free, nickel free and cadmium free. 14K gold plated, no fading, maintaining a long-lasting luster. The safe product gives you a better wearing experience. Perfect Gift: These pearl necklace make perfect gifts, are prefect for women or teens and are delivered in our signature giftable packaging. An Ideal gift for Christmas, Valentine’s Day, Mother’s Day, prom, holidays, birthdays, or a wedding celebration. Even better when purchased for yourself, you deserve it.',
+        price = 59,
+        catagory_id = 12,
+        img1 ='https://myaaprojects.s3.us-east-2.amazonaws.com/movie5img1.jpg',
+        img2 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie5img1.jpg',
+        img3 = "https://myaaprojects.s3.us-east-2.amazonaws.com/movie5img1.jpg",
+        img4 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie5img1.jpg',
+        img5 = 'https://myaaprojects.s3.us-east-2.amazonaws.com/movie5img1.jpg'
     )
 
 
@@ -792,6 +857,11 @@ def seed_products():
     db.session.add(product53)
     db.session.add(product54)
     db.session.add(product55)
+    db.session.add(product56)
+    db.session.add(product57)
+    db.session.add(product58)
+    db.session.add(product59)
+    db.session.add(product60)
     
     db.session.commit()
 

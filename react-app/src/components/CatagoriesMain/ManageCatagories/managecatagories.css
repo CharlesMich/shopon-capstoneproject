@@ -1,0 +1,8 @@
+.manage-catagories-update-delete{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.manage-catagories-update-delete > * {
+    margin-right: 50px;
+}
