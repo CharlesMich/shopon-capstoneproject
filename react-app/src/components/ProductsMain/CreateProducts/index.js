@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import { useHistory, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {fetchAddProduct} from '../../../store/product'
-// import { addPics } from '../../store/SpotImagesReducer';
-// import { createSpot } from '../../store/SpotsReducer';
+import {getAllCatagories} from "../../../store/catagories"
 import "./createproducts.css"
 
 function CreateProduct() {
@@ -11,10 +10,15 @@ function CreateProduct() {
     const dispatch = useDispatch();
 
     const sessionUser = useSelector(state=> state.session.user)
+    const catagories = useSelector(state=> Object.values(state.catagory.allCatagories))
     let seller;
     if(sessionUser){
         seller = sessionUser.username;
     }
+
+    useEffect(()=> {
+        dispatch(getAllCatagories())
+    }, [dispatch])
 
     const [name, setName] = useState('');
     const [product_shortdescription, setProduct_shortdescription] = useState('');
@@ -121,14 +125,17 @@ function CreateProduct() {
                     <div> <div><label htmlFor='catagory_id' className="createproduct-label">Catagory* </label></div>
                 <span><select className="createproduct-select" defaultValue={null} value={catagory_id} onChange={(e) => setCatagory_id(e.target.value)} >
                         {/* <option value = ""></option> */}
-                        <option value={"Choose one"}></option>
-                        <option value={1}>Electronics</option>
+                        {/* <option value={"Choose one"}></option> */}
+                        {catagories.map(ele => (
+                            <option value = {ele.id}>{ele.catagory}</option>
+                        ))}
+                        {/* <option value={1}>Electronics</option>
                         <option value={2}>Clothes</option>
                         <option value={3}>Books</option>
                         <option value={4}>Sports and Fitness</option>
                         <option value={5}>Cologne</option>
                         <option value={6}>Shoes</option>
-                        <option value={7}>Other</option>
+                        <option value={7}>Other</option> */}
           </select></span></div>
                 <span><label htmlFor='price' className="createproduct-label">Price* </label></span><span className='error'> {hasSubmitted && validationErrors.price && `${validationErrors.price}`}</span>
                 <input id='price' placeholder='Price (USD)' type="text" value={price}

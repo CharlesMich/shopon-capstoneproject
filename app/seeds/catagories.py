@@ -48,17 +48,17 @@ def seed_catagories():
         img="https://myaaprojects.s3.us-east-2.amazonaws.com/beauty-cat.png"
     )
     catagory10 = Catagory(
-        catagory='Home Decor',
+        catagory='Video Games',
           seller='Shopon',
         img="https://myaaprojects.s3.us-east-2.amazonaws.com/home-decor-cat.png"
     )
     catagory11 = Catagory(
-        catagory='Music',
+        catagory='Home Decor',
           seller='Shopon',
         img="https://myaaprojects.s3.us-east-2.amazonaws.com/music-cat.png"
     )
     catagory12 = Catagory(
-        catagory='Video Games',
+        catagory='Music',
           seller='Shopon',
         img="https://myaaprojects.s3.us-east-2.amazonaws.com/video-games-cat.png"
     )

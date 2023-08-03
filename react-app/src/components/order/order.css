@@ -1,5 +1,5 @@
 .order-container{
-   margin: 0 auto;
+   /* margin: 0 auto; */
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -21,4 +21,18 @@
 }
 .order-h2{
     color: rgb(28 42 53)
+}
+
+.order-map{
+    width: 100%;
+}
+
+.order-map-eachitem{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(94, 94, 94);
+    padding: 20px;
 }

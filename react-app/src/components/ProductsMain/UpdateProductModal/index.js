@@ -3,6 +3,7 @@ import { useHistory, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { useModal } from "../../../context/Modal";
 import { fetchUpdateProduct, getAllProducts } from "../../../store/product";
+import {getAllCatagories} from "../../../store/catagories"
 import './updateproductmodal.css'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
@@ -13,6 +14,7 @@ function UpdateProductModal() {
     console.log(productId)
     
     const product = useSelector((state) => state.product.allProducts[productId])
+    const catagories = useSelector(state=> Object.values(state.catagory.allCatagories))
     const sessionUser = useSelector(state=> state.session.user)
 
     let seller;
@@ -24,6 +26,9 @@ function UpdateProductModal() {
         dispatch(getAllProducts())
     },[dispatch])
 
+    useEffect(()=> {
+        dispatch(getAllCatagories())
+    }, [dispatch])
 
     const [name, setName] = useState(product.name);
     const [product_shortdescription, setProduct_shortdescription] = useState(product.product_shortdescription);
@@ -60,7 +65,7 @@ function UpdateProductModal() {
     }, [name, product_shortdescription, product_longdescription, price, catagory_id, img1, img2, img3, img4, img5])
 
     const handleCancel =(e)=> {
-        // closeModal()
+       history.push('/manageproducts')
     }
 
     const onSubmit = async (e) => {
@@ -129,13 +134,9 @@ function UpdateProductModal() {
                      <div><div><label htmlFor='catagory_id'>Catagory: </label></div>
                 <select className="update-select" defaultValue={null} value={catagory_id} onChange={(e) => setCatagory_id(e.target.value)} >
                         {/* <option value = ""></option> */}
-                        <option value={1}>Electronics</option>
-                        <option value={2}>Clothes</option>
-                        <option value={3}>Books</option>
-                        <option value={4}>Sports and Fitness</option>
-                        <option value={5}>Cologne</option>
-                        <option value={6}>Shoes</option>
-                        <option value={7}>Other</option>
+                        {catagories.map(ele => (
+                            <option value = {ele.id}>{ele.catagory}</option>
+                        ))}
           </select></div>
                 <span><label htmlFor='price'>Price: </label></span><span className='error'> {hasSubmitted && validationErrors.price && `${validationErrors.price}`}</span>
                 <input id='update-price' placeholder='Price per Night (USD)' type="text" value={price}
@@ -166,10 +167,10 @@ function UpdateProductModal() {
                 <button
                     type="submit"
                     className="updateproduct-button" style={{ fontSize: "10px", padding: "10px", marginTop: "10px", backgroundColor:"rgb(247 126 40)" }}>Update Product</button>
+                     {(imageLoading)&& <p>Loading...</p>}
                 <button
                    type="submit" onclick={handleCancel}
                     className="updateproduct-button" style={{ fontSize: "10px", padding: "10px", marginTop: "10px", color:"white", backgroundColor:"black" }}>Cancel</button>    
-                     {(imageLoading)&& <p>Loading...</p>}
             </form >
             </div>
 

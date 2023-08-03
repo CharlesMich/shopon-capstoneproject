@@ -71,11 +71,10 @@ function Cart() {
                for (let item of cartItemArr) {
                 await dispatch(fetchDeleteCartItem(item.id))
                 }
-                history.push(`/order/${order_id}`)
             }
-        }
+            history.push(`/order/${order_id}`)
+            }
     }
-
     // update an item
     useEffect(() => {
         dispatch(fetchLoadCartItem(userId))

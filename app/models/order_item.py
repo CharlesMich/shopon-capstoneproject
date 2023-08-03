@@ -28,7 +28,9 @@ class Order_Item(db.Model):
             'id': self.id,
             'order_id' : self.order_id,
             'product_id': self.product_id,
+            'price': self.price,
             'quantity': self.quantity,
             'shortdescription': self.orderitem_product.product_shortdescription,
+            'img1': self.orderitem_product.img1,
             'name': self.orderitem_product.name,
         }
