@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 import {Link} from 'react-router-dom'
 import '../../ProductsMain/ManageProducts'
 import { useEffect } from 'react'
@@ -18,6 +19,8 @@ function ManageCatagory(){
    useEffect(()=> {
     dispatch(getAllCatagories())
    }, [dispatch])
+
+   if (!sessionUser) return <Redirect to="/login" />;
 
     return(
         <div className="manageproducts-container">

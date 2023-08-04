@@ -24,7 +24,7 @@ function Order(){
         for(let i = 0; i < array.length; i++){
             count = count + (array[i].price * array[i].quantity)
         }
-        return count;
+        return count.toFixed(2);
     }
 
     if(!myOrder) return null;
@@ -41,9 +41,13 @@ function Order(){
                 <div>{Number(ele.price * ele.quantity).toFixed(2)}</div>
                 </div>
                 )}</div>
+                <div className="order-grandtotal">
+                    <div className="order-sub-grandtotal">
                 <div>Subtotal: {orderSubtotal(orderItems)}</div>
                 <div>Tax: {orderSubtotal(orderItems) * 5 /100}</div>
-                <div>Total: {orderSubtotal(orderItems) + orderSubtotal(orderItems) * 5 /100}</div>
+                <div>Total: {(orderSubtotal(orderItems) + orderSubtotal(orderItems) * 5 /100)}</div>
+                </div>
+                </div>
              <Link to="/"><h2 className="order-h2">Continue Shopping...</h2></Link>
              </div>
         </div>

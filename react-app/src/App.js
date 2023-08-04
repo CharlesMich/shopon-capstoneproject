@@ -22,6 +22,7 @@ import UpdateProductModal from "./components/ProductsMain/UpdateProductModal";
 import ManageCatagory from "./components/CatagoriesMain/ManageCatagories";
 import CreateCatagory from "./components/CatagoriesMain/CreateCatagory";
 import UpdateCatagory from "./components/CatagoriesMain/UpdateCatagory"
+// import ManageOrder from "./components/ManageOrders";
 
 function App() {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ function App() {
           <Route path="/products/productdetails/:productId"><ProductDetails/></Route>
           <Route path ="/manageproducts"><ManageProducts/></Route>
           <Route path ="/products/search-by-product"><SearchByProduct/></Route>
+          {/* <Route path="/manageorders"><ManageOrder/></Route> */}
           <Route path ="/"><Catagories/></Route>
         </Switch>
         {/* <Footer></Footer> */}

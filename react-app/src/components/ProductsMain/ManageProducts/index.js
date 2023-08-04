@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import {Link} from 'react-router-dom'
-import './manageproducts.css'
 import { useEffect } from 'react'
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
+import './manageproducts.css'
 import OpenModalButton from '../../OpenModalButton';
 import DeleteProductModal from '../DeleteProductModal';
 import UpdateProductModal from '../UpdateProductModal';
@@ -10,6 +11,7 @@ import { getAllProducts } from '../../../store/product';
 
 function ManageProducts(){
     const dispatch = useDispatch()
+    const sessionUser = useSelector(state => state.session.user)
    const allProducts = useSelector(state => Object.values(state.product.allProducts))
    const username = useSelector(state => state.session.user.username)
    const myProducts = allProducts.filter(ele => ele.seller === username)
@@ -18,6 +20,8 @@ function ManageProducts(){
    useEffect(()=> {
     dispatch(getAllProducts())
    }, [dispatch])
+
+   if (!sessionUser) return <Redirect to="/login" />;
 
     return(
         <div className="manageproducts-container">
