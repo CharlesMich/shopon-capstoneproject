@@ -58,6 +58,12 @@ function ProductDetails() {
     });
   }
 
+  // check if user is the seller
+  let userIsSeller = false;
+  if (sessionUser.username === product.seller){
+    userIsSeller = true;
+  }
+
   function avgRating(reviews) {
     let sum = 0
     for (let i = 0; i < reviews.length; i++) {
@@ -104,8 +110,7 @@ function ProductDetails() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // await dispatch(fetchLoadCartItem(user_id))
-
+    
     const createCartForm = {
       productId,
       user_id,
@@ -189,13 +194,12 @@ function ProductDetails() {
       </div>
 
         <h2 className="productdetails-h2">Reviews</h2>
-        {/* <div>< OpenModalButton buttonText="Post your Review" className="postReview" modalComponent={<CreateReviewModal id={product.id} />} /></div> */}
         <div className="products-review-reviewsummary-div">
         <span style={{marginRight:"5px"}}>Avg Rating:</span><span style={{marginRight:"15px"}}>{starAvgRating(Number(avgRating(reviews)))}</span>
               <span style={{marginRight:"5px"}} className="products-review-reviewsummary" >{reviews.length}</span><span className="products-review-reviewsummary">{reviews.length === 1 ? <span>Review</span> : <span> Reviews</span>}</span>
         </div>
         
-        {userNoReview ? <div style={{marginTop:"20px", marginBottom:"20px"}} ><OpenModalButton buttonText="Post your Review" className="postReview" modalComponent={<CreateReviewModal id={product.id} />} /></div> : null}
+        {!userIsSeller && userNoReview ? <div style={{marginTop:"20px", marginBottom:"20px"}} ><OpenModalButton buttonText="Post your Review" className="postReview" modalComponent={<CreateReviewModal id={product.id} />} /></div> : null}
     
         <div>{reviews.map((ele) =>
           <div className="productdetails-review">
