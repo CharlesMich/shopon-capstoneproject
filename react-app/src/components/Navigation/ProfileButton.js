@@ -55,7 +55,7 @@ function ProfileButton({ user }) {
             <li className="profile-button-li"><Link to="/reviews" style={{textDecoration:'none', color:"black"}} onClick={closeMenu}>Reviews</Link></li>
             <li className="profile-button-li"><Link to="/manageproducts" style={{textDecoration:'none', color:"black"}} onClick={closeMenu}>Products</Link></li>
             <li className="profile-button-li"><Link to="/managecatagories" style={{textDecoration:'none', color:"black"}} onClick={closeMenu}>Catagories</Link></li>
-            {/* <li className="profile-button-li"><Link to="/manageorders" style={{textDecoration:'none', color:"black"}} onClick={closeMenu}>Orders</Link></li> */}
+            <li className="profile-button-li"><Link to="/manageorders" style={{textDecoration:'none', color:"black"}} onClick={closeMenu}>Orders</Link></li>
             <li className="profile-button-li"><button className="profile-logout-button" onClick={handleLogout}>Log Out</button>
             </li>
           </>
