@@ -45,7 +45,7 @@ function Order(){
                     <div className="order-sub-grandtotal">
                 <div>Subtotal: {orderSubtotal(orderItems)}</div>
                 <div>Tax: {orderSubtotal(orderItems) * 5 /100}</div>
-                <div>Total: {(orderSubtotal(orderItems) + orderSubtotal(orderItems) * 5 /100)}</div>
+                <div>Total: {Number(orderSubtotal(orderItems)) + orderSubtotal(orderItems) * 5 /100}</div>
                 </div>
                 </div>
              <Link to="/"><h2 className="order-h2">Continue Shopping...</h2></Link>

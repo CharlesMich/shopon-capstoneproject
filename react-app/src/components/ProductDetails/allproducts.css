@@ -3,7 +3,7 @@
     /* height: 100%; */
     margin: 0px;
     background-color:rgb(234, 237, 237);
-    height: 100vh;
+    min-height: 100vh;
     min-height : 100vh;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,6 @@
    padding-top: 150px;
    width: 60%;
    padding-bottom: 50px;
-  
 }
 
 .product-detail-thumbnail-img{

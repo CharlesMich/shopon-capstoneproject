@@ -56,7 +56,7 @@ function App() {
           <Route path="/manageorders"><ManageOrder/></Route>
           <Route path ="/"><Catagories/></Route>
         </Switch>
-        {/* <Footer></Footer> */}
+        <Footer></Footer>
          </div>
       )}
     </>

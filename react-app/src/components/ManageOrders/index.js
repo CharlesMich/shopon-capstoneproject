@@ -52,7 +52,7 @@ function ManageOrder() {
                 {/* <h1 className ="manageproducts-h1">Manage your Orders</h1> */}
                 <h2 className="manageproducts-h2">My Orders</h2>
                 <div className= "manage-order-map-container">{myOrders.map((ele, index) =>
-                    <div>
+                    <div className="manage-order-order-1">
                             <div className="manage-order-each-order">
                                         <p>order Id: {ele.id}</p>
                                         <p>Order Placed on: {(ele.created_at).split(' ').slice(1, 4).join(' ')}</p>
