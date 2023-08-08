@@ -4,7 +4,41 @@
 }
 .manage-orders-subcontainer{
     width: 60%;
-    padding-top: 400px;
+    padding-top: 5%;
     margin: 0 auto;
    
+}
+/* .manage-order-map-container{
+    /* border-bottom: 1px solid black; */
+/* } */ 
+.manageorder-orderitem-map{
+    width: 100%;
+    /* background-color: black; */
+}
+.order-map-eachitem-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 10px;
+    align-items: center;
+    background-color: white;
+    margin-top: 10px;
+}
+.manage-orders-subtotal{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.manage-order-each-order{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.manage-orders-details-button{
+    background-color: rgb(247 126 40);
+    height: fit-content;
+    padding: 5px 10px;
+    border:none;
 }
