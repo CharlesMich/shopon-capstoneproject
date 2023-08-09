@@ -83,7 +83,7 @@ export const fetchAddProduct = (formData) => async dispatch => {
 
 // update product
 export const fetchUpdateProduct = (formData, productId) => async dispatch => {
-    console.log(formData)
+   
     const response = await fetch(`/api/product/update/${productId}`, {
         method: 'POST',
         body: formData

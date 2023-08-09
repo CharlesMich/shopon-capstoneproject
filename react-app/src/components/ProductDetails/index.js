@@ -175,7 +175,7 @@ function ProductDetails() {
                   </select></div>
 
                 </div>
-                  <button style={{marginTop:"20px"}} type="sumbit" className="product-details-shoppingcart-button" >Add to Cart</button>
+                  <button style={{marginTop:"20px", cursor:"pointer"}} type="sumbit" className="product-details-shoppingcart-button" >Add to Cart</button>
               </form>
             </div>
           </div>
@@ -186,7 +186,7 @@ function ProductDetails() {
         style={showCart ? { transform: 'translateX(-100%)' } : {}}
       >
         <div className="sidebar-header">
-          <button className="arrow-button" onClick={() => setShowCart(false)}>
+          <button className="arrow-button" style={{cursor:"pointer"}} onClick={() => setShowCart(false)}>
           <i class="fa-solid fa-x"></i>
           </button>
         </div>

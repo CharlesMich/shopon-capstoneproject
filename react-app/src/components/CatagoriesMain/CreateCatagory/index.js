@@ -44,7 +44,7 @@ function CreateCatagory() {
         
         setImageLoading(true);
         let newCatagory = await dispatch(fetchAddCatagory(formData))
-        console.log(newCatagory)
+        
         if (newCatagory) {
             setCatagory('');
             setImg(null);

@@ -11,7 +11,6 @@ function UpdateProductModal() {
     const history = useHistory();
     const dispatch = useDispatch();
     const { productId } = useParams()
-    console.log(productId)
     
     const product = useSelector((state) => state.product.allProducts[productId])
     const catagories = useSelector(state=> Object.values(state.catagory.allCatagories))

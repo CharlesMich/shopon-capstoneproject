@@ -76,6 +76,8 @@ function Navigation({ isLoaded }) {
 						<NavLink className="nav-link-item" exact to='/'>Catagories</NavLink>
 						<NavLink className="nav-link-item" exact to='/products/top-rated-products'>Top Rated Products</NavLink>
 						<NavLink className="nav-link-item" exact to='/products/new-arrivals'>New Arrivals</NavLink>
+						<NavLink className="nav-link-item" exact to='/products/top-deals'>Top Deals</NavLink>
+
 						{/* <NavLink className= "nav-link-item" exact to='/'>Top Rated</NavLink>
 				<NavLink className= "nav-link-item" exact to='/reviews'>Reviews</NavLink>	
 				<NavLink className= "nav-link-item" exact to='/cart'>Cart</NavLink>

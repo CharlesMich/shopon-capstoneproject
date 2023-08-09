@@ -25,7 +25,6 @@
     
 }
 
-
 .product-detail-thumbnail{
     display: flex;
     flex-direction: column;
@@ -45,7 +44,6 @@
     justify-content: center;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
 }
-
 
 .product-detail-img{
     max-width: 500px;
@@ -95,9 +93,8 @@ box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     word-wrap: break-word;
     font-size: 12px;
-    
-
 }
+
 .product-details-shoppingcart-button{
     background-color: orange;
     border:none;
@@ -118,15 +115,17 @@ box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
     flex-direction: row;
     align-items: center;
 }
+
 .productdetails-cart-form-elements > * {
     margin-right: 30px;
 }
+
 .products-review-reviewsummary{
    
     white-space: nowrap;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
 }
+
 .products-review-reviewsummary-div{
     display: flex;
     flex-direction: row;

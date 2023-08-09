@@ -23,6 +23,7 @@ import ManageCatagory from "./components/CatagoriesMain/ManageCatagories";
 import CreateCatagory from "./components/CatagoriesMain/CreateCatagory";
 import UpdateCatagory from "./components/CatagoriesMain/UpdateCatagory"
 import ManageOrder from "./components/ManageOrders";
+import TopDeals from "./components/TopDeals";
 
 function App() {
   const dispatch = useDispatch();
@@ -47,6 +48,7 @@ function App() {
           <Route path="/manageproducts/updateproduct/:productId"><UpdateProductModal/></Route>
           <Route path ="/managecatagories"><ManageCatagory/></Route>
           <Route path ="/products/top-rated-products"><TopRatedProducts/></Route>
+          <Route path="/products/top-deals"><TopDeals/></Route>
           <Route path="/products/new-arrivals"><NewArrivals/></Route>
           <Route path = "/order/:orderId"><Order/></Route>
           <Route exact path="/products/all/:catagoryId"><AllProducts/></Route>

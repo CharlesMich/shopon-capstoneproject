@@ -16,7 +16,7 @@ function OpenModalButton({
   };
 
   return (
-    <button className="review-button" onClick={onClick}>{buttonText}</button>
+    <button className="review-button" style={{cursor:"pointer"}} onClick={onClick}>{buttonText}</button>
   );
 }
 

@@ -76,9 +76,9 @@ function AllReviews(){
                                                         <p className="review-text">{ele.review}</p>
                                                         <div className="review-update-del-button">
                                                         
-                                                        <div><OpenModalButton buttonText="Update" className="review-button"  modalComponent={<UpdateReviewModal id={ele.id} />} /></div>
+                                                        <div><OpenModalButton buttonText="Update" className="review-button" style={{cursor:"pointer"}} modalComponent={<UpdateReviewModal id={ele.id} />} /></div>
                                                         <button key={ele.id} className="review-button" style={{
-                                                            color:"white"
+                                                            color:"white", cursor:"pointer"
                                                         }} onClick={handleDelete} data-value ={ele.id}>Delete</button>
                                                         </div>
                                                         </div>

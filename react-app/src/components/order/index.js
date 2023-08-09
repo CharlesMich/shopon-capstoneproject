@@ -9,11 +9,9 @@ function Order(){
 
     const orderId = useParams().orderId;
     const dispatch = useDispatch()
-    console.log(orderId)
 
     const myOrder = useSelector(state => Object.values((state.orderItems)));
     const orderItems = myOrder.filter(ele => ele.order_id === Number(orderId))
-    console.log(orderItems)
 
     useEffect(()=> {
         dispatch(fetchLoadorderItem())
@@ -33,21 +31,21 @@ function Order(){
             <div className ="order-body">
                 <h1 className= "order-h1">Thank you for the Order</h1>
                 <h2 className="order-h2">Order Summary</h2>
-             <div className="order-map">{orderItems.map((ele)=>
-                <div className="order-map-eachitem">
-                    <div><img style={{width:'50px'}} src ={ele.img1} alt=""></img></div>
-                <div>{ele.name}</div>
-                <div>Qty: {ele.quantity}</div>
-                <div>{Number(ele.price * ele.quantity).toFixed(2)}</div>
-                </div>
+                <div className="order-map">{orderItems.map((ele)=>
+                    <div className="order-map-eachitem">
+                            <div><img style={{width:'100px'}} src ={ele.img1} alt=""></img></div>
+                            <div>{ele.name}</div>
+                            <div>Qty: {ele.quantity}</div>
+                            <div>{Number(ele.price * ele.quantity).toFixed(2)}</div>
+                    </div>
                 )}</div>
-                <div className="order-grandtotal">
-                    <div className="order-sub-grandtotal">
-                <div>Subtotal: {orderSubtotal(orderItems)}</div>
-                <div>Tax: {orderSubtotal(orderItems) * 5 /100}</div>
-                <div>Total: {Number(orderSubtotal(orderItems)) + orderSubtotal(orderItems) * 5 /100}</div>
-                </div>
-                </div>
+                    <div className="order-grandtotal">
+                        <div className="order-sub-grandtotal">
+                            <div>Subtotal: {orderSubtotal(orderItems)}</div>
+                            <div>Tax: {orderSubtotal(orderItems) * 5 /100}</div>
+                            <div>Total: {Number(orderSubtotal(orderItems)) + orderSubtotal(orderItems) * 5 /100}</div>
+                        </div>
+                    </div>
              <Link to="/"><h2 className="order-h2">Continue Shopping...</h2></Link>
              </div>
         </div>

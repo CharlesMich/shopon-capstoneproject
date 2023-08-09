@@ -15,7 +15,6 @@ function ManageProducts(){
    const allProducts = useSelector(state => Object.values(state.product.allProducts))
    const username = useSelector(state => state.session.user.username)
    const myProducts = allProducts.filter(ele => ele.seller === username)
-   console.log(myProducts)
 
    useEffect(()=> {
     dispatch(getAllProducts())

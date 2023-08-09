@@ -19,10 +19,10 @@ function ManageOrder() {
     }
     const allOrders = useSelector(state => Object.values(state.order))
     const orderItems = useSelector(state => Object.values(state.orderItems))
-    const myOrders = allOrders.filter(ele => ele.user_id === userId)
+    const myOrders = allOrders.filter(ele => ele.user_id === userId).sort((a,b) => b.id - a.id)
 
     const [showItem, setShowItem] = useState(-1)
-    console.log(showItem)
+
     useEffect(() => {
         dispatch(fetchGetOrder())
     }, [dispatch])
@@ -56,7 +56,7 @@ function ManageOrder() {
                             <div className="manage-order-each-order">
                                         <p>order Id: {ele.id}</p>
                                         <p>Order Placed on: {(ele.created_at).split(' ').slice(1, 4).join(' ')}</p>
-                                        <button key={ele.id} className="manage-orders-details-button" onClick={()=> revealText(index)}>Order Details</button>
+                                        <button key={ele.id} className="manage-orders-details-button" style={{cursor:"pointer"}} onClick={()=> revealText(index)}>Order Details</button>
                             </div>
                                                 
                                 <div  key={ele.id} className="manageorder-orderitem-map">{showItem === index && orderItems.filter(item => item.order_id === Number(ele.id)).map(ele => (
