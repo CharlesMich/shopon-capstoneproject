@@ -124,7 +124,7 @@ function CreateProduct() {
                 {/* <p>Help people find what they are looking for.</p>      */}
                     <div> <div><label htmlFor='catagory_id' className="createproduct-label">Catagory* </label></div>
                 <span><select className="createproduct-select" defaultValue={null} value={catagory_id} onChange={(e) => setCatagory_id(e.target.value)} >
-                        {/* <option value = ""></option> */}
+                        <option value = "">Choose a Catagory</option>
                         {/* <option value={"Choose one"}></option> */}
                         {catagories.map(ele => (
                             <option value = {ele.id}>{ele.catagory}</option>
