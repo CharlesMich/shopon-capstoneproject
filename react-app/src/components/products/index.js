@@ -34,6 +34,9 @@ function AllProducts() {
         <div className="product-container">
             <div className="product-sub-container">
                 <div style={{ textAlign: "left" }}><h1 className="product-h1">{catagory && catagory.catagory}</h1></div>
+                {!newArr.length && <div className="products-no-products">There are no Products in this Catagory</div>}
+
+
                 <div className='products-inner-container'>
                     <div className="productMap">{newArr.map((ele) =>
                         <div className="products-each-product">
