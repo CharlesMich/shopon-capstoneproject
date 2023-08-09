@@ -220,10 +220,14 @@ your site just below the name of the Web Service at the top of the page.
 | POST/api/review/new/ | This fetch is sent to post a review. It returns an object with the new review | {'product_id': INT, 'user_id': STRING, "title": STRING, 'review': STRING, "rating": INT } |
 | POST/api/review/update/:reviewId | This fetch is sent to update a review. It returns an object representing the updated review. | {'product_id': INT, 'user_id': STRING, "title": STRING, 'review': STRING, "rating": INT} |
 | POST/api/review/delete/:reviewId | This fetch is sent to delete a review. It returns a "sucessfully deleted" message. | {"message": "Successfully Deleted"} |
-| GET/api/spaces/ | This fetch is sent to gell all spaces. It returns an object representing all the spaces. | { 'id': INT, 'space_name': STRING,'description': STRING } |
-| POST/api/spaces/ | This fetch is sent to create a new space. It returns an object representing the new space | {'id': INT, 'space_name': STRING, 'description': STRING } |
-| POST/api/follows/add-follows/:userId| This fetch is sent to follow a user. It returns an object representing following user id and followed user id | { 'following_user_id': INT, 'followed_user_id': INT } |
-| POST/api/follows/delete-follows/int:id | This fetch is sent to unfollow a user. It returns an object with a message, "successfully deleted" | {"message": "Successfully Deleted"} |
+| GET/api/product/ | This fetch is sent to gell all productds. It returns an object representing all the products. | { 'id': INT, 'space_name': STRING,'description': STRING } |
+| POST/api/product/new | This fetch is sent to create a new product. It returns an object representing the new product created | {'id': INT, 'space_name': STRING, 'description': STRING } |
+| POST/api/product/update-product/:productId| This fetch is sent to update a product. It returns an object representing updated product | { 'following_user_id': INT, 'followed_user_id': INT } |
+| POST/api/product/delete/productId | This fetch is sent to delete a product. It returns an object with a message, "successfully deleted" | {"message": "Successfully Deleted"} |
+| GET/api/catagory/ | This fetch is sent to gell all catagories. It returns an object representing all the catagories. | { 'id': INT, 'space_name': STRING,'description': STRING } |
+| POST/api/catagory/new | This fetch is sent to create a new catagory. It returns an object representing the new catagory | {'id': INT, 'space_name': STRING, 'description': STRING } |
+| POST/api/catagory/update-product/:productId| This fetch is sent to update a catagory. It returns an object representing updated catagory | { 'following_user_id': INT, 'followed_user_id': INT } |
+| POST/api/catagory/delete/productId | This fetch is sent to delete a catagory. It returns an object with a message, "successfully deleted" | {"message": "Successfully Deleted"} |
   
 
 
