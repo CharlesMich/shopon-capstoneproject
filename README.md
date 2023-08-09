@@ -1,6 +1,6 @@
 
 # Shopon
-Shopon is a soft clone of Amazon and Etsy. It is a marketplace where users can sell thier products, browse and sell their products.
+Shopon is a clone of Amazon and Etsy. It is a marketplace where users can sell thier products, browse and sell their products.
 
 check out [Shopon](https://shopon-308z.onrender.com/login)
 
@@ -14,13 +14,21 @@ check out [Shopon](https://shopon-308z.onrender.com/login)
 <img src ="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" /><img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" /><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /><img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" /><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
 
 ## Splash Page
-![splash](https://myaaprojects.s3.us-east-2.amazonaws.com/screenshots/shopon-screenshot.jpg)
+![splash](https://myaaprojects.s3.us-east-2.amazonaws.com/screenshots/login-screenshot.png)
+
+## Catagories Page
+![splash](https://myaaprojects.s3.us-east-2.amazonaws.com/screenshots/catagories-screenshot.png)
 
 ## Products Page
 ![product](https://myaaprojects.s3.us-east-2.amazonaws.com/screenshots/shopon-product-screenshot.png)
 
 ## Reviews Page
 ![Review](https://myaaprojects.s3.us-east-2.amazonaws.com/screenshots/shopon-review-screenshot.png)
+
+## Product details Page
+![Review](https://myaaprojects.s3.us-east-2.amazonaws.com/screenshots/product-details-screenshot.png)
+
+
 
 ## Getting started
 1. Clone this repository:
@@ -196,6 +204,30 @@ your site just below the name of the Web Service at the top of the page.
 * Users can read/view all Catagories
 * Users can update their Catagories
 * Users can delete their Catagories
+
+## End Points
+| Request| Purpose | Return Value |
+| ------------ | ------------- | ------------- 
+| GET/api/auth/ | This fetch is sent upon initial app load and on subsequent refreshes. It returns an object representing the current user, if user is logged in | {'id': INT, 'username':STRING, 'email':STRING } |
+| POST/api/login/ | This fetch is sent for a log in request. It returns an object representing the current user | { 'id': INT, 'username': STRING, 'email': STRING, 'first_name': STRING, 'last_name': STRING }|
+| GET/api/logout/ | This fetch is sent upon a logout request. It returns a message about the logout | {'message': 'User logged out'} |
+| GET/api/signup/ | This fetch is sent upon a signup request. It returns an object representing the new signed up user. | { 'id': INT, 'username': STRING, 'email': STRING, 'first_name': STRING, 'last_name': STRING } |
+| GET/api/cartproduct/id | This fetch is sent to get all items in the user shopping cart. It returns an object with the updated cart item | {'id': INT, 'cart_id' :INT, 'user_id': INT, 'product_id': INT, 'img1': STRING, 'quantity': INT, 'name': STRING, 'description': STRING, 'price':INT} |
+| POST/api/cartproduct/new | This fetch is sent when a user adds an item to the cart. It returns an object with the newly added item | { 'user_id': INT, 'product_id': INT, 'quantity': INT} |
+| POST/api/cartproduct/update-cart/:cartId | This fetch is sent to update an item in the cart. It returns the the updated question displayed on the manage questions page. | { 'user_id': INT, 'product_id': INT, 'quantity': INT} |
+| POST/api/cartproduct/delete-cart/:cartId | This fetch is sent to delete an item in the cart. It returns a product deleted message and the cart does not contain the deleted item | {"message": "Product Deleted"} |
+| GET/api/review/ | This fetch is sent get all reviews. It returns an object with all the reviews | {'id': INT, 'user_id' : INT, 'product_id': INT, 'name': STRING, 'img1':STRING, 'title': STRING,'review': STRING, 'rating':INT } |
+| POST/api/review/new/ | This fetch is sent to post a review. It returns an object with the new review | {'product_id': INT, 'user_id': STRING, "title": STRING, 'review': STRING, "rating": INT } |
+| POST/api/review/update/:reviewId | This fetch is sent to update a review. It returns an object representing the updated review. | {'product_id': INT, 'user_id': STRING, "title": STRING, 'review': STRING, "rating": INT} |
+| POST/api/review/delete/:reviewId | This fetch is sent to delete a review. It returns a "sucessfully deleted" message. | {"message": "Successfully Deleted"} |
+| GET/api/product/ | This fetch is sent to gell all productds. It returns an object representing all the products. | { 'id': INT, 'space_name': STRING,'description': STRING } |
+| POST/api/product/new | This fetch is sent to create a new product. It returns an object representing the new product created | {'id': INT, 'space_name': STRING, 'description': STRING } |
+| POST/api/product/update-product/:productId| This fetch is sent to update a product. It returns an object representing updated product | { 'following_user_id': INT, 'followed_user_id': INT } |
+| POST/api/product/delete/productId | This fetch is sent to delete a product. It returns an object with a message, "successfully deleted" | {"message": "Successfully Deleted"} |
+| GET/api/catagory/ | This fetch is sent to gell all catagories. It returns an object representing all the catagories. | { 'id': INT, 'space_name': STRING,'description': STRING } |
+| POST/api/catagory/new | This fetch is sent to create a new catagory. It returns an object representing the new catagory | {'id': INT, 'space_name': STRING, 'description': STRING } |
+| POST/api/catagory/update-product/:productId| This fetch is sent to update a catagory. It returns an object representing updated catagory | { 'following_user_id': INT, 'followed_user_id': INT } |
+| POST/api/catagory/delete/productId | This fetch is sent to delete a catagory. It returns an object with a message, "successfully deleted" | {"message": "Successfully Deleted"} |
   
 
 
