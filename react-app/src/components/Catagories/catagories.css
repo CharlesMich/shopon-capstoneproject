@@ -2,7 +2,8 @@
     background-color: rgb(234, 237, 237);
     display: flex;
     justify-content: center;
-    margin-top: 0px 0 px;
+    margin-top: 0px;
+    margin-bottom: 200px;
 }
 .catagories-card{
     margin-top: 150px;

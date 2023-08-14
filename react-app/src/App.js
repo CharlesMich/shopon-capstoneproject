@@ -24,6 +24,7 @@ import CreateCatagory from "./components/CatagoriesMain/CreateCatagory";
 import UpdateCatagory from "./components/CatagoriesMain/UpdateCatagory"
 import ManageOrder from "./components/ManageOrders";
 import TopDeals from "./components/TopDeals";
+import CheckoutForm from "./components/Payment";
 
 function App() {
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ function App() {
           <Route path="/products/productdetails/:productId"><ProductDetails/></Route>
           <Route path ="/manageproducts"><ManageProducts/></Route>
           <Route path ="/products/search-by-product"><SearchByProduct/></Route>
+          <Route path ="/payment"><CheckoutForm/></Route>
           <Route path="/manageorders"><ManageOrder/></Route>
           <Route path ="/"><Catagories/></Route>
         </Switch>
