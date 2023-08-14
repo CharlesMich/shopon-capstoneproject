@@ -26,6 +26,8 @@ function Footer() {
                     <span className="footer-text-p">Designed and developed by Charles</span>
                     <Link to={{ pathname: "https://www.linkedin.com/in/charles-michael-b83571a2/" }} target="_blank"><span><i class="fa-brands fa-linkedin" style={{color:"white"}}></i></span></Link>
                     <Link to={{ pathname: "https://github.com/CharlesMich" }} target="_blank"><i class="fa-brands fa-github"style={{color:"white"}}></i></Link>
+                    <Link to={{ pathname: "https://wellfound.com/u/charles-michael-7" }} target="_blank"><i class="fa-brands fa-angellist"style={{color:"white"}}></i></Link>
+                    <Link to={{ pathname: "https://sprightly-treacle-331b23.netlify.app" }} target="_blank"><i class="fa-solid fa-c"style={{color:"white"}}></i></Link>
                     </div>
             </div>    
         </div>
