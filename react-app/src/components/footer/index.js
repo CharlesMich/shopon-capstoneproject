@@ -4,7 +4,7 @@ import './footer.css'
 
 function Footer() {
     const { pathname } = useLocation();
-  console.log(pathname);
+
   // you can check a more conditions here
   if (pathname === "/login") return null;
   if (pathname === "/signup") return null;
