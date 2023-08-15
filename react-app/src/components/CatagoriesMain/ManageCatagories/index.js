@@ -21,6 +21,7 @@ function ManageCatagory(){
    }, [dispatch])
 
    if (!sessionUser) return <Redirect to="/login" />;
+   if (!myCatagories) return null;
 
     return(
         <div className="manageproducts-container">
