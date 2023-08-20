@@ -20,7 +20,7 @@ function ManageCatagory(){
     dispatch(getAllCatagories())
    }, [dispatch])
 
-   if (!sessionUser) return <Redirect to="/login" />;
+   if (!sessionUser || !sessionUser.username) return <Redirect to="/login"/>;
    if (!myCatagories) return null;
 
     return(
@@ -40,7 +40,6 @@ function ManageCatagory(){
                         <div><OpenModalButton buttonText="Delete" className="manageproduct-button"  modalComponent={<DeleteCatagoryModal catagoryId={ele.id} />} /></div>
                         </div>
                     </div>
-                    
                     )}</div>
             </div>
         </div>

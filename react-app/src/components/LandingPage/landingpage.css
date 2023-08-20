@@ -235,6 +235,37 @@ height: 100%;
     background-color: white;
 } */
 
+@media only screen and (max-width: 600px){
+
+.auth-container{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  /* height: 400px; */
+  margin: 50px 0px;
+}
+.login-container{
+  background-color:  rgb(28 42 53);
+  height: 100%;
+  width: 100%;
+  padding: 70px 0px;
+}
+.landing-main{
+  box-shadow: none;
+  /* background-color: green; */
+  margin: 0px;
+  height: fit-content;
+  padding: 0px;
+}
+.landing-logo{
+  width:100px;
+  margin: 0 35%;
+}
+
+}
+  
 
 
 
