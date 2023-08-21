@@ -158,3 +158,30 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
   border-top-right-radius: 3px ;
   border-bottom-right-radius: 3px ;
 }
+
+@media only screen and (max-width: 910px){
+  .nav-topbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px 0px;
+  }
+  .nav-search{
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .nav-search-input{
+    width: 300px
+  }
+
+  .nav-bottom-bar{
+    padding: 10px 10px;
+    justify-content: center;
+  }
+  .nav-link-item{
+    padding-right: 15px;
+    font-size: 12px
+  }
+}
